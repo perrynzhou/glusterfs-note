@@ -1,0 +1,61 @@
+/var/log/glusterfs/geo-replication/*/*.log {
+    sharedscripts
+    weekly
+    maxsize 10M
+    minsize 100k
+
+    # 6 months of logs are good enough
+    rotate 26
+
+    missingok
+    compress
+    delaycompress
+    notifempty
+    postrotate
+    for pid in `ps -aef | grep glusterfs | egrep "\-\-aux-gfid-mount" | awk '{print $2}'`; do
+        /usr/bin/kill -HUP $pid > /dev/null 2>&1 || true
+    done
+     endscript
+}
+
+
+/var/log/glusterfs/geo-replication-slaves/*.log {
+    sharedscripts
+    weekly
+    maxsize 10M
+    minsize 100k
+
+    # 6 months of logs are good enough
+    rotate 26
+
+    missingok
+    compress
+    delaycompress
+    notifempty
+    postrotate
+    for pid in `ps -aef | grep glusterfs | egrep "\-\-aux-gfid-mount" | awk '{print $2}'`; do
+        /usr/bin/kill -HUP $pid > /dev/null 2>&1 || true
+    done
+    endscript
+}
+
+
+/var/log/glusterfs/geo-replication-slaves/*/*.log {
+    sharedscripts
+    weekly
+    maxsize 10M
+    minsize 100k
+
+    # 6 months of logs are good enough
+    rotate 26
+
+    missingok
+    compress
+    delaycompress
+    notifempty
+    postrotate
+    for pid in `ps -aef | grep glusterfs | egrep "\-\-aux-gfid-mount" | awk '{print $2}'`; do
+        /usr/bin/kill -HUP $pid > /dev/null 2>&1 || true
+    done
+    endscript
+}

@@ -1,0 +1,67 @@
+.\"
+.\"  Copyright (c) 2006-2012 Red Hat, Inc. <http://www.redhat.com>
+.\"  This file is part of GlusterFS.
+.\"
+.\"  This file is licensed to you under your choice of the GNU Lesser
+.\"  General Public License, version 3 or any later version (LGPLv3 or
+.\"  later), or the GNU General Public License, version 2 (GPLv2), in all
+.\"  cases as published by the Free Software Foundation.
+.\"
+.\"
+
+.TH Glusterd 8 "Gluster elastic volume management daemon" "07 March 2011" "Gluster Inc."
+.SH NAME
+Glusterd \- Gluster elastic volume management daemon
+.SH SYNOPSIS
+.B glusterd
+.I [OPTION...]
+.SH DESCRIPTION
+The glusterd daemon is used for elastic volume management. The daemon must be run on all export servers.
+
+.SH OPTIONS
+
+.SS "Basic options"
+.PP
+.TP
+
+\fB\-l <LOGFILE>, \fB\-\-log\-file=<LOGFILE>\fR
+File to use for logging.
+.TP
+\fB\-L <LOGLEVEL>, \fB\-\-log\-level=<LOGLEVEL>\fR
+Logging severity.  Valid options are TRACE, DEBUG, INFO, WARNING, ERROR and CRITICAL (the default is INFO).
+.TP
+\fB\-\-localtime\-logging\fR
+Enable localtime log timestamps.
+.TP
+\fB\-\-debug\fR
+Run the program in debug mode. This option sets \fB\-\-no\-daemon\fR, \fB\-\-log\-level\fR to DEBUG
+and \fB\-\-log\-file\fR to console.
+.TP
+\fB\-N, \fB\-\-no\-daemon\fR
+Run the program in the foreground.
+
+.SS "Miscellaneous Options:"
+.TP
+\fB\-?, \fB\-\-help\fR
+Display this help.
+.TP
+\fB\-\-usage\fR
+Display a short usage message.
+.TP
+\fB\-V, \fB\-\-version\fR
+Print the program version.
+
+.PP
+.SH FILES
+/var/lib/glusterd/*
+
+.SH SEE ALSO
+.nf
+\fBfusermount\fR(1), \fBmount.glusterfs\fR(8), \fBglusterfs\fR(8), \fBgluster\fR(8)
+\fR
+.fi
+.SH COPYRIGHT
+.nf
+Copyright(c) 2006-2011  Gluster, Inc.  <http://www.gluster.com>
+\fR
+.fi
