@@ -10,4 +10,5 @@
 - [1.glustefs调试](./document/glusterfs调试.md)
 - [2.glusterfsd启动过程](./document/glusterfsd启动过程.md)
 - [3.glusterfs客户端挂载init流程](./document/glusterfs客户端挂载init流程.md)
-- [4.gluster-create-volume处理过程](./document/gluster-create-volume处理过程.md)
+- [4.哈gluster-create-volume处理过程](./document/gluster-create-volume处理过程.md)
+- [4.哈希卷的xlators执行链路](./document/哈希卷的xlator执行链路.md)
