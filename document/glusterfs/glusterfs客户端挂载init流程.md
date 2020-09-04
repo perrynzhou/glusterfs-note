@@ -54,7 +54,7 @@ mount -t glusterfs -o acl 10.193.189.153:/rep3_vol /mnt/rep3_vol2
 
 ##### Glusterfs 交互架构
 
-![glusterfs-init](./images/glusterfs-init.png)
+![glusterfs-init](../images/glusterfs-init.png)
 
 ##### Glusterfs 客户端实现分析
 - 1.glusterfsd.c中的main方法入口函数
