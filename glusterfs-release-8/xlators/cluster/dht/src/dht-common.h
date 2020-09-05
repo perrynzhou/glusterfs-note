@@ -616,10 +616,13 @@ struct dht_methods_s {
 
 typedef struct dht_methods_s dht_methods_t;
 
+//dht的配置文件
 struct dht_conf {
+    //所有birck对应的subvolume
     xlator_t **subvolumes;
     char *subvolume_status;
     int *last_event;
+    //哈希卷对应的文件layout
     dht_layout_t **file_layouts;
     dht_layout_t **dir_layouts;
     unsigned int search_unhashed;
@@ -627,6 +630,7 @@ struct dht_conf {
     dht_du_t *du_stats;
     double min_free_disk;
     double min_free_inodes;
+    //哈希卷对应的birck子卷的个数
     int subvolume_cnt;
     int32_t refresh_interval;
     gf_lock_t subvolume_lock;
