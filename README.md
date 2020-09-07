@@ -13,6 +13,7 @@
 - [3.glusterfs客户端挂载init流程](./document/glusterfs/glusterfs客户端挂载init流程.md)
 - [4.哈gluster-create-volume处理过程](./document/glusterfs/gluster-create-volume处理过程.md)
 - [4.哈希卷的xlators执行链路](./document/glusterfs/哈希卷的xlator执行链路.md)
+- [5.glusterfs-brick哈希范围设定过程](./document/glusterfs/glusterfs-brick哈希范围设定过程.md)
 
 
 ## gluster-block使用

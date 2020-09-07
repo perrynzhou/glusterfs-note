@@ -521,6 +521,7 @@ dht_layout_anomalies(xlator_t *this, loc_t *loc, dht_layout_t *layout,
                 non erroneous layout entry)
                      then it indicates an overlap in the layout
     */
+   //layout->list[0].start类型是uint32_t，layout->list[0].start - 1 = uint32_t 最大值
     last_stop = layout->list[0].start - 1;
     prev_stop = last_stop;
 

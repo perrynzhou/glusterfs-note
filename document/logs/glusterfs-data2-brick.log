@@ -1,0 +1,800 @@
+[2020-09-07 09:56:02.079363] I [MSGID: 100030] [glusterfsd.c:2685:main] 0-/usr/local/sbin/glusterfsd: Started running version [{arg=/usr/local/sbin/glusterfsd}, {version=2020.09.07}, {cmdlinestr=/usr/local/sbin/glusterfsd -s 172.25.78.14 --volfile-id dht_debug.172.25.78.14.glusterfs-data2-brick -p /var/run/gluster/vols/dht_debug/172.25.78.14-glusterfs-data2-brick.pid -S /var/run/gluster/6838c6021cc43c20.socket --brick-name /glusterfs/data2/brick -l /var/log/glusterfs/bricks/glusterfs-data2-brick.log --xlator-option *-posix.glusterd-uuid=ee93f447-eca4-4daa-9808-4c4f17626bb0 --process-name brick --brick-port 49153 --xlator-option dht_debug-server.listen-port=49153}] 
+[2020-09-07 09:56:02.081547] I [glusterfsd.c:2420:daemonize] 0-glusterfs: Pid of current running process is 110159
+[2020-09-07 09:56:02.083758] I [socket.c:929:__socket_server_bind] 0-socket.glusterfsd: closing (AF_UNIX) reuse check socket 9
+[2020-09-07 09:56:02.085941] I [MSGID: 101190] [event-epoll.c:670:event_dispatch_epoll_worker] 0-epoll: Started thread with index [{index=0}] 
+[2020-09-07 09:56:02.086007] I [MSGID: 101190] [event-epoll.c:670:event_dispatch_epoll_worker] 0-epoll: Started thread with index [{index=1}] 
+[2020-09-07 09:56:02.090349] I [rpcsvc.c:2700:rpcsvc_set_outstanding_rpc_limit] 0-rpc-service: Configured rpc.outstanding-rpc-limit with value 64
+[2020-09-07 09:56:02.090823] T [MSGID: 0] [options.c:1230:xlator_option_init_bool] 0-/glusterfs/data2/brick: option dump-fd-stats using default value off 
+[2020-09-07 09:56:02.090836] D [MSGID: 0] [options.c:1230:xlator_option_init_bool] 0-/glusterfs/data2/brick: option count-fop-hits using set value off 
+[2020-09-07 09:56:02.090842] D [MSGID: 0] [options.c:1230:xlator_option_init_bool] 0-/glusterfs/data2/brick: option latency-measurement using set value off 
+[2020-09-07 09:56:02.090848] T [MSGID: 0] [options.c:1225:xlator_option_init_int32] 0-/glusterfs/data2/brick: option ios-dump-interval using default value 0 
+[2020-09-07 09:56:02.090855] T [MSGID: 0] [options.c:1225:xlator_option_init_int32] 0-/glusterfs/data2/brick: option ios-sample-interval using default value 0 
+[2020-09-07 09:56:02.090860] T [MSGID: 0] [options.c:1221:xlator_option_init_str] 0-/glusterfs/data2/brick: option ios-dump-format using default value json 
+[2020-09-07 09:56:02.090866] T [MSGID: 0] [options.c:1225:xlator_option_init_int32] 0-/glusterfs/data2/brick: option ios-sample-buf-size using default value 65535 
+[2020-09-07 09:56:02.090879] T [MSGID: 0] [options.c:1225:xlator_option_init_int32] 0-/glusterfs/data2/brick: option ios-dnscache-ttl-sec using default value 86400 
+[2020-09-07 09:56:02.090886] T [MSGID: 0] [options.c:1221:xlator_option_init_str] 0-/glusterfs/data2/brick: option sys-log-level using default value CRITICAL 
+[2020-09-07 09:56:02.090891] D [MSGID: 0] [options.c:1221:xlator_option_init_str] 0-/glusterfs/data2/brick: option log-level using set value TRACE 
+[2020-09-07 09:56:02.090898] T [MSGID: 0] [options.c:1221:xlator_option_init_str] 0-/glusterfs/data2/brick: option logger not set 
+[2020-09-07 09:56:02.090904] T [MSGID: 0] [options.c:1221:xlator_option_init_str] 0-/glusterfs/data2/brick: option log-format not set 
+[2020-09-07 09:56:02.090911] T [MSGID: 0] [options.c:1224:xlator_option_init_uint32] 0-/glusterfs/data2/brick: option log-buf-size using default value 5 
+[2020-09-07 09:56:02.090919] T [MSGID: 0] [options.c:1234:xlator_option_init_time] 0-/glusterfs/data2/brick: option log-flush-timeout using default value 120 
+[2020-09-07 09:56:02.090927] D [MSGID: 0] [options.c:1225:xlator_option_init_int32] 0-/glusterfs/data2/brick: option threads using set value 16 
+[2020-09-07 09:56:02.090931] T [MSGID: 0] [options.c:83:xlator_option_validate_int] 0-/glusterfs/data2/brick: no range check required for 'option threads 16' 
+[2020-09-07 09:56:02.090950] D [MSGID: 0] [options.c:1230:xlator_option_init_bool] 0-dht_debug-quota: option deem-statfs using set value off 
+[2020-09-07 09:56:02.090956] D [MSGID: 0] [options.c:1230:xlator_option_init_bool] 0-dht_debug-quota: option server-quota using set value off 
+[2020-09-07 09:56:02.090962] T [MSGID: 0] [options.c:1228:xlator_option_init_percent] 0-dht_debug-quota: option default-soft-limit using default value 80% 
+[2020-09-07 09:56:02.090978] T [MSGID: 0] [options.c:1234:xlator_option_init_time] 0-dht_debug-quota: option soft-timeout using default value 60 
+[2020-09-07 09:56:02.090983] T [MSGID: 0] [options.c:1234:xlator_option_init_time] 0-dht_debug-quota: option hard-timeout using default value 5 
+[2020-09-07 09:56:02.090989] T [MSGID: 0] [options.c:1234:xlator_option_init_time] 0-dht_debug-quota: option alert-time using default value 86400 
+[2020-09-07 09:56:02.090994] D [MSGID: 0] [options.c:1221:xlator_option_init_str] 0-dht_debug-quota: option volume-uuid using set value dht_debug 
+[2020-09-07 09:56:02.091008] D [MSGID: 0] [options.c:1232:xlator_option_init_path] 0-dht_debug-index: option index-base using set value /glusterfs/data2/brick/.glusterfs/indices 
+[2020-09-07 09:56:02.091021] T [MSGID: 0] [options.c:1221:xlator_option_init_str] 0-dht_debug-index: option xattrop64-watchlist using default value trusted.ec.dirty 
+[2020-09-07 09:56:02.091029] D [MSGID: 0] [options.c:1221:xlator_option_init_str] 0-dht_debug-index: option xattrop-dirty-watchlist using set value trusted.afr.dirty 
+[2020-09-07 09:56:02.091039] D [MSGID: 0] [options.c:1221:xlator_option_init_str] 0-dht_debug-index: option xattrop-pending-watchlist using set value trusted.afr.dht_debug- 
+[2020-09-07 09:56:02.096126] D [MSGID: 0] [options.c:1230:xlator_option_init_bool] 0-dht_debug-barrier: option barrier using set value disable 
+[2020-09-07 09:56:02.096144] D [MSGID: 0] [options.c:1234:xlator_option_init_time] 0-dht_debug-barrier: option barrier-timeout using set value 120 
+[2020-09-07 09:56:02.096151] T [MSGID: 0] [options.c:472:xlator_option_validate_time] 0-dht_debug-barrier: no range check required for 'option barrier-timeout 120' 
+[2020-09-07 09:56:02.096175] D [MSGID: 0] [options.c:1230:xlator_option_init_bool] 0-dht_debug-selinux: option selinux using set value on 
+[2020-09-07 09:56:02.096191] T [MSGID: 0] [options.c:1225:xlator_option_init_int32] 0-dht_debug-io-threads: option thread-count using default value 16 
+[2020-09-07 09:56:02.096199] T [MSGID: 0] [options.c:1225:xlator_option_init_int32] 0-dht_debug-io-threads: option high-prio-threads using default value 16 
+[2020-09-07 09:56:02.096205] T [MSGID: 0] [options.c:1225:xlator_option_init_int32] 0-dht_debug-io-threads: option normal-prio-threads using default value 16 
+[2020-09-07 09:56:02.096211] T [MSGID: 0] [options.c:1225:xlator_option_init_int32] 0-dht_debug-io-threads: option low-prio-threads using default value 16 
+[2020-09-07 09:56:02.096216] T [MSGID: 0] [options.c:1225:xlator_option_init_int32] 0-dht_debug-io-threads: option least-prio-threads using default value 1 
+[2020-09-07 09:56:02.096222] T [MSGID: 0] [options.c:1225:xlator_option_init_int32] 0-dht_debug-io-threads: option idle-time using default value 120 
+[2020-09-07 09:56:02.096228] T [MSGID: 0] [options.c:1230:xlator_option_init_bool] 0-dht_debug-io-threads: option enable-least-priority using default value on 
+[2020-09-07 09:56:02.096234] T [MSGID: 0] [options.c:1230:xlator_option_init_bool] 0-dht_debug-io-threads: option cleanup-disconnected-reqs using default value off 
+[2020-09-07 09:56:02.096241] T [MSGID: 0] [options.c:1230:xlator_option_init_bool] 0-dht_debug-io-threads: option pass-through using default value false 
+[2020-09-07 09:56:02.096271] D [MSGID: 0] [io-threads.c:842:__iot_workers_scale] 0-dht_debug-io-threads: scaled threads to 1 (queue_size=0/1) 
+[2020-09-07 09:56:02.096281] T [MSGID: 0] [options.c:1225:xlator_option_init_int32] 0-dht_debug-io-threads: option watchdog-secs not set 
+[2020-09-07 09:56:02.096298] D [MSGID: 0] [options.c:1230:xlator_option_init_bool] 0-dht_debug-upcall: option cache-invalidation using set value off 
+[2020-09-07 09:56:02.096305] T [MSGID: 0] [options.c:1225:xlator_option_init_int32] 0-dht_debug-upcall: option cache-invalidation-timeout using default value 60 
+[2020-09-07 09:56:02.096310] T [MSGID: 0] [options.c:83:xlator_option_validate_int] 0-dht_debug-upcall: no range check required for 'option cache-invalidation-timeout 60' 
+[2020-09-07 09:56:02.096328] D [MSGID: 0] [options.c:1230:xlator_option_init_bool] 0-dht_debug-leases: option leases using set value off 
+[2020-09-07 09:56:02.096335] T [MSGID: 0] [options.c:1225:xlator_option_init_int32] 0-dht_debug-leases: option lease-lock-recall-timeout using default value 60 
+[2020-09-07 09:56:02.096340] T [MSGID: 0] [options.c:83:xlator_option_validate_int] 0-dht_debug-leases: no range check required for 'option lease-lock-recall-timeout 60' 
+[2020-09-07 09:56:02.096353] D [MSGID: 0] [options.c:1230:xlator_option_init_bool] 0-dht_debug-read-only: option read-only using set value off 
+[2020-09-07 09:56:02.096369] D [MSGID: 0] [options.c:1230:xlator_option_init_bool] 0-dht_debug-worm: option worm using set value off 
+[2020-09-07 09:56:02.096375] D [MSGID: 0] [options.c:1230:xlator_option_init_bool] 0-dht_debug-worm: option worm-file-level using set value off 
+[2020-09-07 09:56:02.096381] T [MSGID: 0] [options.c:1223:xlator_option_init_int64] 0-dht_debug-worm: option default-retention-period using default value 120 
+[2020-09-07 09:56:02.096386] T [MSGID: 0] [options.c:472:xlator_option_validate_time] 0-dht_debug-worm: no range check required for 'option default-retention-period 120' 
+[2020-09-07 09:56:02.096392] T [MSGID: 0] [options.c:1223:xlator_option_init_int64] 0-dht_debug-worm: option auto-commit-period using default value 180 
+[2020-09-07 09:56:02.096397] T [MSGID: 0] [options.c:472:xlator_option_validate_time] 0-dht_debug-worm: no range check required for 'option auto-commit-period 180' 
+[2020-09-07 09:56:02.096403] T [MSGID: 0] [options.c:1221:xlator_option_init_str] 0-dht_debug-worm: option retention-mode using default value relax 
+[2020-09-07 09:56:02.096409] D [MSGID: 0] [options.c:1230:xlator_option_init_bool] 0-dht_debug-worm: option worm-files-deletable using set value on 
+[2020-09-07 09:56:02.096425] T [MSGID: 0] [options.c:1221:xlator_option_init_str] 0-dht_debug-locks: option mandatory-locking using default value off 
+[2020-09-07 09:56:02.096431] T [MSGID: 0] [options.c:1230:xlator_option_init_bool] 0-dht_debug-locks: option trace using default value off 
+[2020-09-07 09:56:02.096437] T [MSGID: 0] [options.c:1230:xlator_option_init_bool] 0-dht_debug-locks: option monkey-unlocking using default value false 
+[2020-09-07 09:56:02.096442] T [MSGID: 0] [options.c:1224:xlator_option_init_uint32] 0-dht_debug-locks: option revocation-secs using default value 0 
+[2020-09-07 09:56:02.096448] T [MSGID: 0] [options.c:1230:xlator_option_init_bool] 0-dht_debug-locks: option revocation-clear-all using default value false 
+[2020-09-07 09:56:02.096455] T [MSGID: 0] [options.c:1224:xlator_option_init_uint32] 0-dht_debug-locks: option revocation-max-blocked using default value 0 
+[2020-09-07 09:56:02.096461] T [MSGID: 0] [options.c:1230:xlator_option_init_bool] 0-dht_debug-locks: option notify-contention using default value yes 
+[2020-09-07 09:56:02.096467] T [MSGID: 0] [options.c:1224:xlator_option_init_uint32] 0-dht_debug-locks: option notify-contention-delay using default value 5 
+[2020-09-07 09:56:02.096473] D [MSGID: 0] [options.c:1230:xlator_option_init_bool] 0-dht_debug-locks: option enforce-mandatory-lock using set value off 
+[2020-09-07 09:56:02.096492] T [MSGID: 0] [options.c:1224:xlator_option_init_uint32] 0-dht_debug-access-control: option super-uid using default value 0 
+[2020-09-07 09:56:02.096497] T [MSGID: 0] [options.c:83:xlator_option_validate_int] 0-dht_debug-access-control: no range check required for 'option super-uid 0' 
+[2020-09-07 09:56:02.096515] D [MSGID: 0] [options.c:1230:xlator_option_init_bool] 0-dht_debug-bitrot-stub: option bitrot using set value disable 
+[2020-09-07 09:56:02.096521] D [MSGID: 0] [options.c:1221:xlator_option_init_str] 0-dht_debug-bitrot-stub: option export using set value /glusterfs/data2/brick 
+[2020-09-07 09:56:02.096538] D [MSGID: 0] [options.c:1221:xlator_option_init_str] 0-dht_debug-changelog: option changelog-brick using set value /glusterfs/data2/brick 
+[2020-09-07 09:56:02.096548] D [MSGID: 0] [options.c:1221:xlator_option_init_str] 0-dht_debug-changelog: option changelog-dir using set value /glusterfs/data2/brick/.glusterfs/changelogs 
+[2020-09-07 09:56:02.099034] T [MSGID: 0] [options.c:1230:xlator_option_init_bool] 0-dht_debug-changelog: option changelog using default value off 
+[2020-09-07 09:56:02.099048] D [MSGID: 0] [options.c:1230:xlator_option_init_bool] 0-dht_debug-changelog: option changelog-notification using set value off 
+[2020-09-07 09:56:02.099056] T [MSGID: 0] [options.c:1230:xlator_option_init_bool] 0-dht_debug-changelog: option capture-del-path using default value off 
+[2020-09-07 09:56:02.099062] T [MSGID: 0] [options.c:1221:xlator_option_init_str] 0-dht_debug-changelog: option op-mode using default value realtime 
+[2020-09-07 09:56:02.099073] T [MSGID: 0] [options.c:1221:xlator_option_init_str] 0-dht_debug-changelog: option encoding using default value ascii 
+[2020-09-07 09:56:02.099080] T [MSGID: 0] [options.c:1225:xlator_option_init_int32] 0-dht_debug-changelog: option rollover-time using default value 15 
+[2020-09-07 09:56:02.099086] T [MSGID: 0] [options.c:472:xlator_option_validate_time] 0-dht_debug-changelog: no range check required for 'option rollover-time 15' 
+[2020-09-07 09:56:02.099092] T [MSGID: 0] [options.c:1225:xlator_option_init_int32] 0-dht_debug-changelog: option fsync-interval using default value 5 
+[2020-09-07 09:56:02.099096] T [MSGID: 0] [options.c:472:xlator_option_validate_time] 0-dht_debug-changelog: no range check required for 'option fsync-interval 5' 
+[2020-09-07 09:56:02.099103] D [MSGID: 0] [options.c:1234:xlator_option_init_time] 0-dht_debug-changelog: option changelog-barrier-timeout using set value 120 
+[2020-09-07 09:56:02.099108] T [MSGID: 0] [options.c:472:xlator_option_validate_time] 0-dht_debug-changelog: no range check required for 'option changelog-barrier-timeout 120' 
+[2020-09-07 09:56:02.099116] D [MSGID: 0] [changelog.c:2818:init] 0-dht_debug-changelog: changelog translator loaded 
+[2020-09-07 09:56:02.099133] T [MSGID: 0] [options.c:1230:xlator_option_init_bool] 0-dht_debug-trash: option trash using default value off 
+[2020-09-07 09:56:02.099140] D [MSGID: 0] [options.c:1221:xlator_option_init_str] 0-dht_debug-trash: option trash-dir using set value .trashcan 
+[2020-09-07 09:56:02.099146] T [MSGID: 0] [options.c:1221:xlator_option_init_str] 0-dht_debug-trash: option trash-eliminate-path not set 
+[2020-09-07 09:56:02.099151] I [trash.c:2450:init] 0-dht_debug-trash: no option specified for 'eliminate', using NULL
+[2020-09-07 09:56:02.099156] T [MSGID: 0] [options.c:1227:xlator_option_init_size_uint64] 0-dht_debug-trash: option trash-max-filesize using default value 5MB 
+[2020-09-07 09:56:02.099162] T [MSGID: 0] [options.c:147:xlator_option_validate_sizet] 0-dht_debug-trash: no range check required for 'option trash-max-filesize 5MB' 
+[2020-09-07 09:56:02.099167] D [trash.c:2473:init] 0-dht_debug-trash: 5242880 max-size
+[2020-09-07 09:56:02.099171] D [MSGID: 0] [options.c:1230:xlator_option_init_bool] 0-dht_debug-trash: option trash-internal-op using set value off 
+[2020-09-07 09:56:02.099895] D [trash.c:2505:init] 0-dht_debug-trash: brick path is/glusterfs/data2/brick
+[2020-09-07 09:56:02.099933] T [MSGID: 0] [options.c:1225:xlator_option_init_int32] 0-dht_debug-posix: option janitor-sleep-duration using default value 10 
+[2020-09-07 09:56:02.121911] T [MSGID: 0] [options.c:1225:xlator_option_init_int32] 0-dht_debug-posix: option brick-uid using default value -1 
+[2020-09-07 09:56:02.121924] T [MSGID: 0] [options.c:1225:xlator_option_init_int32] 0-dht_debug-posix: option brick-gid using default value -1 
+[2020-09-07 09:56:02.121930] T [MSGID: 0] [options.c:1230:xlator_option_init_bool] 0-dht_debug-posix: option linux-aio using default value off 
+[2020-09-07 09:56:02.121937] T [MSGID: 0] [options.c:1230:xlator_option_init_bool] 0-dht_debug-posix: option node-uuid-pathinfo using default value off 
+[2020-09-07 09:56:02.121944] T [MSGID: 0] [options.c:1229:xlator_option_init_percent_or_size] 0-dht_debug-posix: option reserve using default value 1 
+[2020-09-07 09:56:02.121954] T [MSGID: 0] [options.c:419:xlator_option_validate_percent_or_sizet] 0-dht_debug-posix: no range check required for 'option reserve 1' 
+[2020-09-07 09:56:02.121996] T [MSGID: 0] [options.c:1224:xlator_option_init_uint32] 0-dht_debug-posix: option health-check-interval using default value 30 
+[2020-09-07 09:56:02.122004] T [MSGID: 0] [options.c:1224:xlator_option_init_uint32] 0-dht_debug-posix: option health-check-timeout using default value 20 
+[2020-09-07 09:56:02.122084] D [MSGID: 0] [posix-helpers.c:2272:posix_disk_space_check_thread_proc] 0-dht_debug-posix: disk-space thread started, interval = 5 seconds 
+[2020-09-07 09:56:02.122106] T [MSGID: 0] [options.c:1221:xlator_option_init_str] 0-dht_debug-posix: option batch-fsync-mode using default value reverse-fsync 
+[2020-09-07 09:56:02.122109] D [MSGID: 0] [posix-helpers.c:2081:posix_health_check_thread_proc] 0-dht_debug-posix: health-check thread started, on path /glusterfs/data2/brick/.glusterfs/health_check, interval = 30 seconds 
+[2020-09-07 09:56:02.122142] T [MSGID: 0] [options.c:1230:xlator_option_init_bool] 0-dht_debug-posix: option gfid2path using default value on 
+[2020-09-07 09:56:02.122151] T [MSGID: 0] [options.c:1221:xlator_option_init_str] 0-dht_debug-posix: option gfid2path-separator using default value : 
+[2020-09-07 09:56:02.122158] T [MSGID: 0] [options.c:1224:xlator_option_init_uint32] 0-dht_debug-posix: option batch-fsync-delay-usec using default value 0 
+[2020-09-07 09:56:02.122163] T [MSGID: 0] [options.c:83:xlator_option_validate_int] 0-dht_debug-posix: no range check required for 'option batch-fsync-delay-usec 0' 
+[2020-09-07 09:56:02.122171] T [MSGID: 0] [options.c:1230:xlator_option_init_bool] 0-dht_debug-posix: option disable-landfill-purge using default value off 
+[2020-09-07 09:56:02.122178] T [MSGID: 0] [options.c:1225:xlator_option_init_int32] 0-dht_debug-posix: option force-create-mode using default value 0000 
+[2020-09-07 09:56:02.122186] T [MSGID: 0] [options.c:1225:xlator_option_init_int32] 0-dht_debug-posix: option force-directory-mode using default value 0000 
+[2020-09-07 09:56:02.122193] T [MSGID: 0] [options.c:1225:xlator_option_init_int32] 0-dht_debug-posix: option create-mask using default value 0777 
+[2020-09-07 09:56:02.122201] T [MSGID: 0] [options.c:1225:xlator_option_init_int32] 0-dht_debug-posix: option create-directory-mask using default value 0777 
+[2020-09-07 09:56:02.122208] T [MSGID: 0] [options.c:1224:xlator_option_init_uint32] 0-dht_debug-posix: option max-hardlinks using default value 100 
+[2020-09-07 09:56:02.122216] D [MSGID: 0] [options.c:1230:xlator_option_init_bool] 0-dht_debug-posix: option fips-mode-rchecksum using set value on 
+[2020-09-07 09:56:02.122223] T [MSGID: 0] [options.c:1230:xlator_option_init_bool] 0-dht_debug-posix: option ctime using default value on 
+[2020-09-07 09:56:02.122239] D [MSGID: 101174] [graph.c:460:_log_if_unknown_option] 0-dht_debug-server: option 'rpc-auth.auth-glusterfs' is not recognized 
+[2020-09-07 09:56:02.122247] D [MSGID: 101174] [graph.c:460:_log_if_unknown_option] 0-dht_debug-server: option 'rpc-auth.auth-unix' is not recognized 
+[2020-09-07 09:56:02.122255] D [MSGID: 101174] [graph.c:460:_log_if_unknown_option] 0-dht_debug-server: option 'rpc-auth.auth-null' is not recognized 
+[2020-09-07 09:56:02.122288] D [MSGID: 101174] [graph.c:460:_log_if_unknown_option] 0-/glusterfs/data2/brick: option 'auth.addr./glusterfs/data2/brick.allow' is not recognized 
+[2020-09-07 09:56:02.122295] D [MSGID: 101174] [graph.c:460:_log_if_unknown_option] 0-/glusterfs/data2/brick: option 'auth-path' is not recognized 
+[2020-09-07 09:56:02.122304] D [MSGID: 101174] [graph.c:460:_log_if_unknown_option] 0-/glusterfs/data2/brick: option 'auth.login.95944cd1-96fe-4943-b328-84b4592ff707.password' is not recognized 
+[2020-09-07 09:56:02.122312] D [MSGID: 101174] [graph.c:460:_log_if_unknown_option] 0-/glusterfs/data2/brick: option 'auth.login./glusterfs/data2/brick.allow' is not recognized 
+[2020-09-07 09:56:02.122368] D [trash.c:2335:notify] 0-dht_debug-trash: trash xlator is off
+Final graph:
++------------------------------------------------------------------------------+
+  1: volume dht_debug-posix
+  2:     type storage/posix
+  3:     option glusterd-uuid ee93f447-eca4-4daa-9808-4c4f17626bb0
+  4:     option directory /glusterfs/data2/brick
+  5:     option volume-id d0f35ac2-7821-4e80-a54d-de097fdbaf2b
+  6:     option fips-mode-rchecksum on
+  7:     option shared-brick-count 1
+  8: end-volume
+  9:  
+ 10: volume dht_debug-trash
+ 11:     type features/trash
+ 12:     option trash-dir .trashcan
+ 13:     option brick-path /glusterfs/data2/brick
+ 14:     option trash-internal-op off
+ 15:     subvolumes dht_debug-posix
+ 16: end-volume
+ 17:  
+ 18: volume dht_debug-changelog
+ 19:     type features/changelog
+ 20:     option changelog-brick /glusterfs/data2/brick
+ 21:     option changelog-dir /glusterfs/data2/brick/.glusterfs/changelogs
+ 22:     option changelog-notification off
+ 23:     option changelog-barrier-timeout 120
+ 24:     subvolumes dht_debug-trash
+ 25: end-volume
+ 26:  
+ 27: volume dht_debug-bitrot-stub
+ 28:     type features/bitrot-stub
+ 29:     option export /glusterfs/data2/brick
+ 30:     option bitrot disable
+ 31:     subvolumes dht_debug-changelog
+ 32: end-volume
+ 33:  
+ 34: volume dht_debug-access-control
+ 35:     type features/access-control
+ 36:     subvolumes dht_debug-bitrot-stub
+ 37: end-volume
+ 38:  
+ 39: volume dht_debug-locks
+ 40:     type features/locks
+ 41:     option enforce-mandatory-lock off
+ 42:     subvolumes dht_debug-access-control
+ 43: end-volume
+ 44:  
+ 45: volume dht_debug-worm
+ 46:     type features/worm
+ 47:     option worm off
+ 48:     option worm-file-level off
+ 49:     option worm-files-deletable on
+ 50:     subvolumes dht_debug-locks
+ 51: end-volume
+ 52:  
+ 53: volume dht_debug-read-only
+ 54:     type features/read-only
+ 55:     option read-only off
+ 56:     subvolumes dht_debug-worm
+ 57: end-volume
+ 58:  
+ 59: volume dht_debug-leases
+ 60:     type features/leases
+ 61:     option leases off
+ 62:     subvolumes dht_debug-read-only
+ 63: end-volume
+ 64:  
+ 65: volume dht_debug-upcall
+ 66:     type features/upcall
+ 67:     option cache-invalidation off
+ 68:     subvolumes dht_debug-leases
+ 69: end-volume
+ 70:  
+ 71: volume dht_debug-io-threads
+ 72:     type performance/io-threads
+ 73:     subvolumes dht_debug-upcall
+ 74: end-volume
+ 75:  
+ 76: volume dht_debug-selinux
+ 77:     type features/selinux
+ 78:     option selinux on
+ 79:     subvolumes dht_debug-io-threads
+ 80: end-volume
+ 81:  
+ 82: volume dht_debug-marker
+ 83:     type features/marker
+ 84:     option volume-uuid d0f35ac2-7821-4e80-a54d-de097fdbaf2b
+ 85:     option timestamp-file /var/lib/glusterd/vols/dht_debug/marker.tstamp
+ 86:     option quota-version 0
+ 87:     option xtime off
+ 88:     option gsync-force-xtime off
+ 89:     option quota off
+ 90:     option inode-quota off
+ 91:     subvolumes dht_debug-selinux
+ 92: end-volume
+ 93:  
+ 94: volume dht_debug-barrier
+ 95:     type features/barrier
+ 96:     option barrier disable
+ 97:     option barrier-timeout 120
+ 98:     subvolumes dht_debug-marker
+ 99: end-volume
+100:  
+101: volume dht_debug-index
+102:     type features/index
+103:     option index-base /glusterfs/data2/brick/.glusterfs/indices
+104:     option xattrop-dirty-watchlist trusted.afr.dirty
+105:     option xattrop-pending-watchlist trusted.afr.dht_debug-
+106:     subvolumes dht_debug-barrier
+107: end-volume
+108:  
+109: volume dht_debug-quota
+110:     type features/quota
+111:     option volume-uuid dht_debug
+112:     option server-quota off
+113:     option deem-statfs off
+114:     subvolumes dht_debug-index
+115: end-volume
+116:  
+117: volume /glusterfs/data2/brick
+118:     type debug/io-stats
+119:     option auth.addr./glusterfs/data2/brick.allow *
+120:     option auth-path /glusterfs/data2/brick
+121:     option auth.login.95944cd1-96fe-4943-b328-84b4592ff707.password 0abc3385-27bf-47ab-8ffb-8dd923100b74
+122:     option auth.login./glusterfs/data2/brick.allow 95944cd1-96fe-4943-b328-84b4592ff707
+123:     option unique-id /glusterfs/data2/brick
+124:     option volume-id d0f35ac2-7821-4e80-a54d-de097fdbaf2b
+125:     option log-level TRACE
+126:     option threads 16
+127:     option latency-measurement off
+128:     option count-fop-hits off
+129:     option global-threading off
+130:     subvolumes dht_debug-quota
+131: end-volume
+132:  
+133: volume dht_debug-server
+134:     type protocol/server
+135:     option transport.socket.listen-port 49153
+136:     option rpc-auth.auth-glusterfs on
+137:     option rpc-auth.auth-unix on
+138:     option rpc-auth.auth-null on
+139:     option rpc-auth-allow-insecure on
+140:     option transport-type tcp
+141:     option transport.address-family inet
+142:     option auth.login./glusterfs/data2/brick.allow 95944cd1-96fe-4943-b328-84b4592ff707
+143:     option auth.login.95944cd1-96fe-4943-b328-84b4592ff707.password 0abc3385-27bf-47ab-8ffb-8dd923100b74
+144:     option auth-path /glusterfs/data2/brick
+145:     option auth.addr./glusterfs/data2/brick.allow *
+146:     option transport.socket.keepalive 1
+147:     option transport.socket.ssl-enabled off
+148:     option transport.socket.keepalive-time 20
+149:     option transport.socket.keepalive-interval 2
+150:     option transport.socket.keepalive-count 9
+151:     option transport.listen-backlog 1024
+152:     subvolumes /glusterfs/data2/brick
+153: end-volume
+154:  
++------------------------------------------------------------------------------+
+[2020-09-07 09:56:02.122642] T [rpc-clnt.c:1448:rpc_clnt_record_build_header] 0-rpc-clnt: Request fraglen 100, payload: 36, rpc hdr: 64
+[2020-09-07 09:56:02.122662] T [rpc-clnt.c:1735:rpc_clnt_submit] 0-rpc-clnt: submitted request (unique: 1, XID: 0x3, Program: Gluster Portmap, ProgVers: 1, Proc: 4) to rpc-transport (glusterfs)
+[2020-09-07 09:56:02.122667] D [rpc-clnt-ping.c:298:rpc_clnt_start_ping] 0-glusterfs: ping timeout is 0, returning
+[2020-09-07 09:56:02.122677] T [socket.c:2938:socket_event_handler] 0-glusterfs: (sock:9) socket_event_poll_in returned 0
+[2020-09-07 09:56:02.122778] T [socket.c:2894:socket_event_handler] 0-glusterfs: client (sock:9) in:1, out:0, err:0
+[2020-09-07 09:56:02.122783] T [socket.c:2920:socket_event_handler] 0-glusterfs: Client socket (9) is already connected
+[2020-09-07 09:56:02.122786] T [socket.c:567:__socket_ssl_readv] 0-glusterfs: ***** reading over non-SSL
+[2020-09-07 09:56:02.122790] T [socket.c:567:__socket_ssl_readv] 0-glusterfs: ***** reading over non-SSL
+[2020-09-07 09:56:02.122798] T [rpc-clnt.c:666:rpc_clnt_reply_init] 0-glusterfs: received rpc message (RPC XID: 0x3 Program: Gluster Portmap, ProgVers: 1, Proc: 4) from rpc-transport (glusterfs)
+[2020-09-07 09:56:02.122809] T [socket.c:2938:socket_event_handler] 0-glusterfs: (sock:9) socket_event_poll_in returned 0
+[2020-09-07 09:56:02.123189] T [socket.c:3098:socket_server_event_handler] 0-socket.glusterfsd: XXX server:/var/run/gluster/6838c6021cc43c20.socket, client:
+[2020-09-07 09:56:05.085913] T [rpc-clnt.c:410:rpc_clnt_reconnect] 0-glusterfs: breaking reconnect chain
+[2020-09-07 09:56:13.101636] T [MSGID: 0] [posix-helpers.c:1518:posix_janitor_task] 0-dht_debug-posix: janitor cleaning out /glusterfs/data2/brick/.glusterfs/landfill 
+[2020-09-07 09:56:13.101690] D [MSGID: 0] [posix-metadata.c:135:posix_fetch_mdata_xattr] 0-dht_debug-posix: No such attribute:trusted.glusterfs.mdata for file /glusterfs/data2/brick/.glusterfs/landfill gfid: null 
+[2020-09-07 09:56:24.119682] T [MSGID: 0] [posix-helpers.c:1518:posix_janitor_task] 0-dht_debug-posix: janitor cleaning out /glusterfs/data2/brick/.glusterfs/landfill 
+[2020-09-07 09:56:24.119733] D [MSGID: 0] [posix-metadata.c:135:posix_fetch_mdata_xattr] 0-dht_debug-posix: No such attribute:trusted.glusterfs.mdata for file /glusterfs/data2/brick/.glusterfs/landfill gfid: null 
+[2020-09-07 09:56:35.139350] T [MSGID: 0] [posix-helpers.c:1518:posix_janitor_task] 0-dht_debug-posix: janitor cleaning out /glusterfs/data2/brick/.glusterfs/landfill 
+[2020-09-07 09:56:35.139466] D [MSGID: 0] [posix-metadata.c:135:posix_fetch_mdata_xattr] 0-dht_debug-posix: No such attribute:trusted.glusterfs.mdata for file /glusterfs/data2/brick/.glusterfs/landfill gfid: null 
+[2020-09-07 09:56:46.159583] T [MSGID: 0] [posix-helpers.c:1518:posix_janitor_task] 0-dht_debug-posix: janitor cleaning out /glusterfs/data2/brick/.glusterfs/landfill 
+[2020-09-07 09:56:46.159638] D [MSGID: 0] [posix-metadata.c:135:posix_fetch_mdata_xattr] 0-dht_debug-posix: No such attribute:trusted.glusterfs.mdata for file /glusterfs/data2/brick/.glusterfs/landfill gfid: null 
+[2020-09-07 09:56:57.180618] T [MSGID: 0] [posix-helpers.c:1518:posix_janitor_task] 0-dht_debug-posix: janitor cleaning out /glusterfs/data2/brick/.glusterfs/landfill 
+[2020-09-07 09:56:57.180741] D [MSGID: 0] [posix-metadata.c:135:posix_fetch_mdata_xattr] 0-dht_debug-posix: No such attribute:trusted.glusterfs.mdata for file /glusterfs/data2/brick/.glusterfs/landfill gfid: null 
+[2020-09-07 09:57:08.199566] T [MSGID: 0] [posix-helpers.c:1518:posix_janitor_task] 0-dht_debug-posix: janitor cleaning out /glusterfs/data2/brick/.glusterfs/landfill 
+[2020-09-07 09:57:08.199605] D [MSGID: 0] [posix-metadata.c:135:posix_fetch_mdata_xattr] 0-dht_debug-posix: No such attribute:trusted.glusterfs.mdata for file /glusterfs/data2/brick/.glusterfs/landfill gfid: null 
+[2020-09-07 09:57:19.222689] T [MSGID: 0] [posix-helpers.c:1518:posix_janitor_task] 0-dht_debug-posix: janitor cleaning out /glusterfs/data2/brick/.glusterfs/landfill 
+[2020-09-07 09:57:19.222823] D [MSGID: 0] [posix-metadata.c:135:posix_fetch_mdata_xattr] 0-dht_debug-posix: No such attribute:trusted.glusterfs.mdata for file /glusterfs/data2/brick/.glusterfs/landfill gfid: null 
+[2020-09-07 09:57:29.770433] T [socket.c:1016:__socket_nodelay] 0-dht_debug-server: NODELAY enabled for socket 10
+[2020-09-07 09:57:29.770456] T [socket.c:1105:__socket_keepalive] 0-dht_debug-server: Keep-alive enabled for socket: 10, (idle: 20, interval: 2, max-probes: 9, timeout: 42)
+[2020-09-07 09:57:29.770471] T [socket.c:3098:socket_server_event_handler] 0-tcp.dht_debug-server: XXX server:172.25.78.14:49153, client:172.25.78.14:49143
+[2020-09-07 09:57:29.770483] D [socket.c:4516:socket_init] 0-tcp.dht_debug-server: Configured transport.tcp-user-timeout=42
+[2020-09-07 09:57:29.770490] D [socket.c:4536:socket_init] 0-tcp.dht_debug-server: Reconfigured transport.keepalivecnt=9
+[2020-09-07 09:57:29.770546] T [socket.c:2894:socket_event_handler] 0-tcp.dht_debug-server: server (sock:10) in:1, out:0, err:0
+[2020-09-07 09:57:29.770553] T [socket.c:2901:socket_event_handler] 0-tcp.dht_debug-server: server (sock:10) socket is not connected, completing connection
+[2020-09-07 09:57:29.770560] T [socket.c:2908:socket_event_handler] 0-tcp.dht_debug-server: (sock:10) socket_complete_connection() returned 1
+[2020-09-07 09:57:29.770566] T [socket.c:2912:socket_event_handler] 0-tcp.dht_debug-server: (sock:10) returning to wait on socket
+[2020-09-07 09:57:29.770576] T [socket.c:2894:socket_event_handler] 0-tcp.dht_debug-server: server (sock:10) in:1, out:0, err:0
+[2020-09-07 09:57:29.770588] T [socket.c:2920:socket_event_handler] 0-tcp.dht_debug-server: Server socket (10) is already connected
+[2020-09-07 09:57:29.770593] T [socket.c:567:__socket_ssl_readv] 0-tcp.dht_debug-server: ***** reading over non-SSL
+[2020-09-07 09:57:29.770601] T [socket.c:567:__socket_ssl_readv] 0-tcp.dht_debug-server: ***** reading over non-SSL
+[2020-09-07 09:57:29.770625] T [rpcsvc.c:746:rpcsvc_handle_rpc_call] 0-rpcsvc: Client port: 49143
+[2020-09-07 09:57:29.770634] T [rpcsvc-auth.c:444:rpcsvc_auth_request_init] 0-rpc-service: Auth handler: AUTH_GLUSTERFS-v2
+[2020-09-07 09:57:29.770639] T [rpcsvc.c:551:rpcsvc_request_create] 0-rpc-service: received rpc-message (XID: 0x5, Ver: 2, Program: 123451501, ProgVers: 1, Proc: 1) from rpc-transport (tcp.dht_debug-server)
+[2020-09-07 09:57:29.770648] T [auth-glusterfs.c:228:auth_glusterfs_v2_authenticate] 0-rpc-service: Auth Info: pid: 0, uid: 0, gid: 0, owner: 00000000
+[2020-09-07 09:57:29.770654] T [rpcsvc.c:377:rpcsvc_program_actor] 0-rpc-service: Actor found: GF-DUMP - DUMP for 172.25.78.14:49143
+[2020-09-07 09:57:29.770664] T [socket.c:2894:socket_event_handler] 0-tcp.dht_debug-server: server (sock:10) in:1, out:0, err:0
+[2020-09-07 09:57:29.770678] T [socket.c:2920:socket_event_handler] 0-tcp.dht_debug-server: Server socket (10) is already connected
+[2020-09-07 09:57:29.770682] T [rpcsvc.c:1535:rpcsvc_submit_generic] 0-rpc-service: Tx message: 176
+[2020-09-07 09:57:29.770685] T [socket.c:567:__socket_ssl_readv] 0-tcp.dht_debug-server: ***** reading over non-SSL
+[2020-09-07 09:57:29.770691] T [rpcsvc.c:1071:rpcsvc_record_build_header] 0-rpc-service: Reply fraglen 200, payload: 176, rpc hdr: 24
+[2020-09-07 09:57:29.770758] T [socket.c:567:__socket_ssl_readv] 0-tcp.dht_debug-server: ***** reading over non-SSL
+[2020-09-07 09:57:29.770776] T [rpcsvc.c:1587:rpcsvc_submit_generic] 0-rpc-service: submitted reply for rpc-message (XID: 0x5, Program: GF-DUMP, ProgVers: 1, Proc: 1) to rpc-transport (tcp.dht_debug-server)
+[2020-09-07 09:57:29.770788] T [socket.c:2938:socket_event_handler] 0-tcp.dht_debug-server: (sock:10) socket_event_poll_in returned 0
+[2020-09-07 09:57:29.770792] T [rpcsvc.c:746:rpcsvc_handle_rpc_call] 0-rpcsvc: Client port: 49143
+[2020-09-07 09:57:29.770806] T [rpcsvc-auth.c:444:rpcsvc_auth_request_init] 0-rpc-service: Auth handler: AUTH_GLUSTERFS-v2
+[2020-09-07 09:57:29.770813] T [rpcsvc.c:551:rpcsvc_request_create] 0-rpc-service: received rpc-message (XID: 0x6, Ver: 2, Program: 123451501, ProgVers: 1, Proc: 2) from rpc-transport (tcp.dht_debug-server)
+[2020-09-07 09:57:29.770824] T [auth-glusterfs.c:228:auth_glusterfs_v2_authenticate] 0-rpc-service: Auth Info: pid: 0, uid: 0, gid: 0, owner: 00000000
+[2020-09-07 09:57:29.770832] T [rpcsvc.c:377:rpcsvc_program_actor] 0-rpc-service: Actor found: GF-DUMP - PING for 172.25.78.14:49143
+[2020-09-07 09:57:29.770839] T [rpcsvc.c:1535:rpcsvc_submit_generic] 0-rpc-service: Tx message: 12
+[2020-09-07 09:57:29.770848] T [rpcsvc.c:1071:rpcsvc_record_build_header] 0-rpc-service: Reply fraglen 36, payload: 12, rpc hdr: 24
+[2020-09-07 09:57:29.770850] T [socket.c:2894:socket_event_handler] 0-tcp.dht_debug-server: server (sock:10) in:1, out:0, err:0
+[2020-09-07 09:57:29.770857] T [socket.c:2920:socket_event_handler] 0-tcp.dht_debug-server: Server socket (10) is already connected
+[2020-09-07 09:57:29.770860] T [socket.c:567:__socket_ssl_readv] 0-tcp.dht_debug-server: ***** reading over non-SSL
+[2020-09-07 09:57:29.770875] T [rpcsvc.c:1587:rpcsvc_submit_generic] 0-rpc-service: submitted reply for rpc-message (XID: 0x6, Program: GF-DUMP, ProgVers: 1, Proc: 2) to rpc-transport (tcp.dht_debug-server)
+[2020-09-07 09:57:29.770880] T [socket.c:567:__socket_ssl_readv] 0-tcp.dht_debug-server: ***** reading over non-SSL
+[2020-09-07 09:57:29.770888] T [socket.c:2938:socket_event_handler] 0-tcp.dht_debug-server: (sock:10) socket_event_poll_in returned 0
+[2020-09-07 09:57:29.770897] T [rpcsvc.c:746:rpcsvc_handle_rpc_call] 0-rpcsvc: Client port: 49143
+[2020-09-07 09:57:29.770905] T [rpcsvc-auth.c:444:rpcsvc_auth_request_init] 0-rpc-service: Auth handler: AUTH_GLUSTERFS-v3
+[2020-09-07 09:57:29.770909] T [rpcsvc.c:551:rpcsvc_request_create] 0-rpc-service: received rpc-message (XID: 0x7, Ver: 2, Program: 14398633, ProgVers: 2, Proc: 1) from rpc-transport (tcp.dht_debug-server)
+[2020-09-07 09:57:29.770918] T [auth-glusterfs.c:362:auth_glusterfs_v3_authenticate] 0-rpc-service: Auth Info: pid: 0, uid: 0, gid: 0, owner: 00000000, flags: 0
+[2020-09-07 09:57:29.770923] T [rpcsvc.c:377:rpcsvc_program_actor] 0-rpc-service: Actor found: GlusterFS Handshake - SETVOLUME for 172.25.78.14:49143
+[2020-09-07 09:57:29.771113] D [client_t.c:235:gf_client_get] (-->/usr/local/lib/libgfrpc.so.0(+0x8713) [0x7f318d089713] -->/usr/local/lib/glusterfs/2020.09.07/xlator/protocol/server.so(+0x37e4d) [0x7f31778f4e4d] -->/usr/local/lib/libglusterfs.so.0(gf_client_get+0x59c) [0x7f318d3684ee] ) 0-client_t: CTX_ID:ca4c5b20-ce58-433b-a7a1-a5f23b561d1c-GRAPH_ID:0-PID:111693-HOST:glusterfs4-PC_NAME:dht_debug-client-1-RECON_NO:-0: bind_ref: 1, ref: 1 
+[2020-09-07 09:57:29.771129] D [MSGID: 0] [server-handshake.c:432:server_setvolume] 0-dht_debug-server: Connected to CTX_ID:ca4c5b20-ce58-433b-a7a1-a5f23b561d1c-GRAPH_ID:0-PID:111693-HOST:glusterfs4-PC_NAME:dht_debug-client-1-RECON_NO:-0 
+[2020-09-07 09:57:29.771178] I [addr.c:54:compare_addr_and_update] 0-/glusterfs/data2/brick: allowed = "*", received addr = "172.25.78.14"
+[2020-09-07 09:57:29.771190] I [login.c:110:gf_auth] 0-auth/login: allowed user names: 95944cd1-96fe-4943-b328-84b4592ff707
+[2020-09-07 09:57:29.771199] I [MSGID: 115029] [server-handshake.c:561:server_setvolume] 0-dht_debug-server: accepted client from CTX_ID:ca4c5b20-ce58-433b-a7a1-a5f23b561d1c-GRAPH_ID:0-PID:111693-HOST:glusterfs4-PC_NAME:dht_debug-client-1-RECON_NO:-0 (version: 2020.09.07) with subvol /glusterfs/data2/brick 
+[2020-09-07 09:57:29.771251] T [MSGID: 0] [server-handshake.c:636:server_setvolume] 0-dht_debug-server: creating inode table with lru_limit=16384, xlator=/glusterfs/data2/brick 
+[2020-09-07 09:57:29.771978] T [MSGID: 0] [syncop.c:1310:syncop_lookup] 0-stack-trace: stack-address: 0x7f3170140ba8, winding from dht_debug-server to /glusterfs/data2/brick 
+[2020-09-07 09:57:29.771992] T [MSGID: 0] [io-stats.c:2710:io_stats_lookup] 0-stack-trace: stack-address: 0x7f3170140ba8, winding from /glusterfs/data2/brick to dht_debug-quota 
+[2020-09-07 09:57:29.772004] T [MSGID: 0] [quota.c:1696:quota_lookup] 0-stack-trace: stack-address: 0x7f3170140ba8, winding from dht_debug-quota to dht_debug-index 
+[2020-09-07 09:57:29.772021] T [MSGID: 0] [index.c:2113:index_lookup] 0-stack-trace: stack-address: 0x7f3170140ba8, winding from dht_debug-index to dht_debug-barrier 
+[2020-09-07 09:57:29.772030] T [MSGID: 0] [defaults.c:3027:default_lookup] 0-stack-trace: stack-address: 0x7f3170140ba8, winding from dht_debug-barrier to dht_debug-marker 
+[2020-09-07 09:57:29.772040] T [MSGID: 0] [marker.c:3005:marker_lookup] 0-stack-trace: stack-address: 0x7f3170140ba8, winding from dht_debug-marker to dht_debug-selinux 
+[2020-09-07 09:57:29.772048] T [MSGID: 0] [defaults.c:3027:default_lookup] 0-stack-trace: stack-address: 0x7f3170140ba8, winding from dht_debug-selinux to dht_debug-io-threads 
+[2020-09-07 09:57:29.772062] D [MSGID: 0] [io-threads.c:376:iot_schedule] 0-dht_debug-io-threads: LOOKUP scheduled as fast priority fop 
+[2020-09-07 09:57:29.772109] T [MSGID: 0] [defaults.c:2218:default_lookup_resume] 0-stack-trace: stack-address: 0x7f3170140ba8, winding from dht_debug-io-threads to dht_debug-upcall 
+[2020-09-07 09:57:29.772131] T [MSGID: 0] [upcall.c:776:up_lookup] 0-stack-trace: stack-address: 0x7f3170140ba8, winding from dht_debug-upcall to dht_debug-leases 
+[2020-09-07 09:57:29.772142] T [MSGID: 0] [defaults.c:3027:default_lookup] 0-stack-trace: stack-address: 0x7f3170140ba8, winding from dht_debug-leases to dht_debug-read-only 
+[2020-09-07 09:57:29.772150] T [MSGID: 0] [defaults.c:3027:default_lookup] 0-stack-trace: stack-address: 0x7f3170140ba8, winding from dht_debug-read-only to dht_debug-worm 
+[2020-09-07 09:57:29.772157] T [MSGID: 0] [defaults.c:3027:default_lookup] 0-stack-trace: stack-address: 0x7f3170140ba8, winding from dht_debug-worm to dht_debug-locks 
+[2020-09-07 09:57:29.772174] T [MSGID: 0] [posix.c:3081:pl_lookup] 0-stack-trace: stack-address: 0x7f3170140ba8, winding from dht_debug-locks to dht_debug-access-control 
+[2020-09-07 09:57:29.772189] T [MSGID: 0] [posix-acl.c:1052:posix_acl_lookup] 0-stack-trace: stack-address: 0x7f3170140ba8, winding from dht_debug-access-control to dht_debug-bitrot-stub 
+[2020-09-07 09:57:29.772205] T [MSGID: 0] [bit-rot-stub.c:3073:br_stub_lookup] 0-stack-trace: stack-address: 0x7f3170140ba8, winding from dht_debug-bitrot-stub to dht_debug-changelog 
+[2020-09-07 09:57:29.772213] T [MSGID: 0] [defaults.c:3027:default_lookup] 0-stack-trace: stack-address: 0x7f3170140ba8, winding from dht_debug-changelog to dht_debug-trash 
+[2020-09-07 09:57:29.772220] T [MSGID: 0] [defaults.c:3027:default_lookup] 0-stack-trace: stack-address: 0x7f3170140ba8, winding from dht_debug-trash to dht_debug-posix 
+[2020-09-07 09:57:29.772244] D [MSGID: 0] [posix-metadata.c:135:posix_fetch_mdata_xattr] 0-dht_debug-posix: No such attribute:trusted.glusterfs.mdata for file /glusterfs/data2/brick/ gfid: 00000000-0000-0000-0000-000000000001 
+[2020-09-07 09:57:29.772276] T [MSGID: 0] [posix-entry-ops.c:326:posix_lookup] 0-stack-trace: stack-address: 0x7f3170140ba8, dht_debug-posix returned 0 
+[2020-09-07 09:57:29.772286] T [MSGID: 0] [bit-rot-stub.c:2999:br_stub_lookup_cbk] 0-stack-trace: stack-address: 0x7f3170140ba8, dht_debug-bitrot-stub returned 0 
+[2020-09-07 09:57:29.772294] T [MSGID: 0] [posix-acl.c:1002:posix_acl_lookup_cbk] 0-stack-trace: stack-address: 0x7f3170140ba8, dht_debug-access-control returned 0 
+[2020-09-07 09:57:29.772304] T [common.c:450:pl_inode_get] 0-dht_debug-locks: Allocating new pl inode
+[2020-09-07 09:57:29.772311] T [MSGID: 0] [posix.c:3068:pl_lookup_cbk] 0-stack-trace: stack-address: 0x7f3170140ba8, dht_debug-locks returned 0 
+[2020-09-07 09:57:29.772317] T [MSGID: 0] [upcall.c:756:up_lookup_cbk] 0-stack-trace: stack-address: 0x7f3170140ba8, dht_debug-upcall returned 0 
+[2020-09-07 09:57:29.772324] T [MSGID: 0] [defaults.c:1548:default_lookup_cbk] 0-stack-trace: stack-address: 0x7f3170140ba8, dht_debug-io-threads returned 0 
+[2020-09-07 09:57:29.772333] T [MSGID: 0] [marker.c:2944:marker_lookup_cbk] 0-stack-trace: stack-address: 0x7f3170140ba8, dht_debug-marker returned 0 
+[2020-09-07 09:57:29.772339] T [MSGID: 0] [defaults.c:1548:default_lookup_cbk] 0-stack-trace: stack-address: 0x7f3170140ba8, dht_debug-index returned 0 
+[2020-09-07 09:57:29.772347] T [MSGID: 0] [io-stats.c:2239:io_stats_lookup_cbk] 0-stack-trace: stack-address: 0x7f3170140ba8, /glusterfs/data2/brick returned 0 
+[2020-09-07 09:57:29.772382] T [rpcsvc.c:1535:rpcsvc_submit_generic] 0-rpc-service: Tx message: 236
+[2020-09-07 09:57:29.772394] T [rpcsvc.c:1071:rpcsvc_record_build_header] 0-rpc-service: Reply fraglen 260, payload: 236, rpc hdr: 24
+[2020-09-07 09:57:29.772418] T [rpcsvc.c:1587:rpcsvc_submit_generic] 0-rpc-service: submitted reply for rpc-message (XID: 0x7, Program: GlusterFS Handshake, ProgVers: 2, Proc: 1) to rpc-transport (tcp.dht_debug-server)
+[2020-09-07 09:57:29.772436] T [socket.c:2938:socket_event_handler] 0-tcp.dht_debug-server: (sock:10) socket_event_poll_in returned 0
+[2020-09-07 09:57:29.772593] T [socket.c:2894:socket_event_handler] 0-tcp.dht_debug-server: server (sock:10) in:1, out:0, err:0
+[2020-09-07 09:57:29.772597] T [socket.c:2920:socket_event_handler] 0-tcp.dht_debug-server: Server socket (10) is already connected
+[2020-09-07 09:57:29.772601] T [socket.c:567:__socket_ssl_readv] 0-tcp.dht_debug-server: ***** reading over non-SSL
+[2020-09-07 09:57:29.772606] T [socket.c:567:__socket_ssl_readv] 0-tcp.dht_debug-server: ***** reading over non-SSL
+[2020-09-07 09:57:29.772614] T [rpcsvc.c:746:rpcsvc_handle_rpc_call] 0-rpcsvc: Client port: 49143
+[2020-09-07 09:57:29.772618] T [rpcsvc-auth.c:444:rpcsvc_auth_request_init] 0-rpc-service: Auth handler: AUTH_GLUSTERFS-v3
+[2020-09-07 09:57:29.772623] T [rpcsvc.c:551:rpcsvc_request_create] 0-rpc-service: received rpc-message (XID: 0x8, Ver: 2, Program: 1298437, ProgVers: 400, Proc: 14) from rpc-transport (tcp.dht_debug-server)
+[2020-09-07 09:57:29.772629] T [auth-glusterfs.c:362:auth_glusterfs_v3_authenticate] 0-rpc-service: Auth Info: pid: 0, uid: 0, gid: 0, owner: 00000000, flags: 0
+[2020-09-07 09:57:29.772633] T [rpcsvc.c:377:rpcsvc_program_actor] 0-rpc-service: Actor found: GlusterFS 4.x v1 - STATFS for 172.25.78.14:49143
+[2020-09-07 09:57:29.772672] I [rpcsvc.c:872:rpcsvc_handle_rpc_call] 0-rpc-service: spawned a request handler thread for queue 0
+[2020-09-07 09:57:29.772677] T [socket.c:2938:socket_event_handler] 0-tcp.dht_debug-server: (sock:10) socket_event_poll_in returned 0
+[2020-09-07 09:57:29.772736] T [rpcsvc.c:377:rpcsvc_program_actor] 0-rpc-service: Actor found: GlusterFS 4.x v1 - STATFS for 172.25.78.14:49143
+[2020-09-07 09:57:29.772797] D [client_t.c:285:gf_client_ref] (-->/usr/local/lib/glusterfs/2020.09.07/xlator/protocol/server.so(+0x2dd44) [0x7f31778ead44] -->/usr/local/lib/glusterfs/2020.09.07/xlator/protocol/server.so(+0x142d9) [0x7f31778d12d9] -->/usr/local/lib/libglusterfs.so.0(gf_client_ref+0xdf) [0x7f318d3686d6] ) 0-client_t: CTX_ID:ca4c5b20-ce58-433b-a7a1-a5f23b561d1c-GRAPH_ID:0-PID:111693-HOST:glusterfs4-PC_NAME:dht_debug-client-1-RECON_NO:-0: ref-count 2 
+[2020-09-07 09:57:29.772823] T [MSGID: 0] [server-rpc-fops_v2.c:2724:server4_statfs_resume] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-server to /glusterfs/data2/brick 
+[2020-09-07 09:57:29.772835] T [MSGID: 0] [io-stats.c:2918:io_stats_statfs] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from /glusterfs/data2/brick to dht_debug-quota 
+[2020-09-07 09:57:29.772844] T [MSGID: 0] [quota.c:4548:quota_statfs] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-quota to dht_debug-index 
+[2020-09-07 09:57:29.772852] T [MSGID: 0] [defaults.c:2460:default_statfs] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-index to dht_debug-barrier 
+[2020-09-07 09:57:29.772858] T [MSGID: 0] [defaults.c:2460:default_statfs] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-barrier to dht_debug-marker 
+[2020-09-07 09:57:29.772864] T [MSGID: 0] [defaults.c:2460:default_statfs] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-marker to dht_debug-selinux 
+[2020-09-07 09:57:29.772870] T [MSGID: 0] [defaults.c:2460:default_statfs] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-selinux to dht_debug-io-threads 
+[2020-09-07 09:57:29.772882] D [MSGID: 0] [io-threads.c:376:iot_schedule] 0-dht_debug-io-threads: STATFS scheduled as fast priority fop 
+[2020-09-07 09:57:29.772898] T [MSGID: 0] [defaults.c:1759:default_statfs_resume] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-io-threads to dht_debug-upcall 
+[2020-09-07 09:57:29.772909] T [MSGID: 0] [upcall.c:1209:up_statfs] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-upcall to dht_debug-leases 
+[2020-09-07 09:57:29.772915] T [MSGID: 0] [defaults.c:2460:default_statfs] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-leases to dht_debug-read-only 
+[2020-09-07 09:57:29.772920] T [MSGID: 0] [defaults.c:2460:default_statfs] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-read-only to dht_debug-worm 
+[2020-09-07 09:57:29.772926] T [MSGID: 0] [defaults.c:2460:default_statfs] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-worm to dht_debug-locks 
+[2020-09-07 09:57:29.772934] T [MSGID: 0] [posix.c:4638:pl_statfs] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-locks to dht_debug-access-control 
+[2020-09-07 09:57:29.772939] T [MSGID: 0] [defaults.c:2460:default_statfs] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-access-control to dht_debug-bitrot-stub 
+[2020-09-07 09:57:29.772944] T [MSGID: 0] [defaults.c:2460:default_statfs] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-bitrot-stub to dht_debug-changelog 
+[2020-09-07 09:57:29.772950] T [MSGID: 0] [defaults.c:2460:default_statfs] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-changelog to dht_debug-trash 
+[2020-09-07 09:57:29.772955] T [MSGID: 0] [defaults.c:2460:default_statfs] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-trash to dht_debug-posix 
+[2020-09-07 09:57:29.772970] D [MSGID: 0] [posix-metadata.c:135:posix_fetch_mdata_xattr] 0-dht_debug-posix: No such attribute:trusted.glusterfs.mdata for file /glusterfs/data2/brick/ gfid: 00000000-0000-0000-0000-000000000001 
+[2020-09-07 09:57:29.772982] T [MSGID: 0] [posix-inode-fd-ops.c:2478:posix_statfs] 0-stack-trace: stack-address: 0x7f314c000aa8, dht_debug-posix returned 0 
+[2020-09-07 09:57:29.772988] T [MSGID: 0] [posix.c:4629:pl_statfs_cbk] 0-stack-trace: stack-address: 0x7f314c000aa8, dht_debug-locks returned 0 
+[2020-09-07 09:57:29.772994] T [MSGID: 0] [upcall.c:1189:up_statfs_cbk] 0-stack-trace: stack-address: 0x7f314c000aa8, dht_debug-upcall returned 0 
+[2020-09-07 09:57:29.773001] T [MSGID: 0] [defaults.c:1127:default_statfs_cbk] 0-stack-trace: stack-address: 0x7f314c000aa8, dht_debug-io-threads returned 0 
+[2020-09-07 09:57:29.773011] T [MSGID: 0] [io-stats.c:2366:io_stats_statfs_cbk] 0-stack-trace: stack-address: 0x7f314c000aa8, /glusterfs/data2/brick returned 0 
+[2020-09-07 09:57:29.773023] T [rpcsvc.c:1535:rpcsvc_submit_generic] 0-rpc-service: Tx message: 108
+[2020-09-07 09:57:29.773029] T [rpcsvc.c:1071:rpcsvc_record_build_header] 0-rpc-service: Reply fraglen 132, payload: 108, rpc hdr: 24
+[2020-09-07 09:57:29.773048] T [rpcsvc.c:1587:rpcsvc_submit_generic] 0-rpc-service: submitted reply for rpc-message (XID: 0x8, Program: GlusterFS 4.x v1, ProgVers: 400, Proc: 14) to rpc-transport (tcp.dht_debug-server)
+[2020-09-07 09:57:29.773085] D [client_t.c:394:gf_client_unref] (-->/usr/local/lib/glusterfs/2020.09.07/xlator/protocol/server.so(+0x3d45e) [0x7f31778fa45e] -->/usr/local/lib/glusterfs/2020.09.07/xlator/protocol/server.so(+0xa45a) [0x7f31778c745a] -->/usr/local/lib/libglusterfs.so.0(gf_client_unref+0xe7) [0x7f318d368bc6] ) 0-client_t: CTX_ID:ca4c5b20-ce58-433b-a7a1-a5f23b561d1c-GRAPH_ID:0-PID:111693-HOST:glusterfs4-PC_NAME:dht_debug-client-1-RECON_NO:-0: ref-count 1 
+[2020-09-07 09:57:29.776146] T [socket.c:2894:socket_event_handler] 0-tcp.dht_debug-server: server (sock:10) in:1, out:0, err:0
+[2020-09-07 09:57:29.776167] T [socket.c:2920:socket_event_handler] 0-tcp.dht_debug-server: Server socket (10) is already connected
+[2020-09-07 09:57:29.776178] T [socket.c:567:__socket_ssl_readv] 0-tcp.dht_debug-server: ***** reading over non-SSL
+[2020-09-07 09:57:29.776192] T [socket.c:567:__socket_ssl_readv] 0-tcp.dht_debug-server: ***** reading over non-SSL
+[2020-09-07 09:57:29.776212] T [rpcsvc.c:746:rpcsvc_handle_rpc_call] 0-rpcsvc: Client port: 49143
+[2020-09-07 09:57:29.776225] T [rpcsvc-auth.c:444:rpcsvc_auth_request_init] 0-rpc-service: Auth handler: AUTH_GLUSTERFS-v3
+[2020-09-07 09:57:29.776238] T [rpcsvc.c:551:rpcsvc_request_create] 0-rpc-service: received rpc-message (XID: 0x9, Ver: 2, Program: 1298437, ProgVers: 400, Proc: 27) from rpc-transport (tcp.dht_debug-server)
+[2020-09-07 09:57:29.776258] T [auth-glusterfs.c:362:auth_glusterfs_v3_authenticate] 0-rpc-service: Auth Info: pid: 111693, uid: 0, gid: 0, owner: 4db40100, flags: 0
+[2020-09-07 09:57:29.776271] T [rpcsvc.c:377:rpcsvc_program_actor] 0-rpc-service: Actor found: GlusterFS 4.x v1 - LOOKUP for 172.25.78.14:49143
+[2020-09-07 09:57:29.776290] T [socket.c:2938:socket_event_handler] 0-tcp.dht_debug-server: (sock:10) socket_event_poll_in returned 0
+[2020-09-07 09:57:29.776298] T [rpcsvc.c:377:rpcsvc_program_actor] 0-rpc-service: Actor found: GlusterFS 4.x v1 - LOOKUP for 172.25.78.14:49143
+[2020-09-07 09:57:29.776412] D [client_t.c:285:gf_client_ref] (-->/usr/local/lib/glusterfs/2020.09.07/xlator/protocol/server.so(+0x2dd44) [0x7f31778ead44] -->/usr/local/lib/glusterfs/2020.09.07/xlator/protocol/server.so(+0x142d9) [0x7f31778d12d9] -->/usr/local/lib/libglusterfs.so.0(gf_client_ref+0xdf) [0x7f318d3686d6] ) 0-client_t: CTX_ID:ca4c5b20-ce58-433b-a7a1-a5f23b561d1c-GRAPH_ID:0-PID:111693-HOST:glusterfs4-PC_NAME:dht_debug-client-1-RECON_NO:-0: ref-count 2 
+[2020-09-07 09:57:29.776484] T [MSGID: 0] [server-rpc-fops_v2.c:3201:server4_lookup_resume] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-server to /glusterfs/data2/brick 
+[2020-09-07 09:57:29.776507] T [MSGID: 0] [io-stats.c:2710:io_stats_lookup] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from /glusterfs/data2/brick to dht_debug-quota 
+[2020-09-07 09:57:29.776526] T [MSGID: 0] [quota.c:1696:quota_lookup] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-quota to dht_debug-index 
+[2020-09-07 09:57:29.776550] T [MSGID: 0] [index.c:2113:index_lookup] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-index to dht_debug-barrier 
+[2020-09-07 09:57:29.776569] T [MSGID: 0] [defaults.c:3027:default_lookup] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-barrier to dht_debug-marker 
+[2020-09-07 09:57:29.776591] T [MSGID: 0] [marker.c:3005:marker_lookup] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-marker to dht_debug-selinux 
+[2020-09-07 09:57:29.776599] T [MSGID: 0] [defaults.c:3027:default_lookup] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-selinux to dht_debug-io-threads 
+[2020-09-07 09:57:29.776606] D [MSGID: 0] [io-threads.c:376:iot_schedule] 0-dht_debug-io-threads: LOOKUP scheduled as fast priority fop 
+[2020-09-07 09:57:29.776620] T [MSGID: 0] [defaults.c:2218:default_lookup_resume] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-io-threads to dht_debug-upcall 
+[2020-09-07 09:57:29.776633] T [MSGID: 0] [upcall.c:776:up_lookup] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-upcall to dht_debug-leases 
+[2020-09-07 09:57:29.776640] T [MSGID: 0] [defaults.c:3027:default_lookup] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-leases to dht_debug-read-only 
+[2020-09-07 09:57:29.776646] T [MSGID: 0] [defaults.c:3027:default_lookup] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-read-only to dht_debug-worm 
+[2020-09-07 09:57:29.776652] T [MSGID: 0] [defaults.c:3027:default_lookup] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-worm to dht_debug-locks 
+[2020-09-07 09:57:29.776662] T [MSGID: 0] [posix.c:3081:pl_lookup] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-locks to dht_debug-access-control 
+[2020-09-07 09:57:29.776671] T [MSGID: 0] [posix-acl.c:1052:posix_acl_lookup] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-access-control to dht_debug-bitrot-stub 
+[2020-09-07 09:57:29.776678] T [MSGID: 0] [bit-rot-stub.c:3073:br_stub_lookup] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-bitrot-stub to dht_debug-changelog 
+[2020-09-07 09:57:29.776685] T [MSGID: 0] [defaults.c:3027:default_lookup] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-changelog to dht_debug-trash 
+[2020-09-07 09:57:29.776690] T [MSGID: 0] [defaults.c:3027:default_lookup] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-trash to dht_debug-posix 
+[2020-09-07 09:57:29.776712] D [MSGID: 0] [posix-metadata.c:135:posix_fetch_mdata_xattr] 0-dht_debug-posix: No such attribute:trusted.glusterfs.mdata for file /glusterfs/data2/brick/ gfid: 00000000-0000-0000-0000-000000000001 
+[2020-09-07 09:57:29.776743] T [MSGID: 0] [posix-entry-ops.c:326:posix_lookup] 0-stack-trace: stack-address: 0x7f314c000aa8, dht_debug-posix returned 0 
+[2020-09-07 09:57:29.776751] T [MSGID: 0] [bit-rot-stub.c:2999:br_stub_lookup_cbk] 0-stack-trace: stack-address: 0x7f314c000aa8, dht_debug-bitrot-stub returned 0 
+[2020-09-07 09:57:29.776758] T [MSGID: 0] [posix-acl.c:1002:posix_acl_lookup_cbk] 0-stack-trace: stack-address: 0x7f314c000aa8, dht_debug-access-control returned 0 
+[2020-09-07 09:57:29.776764] T [MSGID: 0] [posix.c:3068:pl_lookup_cbk] 0-stack-trace: stack-address: 0x7f314c000aa8, dht_debug-locks returned 0 
+[2020-09-07 09:57:29.776769] T [MSGID: 0] [upcall.c:756:up_lookup_cbk] 0-stack-trace: stack-address: 0x7f314c000aa8, dht_debug-upcall returned 0 
+[2020-09-07 09:57:29.776775] T [MSGID: 0] [defaults.c:1548:default_lookup_cbk] 0-stack-trace: stack-address: 0x7f314c000aa8, dht_debug-io-threads returned 0 
+[2020-09-07 09:57:29.776783] T [MSGID: 0] [marker.c:2944:marker_lookup_cbk] 0-stack-trace: stack-address: 0x7f314c000aa8, dht_debug-marker returned 0 
+[2020-09-07 09:57:29.776788] T [MSGID: 0] [defaults.c:1548:default_lookup_cbk] 0-stack-trace: stack-address: 0x7f314c000aa8, dht_debug-index returned 0 
+[2020-09-07 09:57:29.776795] T [MSGID: 0] [io-stats.c:2239:io_stats_lookup_cbk] 0-stack-trace: stack-address: 0x7f314c000aa8, /glusterfs/data2/brick returned 0 
+[2020-09-07 09:57:29.776811] T [rpcsvc.c:1535:rpcsvc_submit_generic] 0-rpc-service: Tx message: 356
+[2020-09-07 09:57:29.776816] T [rpcsvc.c:1071:rpcsvc_record_build_header] 0-rpc-service: Reply fraglen 380, payload: 356, rpc hdr: 24
+[2020-09-07 09:57:29.776836] T [rpcsvc.c:1587:rpcsvc_submit_generic] 0-rpc-service: submitted reply for rpc-message (XID: 0x9, Program: GlusterFS 4.x v1, ProgVers: 400, Proc: 27) to rpc-transport (tcp.dht_debug-server)
+[2020-09-07 09:57:29.776871] D [client_t.c:394:gf_client_unref] (-->/usr/local/lib/glusterfs/2020.09.07/xlator/protocol/server.so(+0x3dded) [0x7f31778faded] -->/usr/local/lib/glusterfs/2020.09.07/xlator/protocol/server.so(+0xa45a) [0x7f31778c745a] -->/usr/local/lib/libglusterfs.so.0(gf_client_unref+0xe7) [0x7f318d368bc6] ) 0-client_t: CTX_ID:ca4c5b20-ce58-433b-a7a1-a5f23b561d1c-GRAPH_ID:0-PID:111693-HOST:glusterfs4-PC_NAME:dht_debug-client-1-RECON_NO:-0: ref-count 1 
+[2020-09-07 09:57:29.777130] T [socket.c:2894:socket_event_handler] 0-tcp.dht_debug-server: server (sock:10) in:1, out:0, err:0
+[2020-09-07 09:57:29.777136] T [socket.c:2920:socket_event_handler] 0-tcp.dht_debug-server: Server socket (10) is already connected
+[2020-09-07 09:57:29.777139] T [socket.c:567:__socket_ssl_readv] 0-tcp.dht_debug-server: ***** reading over non-SSL
+[2020-09-07 09:57:29.777143] T [socket.c:567:__socket_ssl_readv] 0-tcp.dht_debug-server: ***** reading over non-SSL
+[2020-09-07 09:57:29.777149] T [rpcsvc.c:746:rpcsvc_handle_rpc_call] 0-rpcsvc: Client port: 49143
+[2020-09-07 09:57:29.777153] T [rpcsvc-auth.c:444:rpcsvc_auth_request_init] 0-rpc-service: Auth handler: AUTH_GLUSTERFS-v3
+[2020-09-07 09:57:29.777157] T [rpcsvc.c:551:rpcsvc_request_create] 0-rpc-service: received rpc-message (XID: 0x10, Ver: 2, Program: 1298437, ProgVers: 400, Proc: 38) from rpc-transport (tcp.dht_debug-server)
+[2020-09-07 09:57:29.777162] T [auth-glusterfs.c:362:auth_glusterfs_v3_authenticate] 0-rpc-service: Auth Info: pid: 4294967292, uid: 0, gid: 0, owner: fcffffff, flags: 0
+[2020-09-07 09:57:29.777165] T [rpcsvc.c:377:rpcsvc_program_actor] 0-rpc-service: Actor found: GlusterFS 4.x v1 - SETATTR for 172.25.78.14:49143
+[2020-09-07 09:57:29.777170] T [socket.c:2938:socket_event_handler] 0-tcp.dht_debug-server: (sock:10) socket_event_poll_in returned 0
+[2020-09-07 09:57:29.777174] T [rpcsvc.c:377:rpcsvc_program_actor] 0-rpc-service: Actor found: GlusterFS 4.x v1 - SETATTR for 172.25.78.14:49143
+[2020-09-07 09:57:29.777208] D [client_t.c:285:gf_client_ref] (-->/usr/local/lib/glusterfs/2020.09.07/xlator/protocol/server.so(+0x2dd44) [0x7f31778ead44] -->/usr/local/lib/glusterfs/2020.09.07/xlator/protocol/server.so(+0x142d9) [0x7f31778d12d9] -->/usr/local/lib/libglusterfs.so.0(gf_client_ref+0xdf) [0x7f318d3686d6] ) 0-client_t: CTX_ID:ca4c5b20-ce58-433b-a7a1-a5f23b561d1c-GRAPH_ID:0-PID:111693-HOST:glusterfs4-PC_NAME:dht_debug-client-1-RECON_NO:-0: ref-count 2 
+[2020-09-07 09:57:29.777218] T [MSGID: 0] [server-rpc-fops_v2.c:3157:server4_setattr_resume] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-server to /glusterfs/data2/brick 
+[2020-09-07 09:57:29.777229] T [MSGID: 0] [io-stats.c:2822:io_stats_setattr] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from /glusterfs/data2/brick to dht_debug-quota 
+[2020-09-07 09:57:29.777237] T [MSGID: 0] [quota.c:3706:quota_setattr] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-quota to dht_debug-index 
+[2020-09-07 09:57:29.777242] T [MSGID: 0] [defaults.c:2984:default_setattr] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-index to dht_debug-barrier 
+[2020-09-07 09:57:29.777248] T [MSGID: 0] [defaults.c:2984:default_setattr] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-barrier to dht_debug-marker 
+[2020-09-07 09:57:29.777256] T [MSGID: 0] [marker.c:2791:marker_setattr] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-marker to dht_debug-selinux 
+[2020-09-07 09:57:29.777262] T [MSGID: 0] [defaults.c:2984:default_setattr] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-selinux to dht_debug-io-threads 
+[2020-09-07 09:57:29.777271] D [MSGID: 0] [io-threads.c:376:iot_schedule] 0-dht_debug-io-threads: SETATTR scheduled as normal priority fop 
+[2020-09-07 09:57:29.777290] T [MSGID: 0] [defaults.c:2184:default_setattr_resume] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-io-threads to dht_debug-upcall 
+[2020-09-07 09:57:29.777307] T [MSGID: 0] [upcall.c:353:up_setattr] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-upcall to dht_debug-leases 
+[2020-09-07 09:57:29.777321] T [MSGID: 0] [leases.c:356:leases_setattr] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-leases to dht_debug-read-only 
+[2020-09-07 09:57:29.777332] T [MSGID: 0] [read-only-common.c:143:ro_setattr] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-read-only to dht_debug-worm 
+[2020-09-07 09:57:29.777341] T [MSGID: 0] [worm.c:312:worm_setattr] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-worm to dht_debug-locks 
+[2020-09-07 09:57:29.777352] T [MSGID: 0] [posix.c:4824:pl_setattr] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-locks to dht_debug-access-control 
+[2020-09-07 09:57:29.777362] T [MSGID: 0] [posix-acl.c:1754:posix_acl_setattr] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-access-control to dht_debug-bitrot-stub 
+[2020-09-07 09:57:29.777368] T [MSGID: 0] [defaults.c:2984:default_setattr] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-bitrot-stub to dht_debug-changelog 
+[2020-09-07 09:57:29.777379] T [MSGID: 0] [changelog.c:1225:changelog_setattr] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-changelog to dht_debug-trash 
+[2020-09-07 09:57:29.777385] T [MSGID: 0] [defaults.c:2984:default_setattr] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-trash to dht_debug-posix 
+[2020-09-07 09:57:29.777403] D [MSGID: 0] [posix-metadata.c:135:posix_fetch_mdata_xattr] 0-dht_debug-posix: No such attribute:trusted.glusterfs.mdata for file /glusterfs/data2/brick/ gfid: 00000000-0000-0000-0000-000000000001 
+[2020-09-07 09:57:29.777421] D [MSGID: 0] [posix-helpers.c:2900:posix_override_umask] 0-posix: The value of mode is 16877 
+[2020-09-07 09:57:29.777426] D [MSGID: 0] [posix-helpers.c:2903:posix_override_umask] 0-posix: The value of mode is 16877 
+[2020-09-07 09:57:29.777435] D [MSGID: 0] [posix-inode-fd-ops.c:258:posix_do_chmod] 0-dht_debug-posix: /glusterfs/data2/brick/ (Function not implemented) 
+[2020-09-07 09:57:29.777450] D [MSGID: 0] [posix-metadata.c:135:posix_fetch_mdata_xattr] 0-dht_debug-posix: No such attribute:trusted.glusterfs.mdata for file /glusterfs/data2/brick/ gfid: 00000000-0000-0000-0000-000000000001 
+[2020-09-07 09:57:29.777466] D [logging.c:1871:_gf_msg_internal] 0-logging-infra: Buffer overflow of a buffer whose size limit is 5. About to flush least recently used log message to disk
+The message "D [MSGID: 0] [posix-metadata.c:135:posix_fetch_mdata_xattr] 0-dht_debug-posix: No such attribute:trusted.glusterfs.mdata for file /glusterfs/data2/brick/ gfid: 00000000-0000-0000-0000-000000000001" repeated 2 times between [2020-09-07 09:57:29.777450] and [2020-09-07 09:57:29.777463]
+[2020-09-07 09:57:29.777465] T [MSGID: 0] [posix-inode-fd-ops.c:468:posix_setattr] 0-stack-trace: stack-address: 0x7f314c000aa8, dht_debug-posix returned 0 
+[2020-09-07 09:57:29.777484] T [MSGID: 0] [changelog.c:1181:changelog_setattr_cbk] 0-stack-trace: stack-address: 0x7f314c000aa8, dht_debug-changelog returned 0 
+[2020-09-07 09:57:29.777490] T [MSGID: 0] [posix-acl.c:1736:posix_acl_setattr_cbk] 0-stack-trace: stack-address: 0x7f314c000aa8, dht_debug-access-control returned 0 
+[2020-09-07 09:57:29.777498] T [MSGID: 0] [posix.c:4814:pl_setattr_cbk] 0-stack-trace: stack-address: 0x7f314c000aa8, dht_debug-locks returned 0 
+[2020-09-07 09:57:29.777505] T [MSGID: 0] [leases.c:323:leases_setattr_cbk] 0-stack-trace: stack-address: 0x7f314c000aa8, dht_debug-leases returned 0 
+[2020-09-07 09:57:29.777511] T [MSGID: 0] [upcall.c:332:up_setattr_cbk] 0-stack-trace: stack-address: 0x7f314c000aa8, dht_debug-upcall returned 0 
+[2020-09-07 09:57:29.777517] T [MSGID: 0] [defaults.c:1512:default_setattr_cbk] 0-stack-trace: stack-address: 0x7f314c000aa8, dht_debug-io-threads returned 0 
+[2020-09-07 09:57:29.777523] T [MSGID: 0] [marker.c:2753:marker_setattr_cbk] 0-stack-trace: stack-address: 0x7f314c000aa8, dht_debug-marker returned 0 
+[2020-09-07 09:57:29.777535] T [MSGID: 0] [io-stats.c:2194:io_stats_setattr_cbk] 0-stack-trace: stack-address: 0x7f314c000aa8, /glusterfs/data2/brick returned 0 
+[2020-09-07 09:57:29.777548] T [rpcsvc.c:1535:rpcsvc_submit_generic] 0-rpc-service: Tx message: 316
+[2020-09-07 09:57:29.777555] T [rpcsvc.c:1071:rpcsvc_record_build_header] 0-rpc-service: Reply fraglen 340, payload: 316, rpc hdr: 24
+[2020-09-07 09:57:29.777574] T [rpcsvc.c:1587:rpcsvc_submit_generic] 0-rpc-service: submitted reply for rpc-message (XID: 0xa, Program: GlusterFS 4.x v1, ProgVers: 400, Proc: 38) to rpc-transport (tcp.dht_debug-server)
+[2020-09-07 09:57:29.777613] D [client_t.c:394:gf_client_unref] (-->/usr/local/lib/glusterfs/2020.09.07/xlator/protocol/server.so(+0x43c18) [0x7f3177900c18] -->/usr/local/lib/glusterfs/2020.09.07/xlator/protocol/server.so(+0xa45a) [0x7f31778c745a] -->/usr/local/lib/libglusterfs.so.0(gf_client_unref+0xe7) [0x7f318d368bc6] ) 0-client_t: CTX_ID:ca4c5b20-ce58-433b-a7a1-a5f23b561d1c-GRAPH_ID:0-PID:111693-HOST:glusterfs4-PC_NAME:dht_debug-client-1-RECON_NO:-0: ref-count 1 
+[2020-09-07 09:57:29.778097] T [socket.c:2894:socket_event_handler] 0-tcp.dht_debug-server: server (sock:10) in:1, out:0, err:0
+[2020-09-07 09:57:29.778104] T [socket.c:2920:socket_event_handler] 0-tcp.dht_debug-server: Server socket (10) is already connected
+[2020-09-07 09:57:29.778107] T [socket.c:567:__socket_ssl_readv] 0-tcp.dht_debug-server: ***** reading over non-SSL
+[2020-09-07 09:57:29.778111] T [socket.c:567:__socket_ssl_readv] 0-tcp.dht_debug-server: ***** reading over non-SSL
+[2020-09-07 09:57:29.778117] T [rpcsvc.c:746:rpcsvc_handle_rpc_call] 0-rpcsvc: Client port: 49143
+[2020-09-07 09:57:29.778120] T [rpcsvc-auth.c:444:rpcsvc_auth_request_init] 0-rpc-service: Auth handler: AUTH_GLUSTERFS-v3
+[2020-09-07 09:57:29.778124] T [rpcsvc.c:551:rpcsvc_request_create] 0-rpc-service: received rpc-message (XID: 0x11, Ver: 2, Program: 1298437, ProgVers: 400, Proc: 29) from rpc-transport (tcp.dht_debug-server)
+[2020-09-07 09:57:29.778129] T [auth-glusterfs.c:362:auth_glusterfs_v3_authenticate] 0-rpc-service: Auth Info: pid: 4294967292, uid: 0, gid: 0, owner: e81100a01f2b0000, flags: 0
+[2020-09-07 09:57:29.778132] T [rpcsvc.c:377:rpcsvc_program_actor] 0-rpc-service: Actor found: GlusterFS 4.x v1 - INODELK for 172.25.78.14:49143
+[2020-09-07 09:57:29.778137] T [socket.c:2938:socket_event_handler] 0-tcp.dht_debug-server: (sock:10) socket_event_poll_in returned 0
+[2020-09-07 09:57:29.778140] T [rpcsvc.c:377:rpcsvc_program_actor] 0-rpc-service: Actor found: GlusterFS 4.x v1 - INODELK for 172.25.78.14:49143
+[2020-09-07 09:57:29.778169] D [client_t.c:285:gf_client_ref] (-->/usr/local/lib/glusterfs/2020.09.07/xlator/protocol/server.so(+0x2dd44) [0x7f31778ead44] -->/usr/local/lib/glusterfs/2020.09.07/xlator/protocol/server.so(+0x142d9) [0x7f31778d12d9] -->/usr/local/lib/libglusterfs.so.0(gf_client_ref+0xdf) [0x7f318d3686d6] ) 0-client_t: CTX_ID:ca4c5b20-ce58-433b-a7a1-a5f23b561d1c-GRAPH_ID:0-PID:111693-HOST:glusterfs4-PC_NAME:dht_debug-client-1-RECON_NO:-0: ref-count 2 
+[2020-09-07 09:57:29.778180] D [MSGID: 0] [server-rpc-fops_v2.c:2537:server4_inodelk_resume] 0-/glusterfs/data2/brick: frame 0x7f314c002248, xlator 0x7f3178028ea0 
+[2020-09-07 09:57:29.778188] T [MSGID: 0] [server-rpc-fops_v2.c:2553:server4_inodelk_resume] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-server to /glusterfs/data2/brick 
+[2020-09-07 09:57:29.778196] T [MSGID: 0] [io-stats.c:2657:io_stats_inodelk] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from /glusterfs/data2/brick to dht_debug-quota 
+[2020-09-07 09:57:29.778203] T [MSGID: 0] [defaults.c:2867:default_inodelk] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-quota to dht_debug-index 
+[2020-09-07 09:57:29.778208] T [MSGID: 0] [defaults.c:2867:default_inodelk] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-index to dht_debug-barrier 
+[2020-09-07 09:57:29.778213] T [MSGID: 0] [defaults.c:2867:default_inodelk] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-barrier to dht_debug-marker 
+[2020-09-07 09:57:29.778221] T [MSGID: 0] [defaults.c:2867:default_inodelk] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-marker to dht_debug-selinux 
+[2020-09-07 09:57:29.778226] T [MSGID: 0] [defaults.c:2867:default_inodelk] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-selinux to dht_debug-io-threads 
+[2020-09-07 09:57:29.778234] D [MSGID: 0] [io-threads.c:376:iot_schedule] 0-dht_debug-io-threads: INODELK scheduled as normal priority fop 
+[2020-09-07 09:57:29.778251] T [MSGID: 0] [defaults.c:2088:default_inodelk_resume] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-io-threads to dht_debug-upcall 
+[2020-09-07 09:57:29.778262] T [MSGID: 0] [defaults.c:2867:default_inodelk] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-upcall to dht_debug-leases 
+[2020-09-07 09:57:29.778268] T [MSGID: 0] [defaults.c:2867:default_inodelk] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-leases to dht_debug-read-only 
+[2020-09-07 09:57:29.778274] T [MSGID: 0] [read-only-common.c:109:ro_inodelk] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-read-only to dht_debug-worm 
+[2020-09-07 09:57:29.778282] T [MSGID: 0] [read-only-common.c:109:ro_inodelk] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-worm to dht_debug-locks 
+[2020-09-07 09:57:29.778295] T [common.c:45:__allocate_domain] 0-posix-locks: New domain allocated: dht.layout.heal
+[2020-09-07 09:57:29.778299] T [common.c:88:get_domain] 0-posix-locks: Domain dht.layout.heal found
+[2020-09-07 09:57:29.778310] T [inodelk.c:830:pl_inode_setlk] 0-dht_debug-locks: Lock (pid=-4) (lk-owner=e81100a01f2b0000) 0 - 9223372036854775807 => OK
+[2020-09-07 09:57:29.778315] T [MSGID: 0] [inodelk.c:1089:pl_common_inodelk] 0-stack-trace: stack-address: 0x7f314c000aa8, dht_debug-locks returned 0 
+[2020-09-07 09:57:29.778322] T [MSGID: 0] [defaults.c:1436:default_inodelk_cbk] 0-stack-trace: stack-address: 0x7f314c000aa8, dht_debug-io-threads returned 0 
+[2020-09-07 09:57:29.778330] T [MSGID: 0] [io-stats.c:2619:io_stats_inodelk_cbk] 0-stack-trace: stack-address: 0x7f314c000aa8, /glusterfs/data2/brick returned 0 
+[2020-09-07 09:57:29.778339] T [rpcsvc.c:1535:rpcsvc_submit_generic] 0-rpc-service: Tx message: 20
+[2020-09-07 09:57:29.778344] T [rpcsvc.c:1071:rpcsvc_record_build_header] 0-rpc-service: Reply fraglen 44, payload: 20, rpc hdr: 24
+[2020-09-07 09:57:29.778358] T [rpcsvc.c:1587:rpcsvc_submit_generic] 0-rpc-service: submitted reply for rpc-message (XID: 0xb, Program: GlusterFS 4.x v1, ProgVers: 400, Proc: 29) to rpc-transport (tcp.dht_debug-server)
+[2020-09-07 09:57:29.778397] D [client_t.c:394:gf_client_unref] (-->/usr/local/lib/glusterfs/2020.09.07/xlator/protocol/server.so(+0x3e540) [0x7f31778fb540] -->/usr/local/lib/glusterfs/2020.09.07/xlator/protocol/server.so(+0xa45a) [0x7f31778c745a] -->/usr/local/lib/libglusterfs.so.0(gf_client_unref+0xe7) [0x7f318d368bc6] ) 0-client_t: CTX_ID:ca4c5b20-ce58-433b-a7a1-a5f23b561d1c-GRAPH_ID:0-PID:111693-HOST:glusterfs4-PC_NAME:dht_debug-client-1-RECON_NO:-0: ref-count 1 
+[2020-09-07 09:57:29.778805] T [socket.c:2894:socket_event_handler] 0-tcp.dht_debug-server: server (sock:10) in:1, out:0, err:0
+[2020-09-07 09:57:29.778812] T [socket.c:2920:socket_event_handler] 0-tcp.dht_debug-server: Server socket (10) is already connected
+[2020-09-07 09:57:29.778815] T [socket.c:567:__socket_ssl_readv] 0-tcp.dht_debug-server: ***** reading over non-SSL
+[2020-09-07 09:57:29.778819] T [socket.c:567:__socket_ssl_readv] 0-tcp.dht_debug-server: ***** reading over non-SSL
+[2020-09-07 09:57:29.778825] T [rpcsvc.c:746:rpcsvc_handle_rpc_call] 0-rpcsvc: Client port: 49143
+[2020-09-07 09:57:29.778828] T [rpcsvc-auth.c:444:rpcsvc_auth_request_init] 0-rpc-service: Auth handler: AUTH_GLUSTERFS-v3
+[2020-09-07 09:57:29.778832] T [rpcsvc.c:551:rpcsvc_request_create] 0-rpc-service: received rpc-message (XID: 0x12, Ver: 2, Program: 1298437, ProgVers: 400, Proc: 27) from rpc-transport (tcp.dht_debug-server)
+[2020-09-07 09:57:29.778839] T [auth-glusterfs.c:362:auth_glusterfs_v3_authenticate] 0-rpc-service: Auth Info: pid: 4294967292, uid: 0, gid: 0, owner: fcffffff, flags: 0
+[2020-09-07 09:57:29.778843] T [rpcsvc.c:377:rpcsvc_program_actor] 0-rpc-service: Actor found: GlusterFS 4.x v1 - LOOKUP for 172.25.78.14:49143
+[2020-09-07 09:57:29.778848] T [socket.c:2938:socket_event_handler] 0-tcp.dht_debug-server: (sock:10) socket_event_poll_in returned 0
+[2020-09-07 09:57:29.778851] T [rpcsvc.c:377:rpcsvc_program_actor] 0-rpc-service: Actor found: GlusterFS 4.x v1 - LOOKUP for 172.25.78.14:49143
+[2020-09-07 09:57:29.778882] D [client_t.c:285:gf_client_ref] (-->/usr/local/lib/glusterfs/2020.09.07/xlator/protocol/server.so(+0x2dd44) [0x7f31778ead44] -->/usr/local/lib/glusterfs/2020.09.07/xlator/protocol/server.so(+0x142d9) [0x7f31778d12d9] -->/usr/local/lib/libglusterfs.so.0(gf_client_ref+0xdf) [0x7f318d3686d6] ) 0-client_t: CTX_ID:ca4c5b20-ce58-433b-a7a1-a5f23b561d1c-GRAPH_ID:0-PID:111693-HOST:glusterfs4-PC_NAME:dht_debug-client-1-RECON_NO:-0: ref-count 2 
+[2020-09-07 09:57:29.778900] T [MSGID: 0] [server-rpc-fops_v2.c:3201:server4_lookup_resume] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-server to /glusterfs/data2/brick 
+[2020-09-07 09:57:29.778908] T [MSGID: 0] [io-stats.c:2710:io_stats_lookup] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from /glusterfs/data2/brick to dht_debug-quota 
+[2020-09-07 09:57:29.778913] T [MSGID: 0] [quota.c:1696:quota_lookup] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-quota to dht_debug-index 
+[2020-09-07 09:57:29.778919] T [MSGID: 0] [index.c:2113:index_lookup] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-index to dht_debug-barrier 
+[2020-09-07 09:57:29.778924] T [MSGID: 0] [defaults.c:3027:default_lookup] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-barrier to dht_debug-marker 
+[2020-09-07 09:57:29.778930] T [MSGID: 0] [marker.c:3005:marker_lookup] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-marker to dht_debug-selinux 
+[2020-09-07 09:57:29.778935] T [MSGID: 0] [defaults.c:3027:default_lookup] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-selinux to dht_debug-io-threads 
+[2020-09-07 09:57:29.778941] D [MSGID: 0] [io-threads.c:376:iot_schedule] 0-dht_debug-io-threads: LOOKUP scheduled as fast priority fop 
+[2020-09-07 09:57:29.778953] T [MSGID: 0] [defaults.c:2218:default_lookup_resume] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-io-threads to dht_debug-upcall 
+[2020-09-07 09:57:29.778964] T [MSGID: 0] [upcall.c:776:up_lookup] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-upcall to dht_debug-leases 
+[2020-09-07 09:57:29.778970] T [MSGID: 0] [defaults.c:3027:default_lookup] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-leases to dht_debug-read-only 
+[2020-09-07 09:57:29.778976] T [MSGID: 0] [defaults.c:3027:default_lookup] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-read-only to dht_debug-worm 
+[2020-09-07 09:57:29.778981] T [MSGID: 0] [defaults.c:3027:default_lookup] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-worm to dht_debug-locks 
+[2020-09-07 09:57:29.778991] T [MSGID: 0] [posix.c:3081:pl_lookup] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-locks to dht_debug-access-control 
+[2020-09-07 09:57:29.779000] T [MSGID: 0] [posix-acl.c:1052:posix_acl_lookup] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-access-control to dht_debug-bitrot-stub 
+[2020-09-07 09:57:29.779007] T [MSGID: 0] [bit-rot-stub.c:3073:br_stub_lookup] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-bitrot-stub to dht_debug-changelog 
+[2020-09-07 09:57:29.779013] T [MSGID: 0] [defaults.c:3027:default_lookup] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-changelog to dht_debug-trash 
+[2020-09-07 09:57:29.779018] T [MSGID: 0] [defaults.c:3027:default_lookup] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-trash to dht_debug-posix 
+[2020-09-07 09:57:29.779035] D [MSGID: 0] [posix-metadata.c:135:posix_fetch_mdata_xattr] 0-dht_debug-posix: No such attribute:trusted.glusterfs.mdata for file /glusterfs/data2/brick/ gfid: 00000000-0000-0000-0000-000000000001 
+[2020-09-07 09:57:29.779058] T [MSGID: 0] [posix-entry-ops.c:326:posix_lookup] 0-stack-trace: stack-address: 0x7f314c000aa8, dht_debug-posix returned 0 
+[2020-09-07 09:57:29.779065] T [MSGID: 0] [bit-rot-stub.c:2999:br_stub_lookup_cbk] 0-stack-trace: stack-address: 0x7f314c000aa8, dht_debug-bitrot-stub returned 0 
+[2020-09-07 09:57:29.779072] T [MSGID: 0] [posix-acl.c:1002:posix_acl_lookup_cbk] 0-stack-trace: stack-address: 0x7f314c000aa8, dht_debug-access-control returned 0 
+[2020-09-07 09:57:29.779078] T [MSGID: 0] [posix.c:3068:pl_lookup_cbk] 0-stack-trace: stack-address: 0x7f314c000aa8, dht_debug-locks returned 0 
+[2020-09-07 09:57:29.779084] T [MSGID: 0] [upcall.c:756:up_lookup_cbk] 0-stack-trace: stack-address: 0x7f314c000aa8, dht_debug-upcall returned 0 
+[2020-09-07 09:57:29.779089] T [MSGID: 0] [defaults.c:1548:default_lookup_cbk] 0-stack-trace: stack-address: 0x7f314c000aa8, dht_debug-io-threads returned 0 
+[2020-09-07 09:57:29.779096] T [MSGID: 0] [marker.c:2944:marker_lookup_cbk] 0-stack-trace: stack-address: 0x7f314c000aa8, dht_debug-marker returned 0 
+[2020-09-07 09:57:29.779102] T [MSGID: 0] [defaults.c:1548:default_lookup_cbk] 0-stack-trace: stack-address: 0x7f314c000aa8, dht_debug-index returned 0 
+[2020-09-07 09:57:29.779108] T [MSGID: 0] [io-stats.c:2239:io_stats_lookup_cbk] 0-stack-trace: stack-address: 0x7f314c000aa8, /glusterfs/data2/brick returned 0 
+[2020-09-07 09:57:29.779119] T [rpcsvc.c:1535:rpcsvc_submit_generic] 0-rpc-service: Tx message: 356
+[2020-09-07 09:57:29.779124] T [rpcsvc.c:1071:rpcsvc_record_build_header] 0-rpc-service: Reply fraglen 380, payload: 356, rpc hdr: 24
+[2020-09-07 09:57:29.779138] T [rpcsvc.c:1587:rpcsvc_submit_generic] 0-rpc-service: submitted reply for rpc-message (XID: 0xc, Program: GlusterFS 4.x v1, ProgVers: 400, Proc: 27) to rpc-transport (tcp.dht_debug-server)
+[2020-09-07 09:57:29.779177] D [client_t.c:394:gf_client_unref] (-->/usr/local/lib/glusterfs/2020.09.07/xlator/protocol/server.so(+0x3dded) [0x7f31778faded] -->/usr/local/lib/glusterfs/2020.09.07/xlator/protocol/server.so(+0xa45a) [0x7f31778c745a] -->/usr/local/lib/libglusterfs.so.0(gf_client_unref+0xe7) [0x7f318d368bc6] ) 0-client_t: CTX_ID:ca4c5b20-ce58-433b-a7a1-a5f23b561d1c-GRAPH_ID:0-PID:111693-HOST:glusterfs4-PC_NAME:dht_debug-client-1-RECON_NO:-0: ref-count 1 
+[2020-09-07 09:57:29.779463] T [socket.c:2894:socket_event_handler] 0-tcp.dht_debug-server: server (sock:10) in:1, out:0, err:0
+[2020-09-07 09:57:29.779467] T [socket.c:2920:socket_event_handler] 0-tcp.dht_debug-server: Server socket (10) is already connected
+[2020-09-07 09:57:29.779470] T [socket.c:567:__socket_ssl_readv] 0-tcp.dht_debug-server: ***** reading over non-SSL
+[2020-09-07 09:57:29.779474] T [socket.c:567:__socket_ssl_readv] 0-tcp.dht_debug-server: ***** reading over non-SSL
+[2020-09-07 09:57:29.779480] T [rpcsvc.c:746:rpcsvc_handle_rpc_call] 0-rpcsvc: Client port: 49143
+[2020-09-07 09:57:29.779483] T [rpcsvc-auth.c:444:rpcsvc_auth_request_init] 0-rpc-service: Auth handler: AUTH_GLUSTERFS-v3
+[2020-09-07 09:57:29.779487] T [rpcsvc.c:551:rpcsvc_request_create] 0-rpc-service: received rpc-message (XID: 0x13, Ver: 2, Program: 1298437, ProgVers: 400, Proc: 17) from rpc-transport (tcp.dht_debug-server)
+[2020-09-07 09:57:29.779491] T [auth-glusterfs.c:362:auth_glusterfs_v3_authenticate] 0-rpc-service: Auth Info: pid: 4294967292, uid: 0, gid: 0, owner: fcffffff, flags: 0
+[2020-09-07 09:57:29.779494] T [rpcsvc.c:377:rpcsvc_program_actor] 0-rpc-service: Actor found: GlusterFS 4.x v1 - SETXATTR for 172.25.78.14:49143
+[2020-09-07 09:57:29.779499] T [socket.c:2938:socket_event_handler] 0-tcp.dht_debug-server: (sock:10) socket_event_poll_in returned 0
+[2020-09-07 09:57:29.779502] T [rpcsvc.c:377:rpcsvc_program_actor] 0-rpc-service: Actor found: GlusterFS 4.x v1 - SETXATTR for 172.25.78.14:49143
+[2020-09-07 09:57:29.779534] D [client_t.c:285:gf_client_ref] (-->/usr/local/lib/glusterfs/2020.09.07/xlator/protocol/server.so(+0x2dd44) [0x7f31778ead44] -->/usr/local/lib/glusterfs/2020.09.07/xlator/protocol/server.so(+0x142d9) [0x7f31778d12d9] -->/usr/local/lib/libglusterfs.so.0(gf_client_ref+0xdf) [0x7f318d3686d6] ) 0-client_t: CTX_ID:ca4c5b20-ce58-433b-a7a1-a5f23b561d1c-GRAPH_ID:0-PID:111693-HOST:glusterfs4-PC_NAME:dht_debug-client-1-RECON_NO:-0: ref-count 2 
+[2020-09-07 09:57:29.779550] T [MSGID: 0] [server-rpc-fops_v2.c:2918:server4_setxattr_resume] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-server to /glusterfs/data2/brick 
+[2020-09-07 09:57:29.779561] T [MSGID: 0] [io-stats.c:3206:io_stats_setxattr] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from /glusterfs/data2/brick to dht_debug-quota 
+[2020-09-07 09:57:29.779568] T [MSGID: 0] [quota.c:4019:quota_setxattr] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-quota to dht_debug-index 
+[2020-09-07 09:57:29.779574] T [MSGID: 0] [defaults.c:2446:default_setxattr] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-index to dht_debug-barrier 
+[2020-09-07 09:57:29.779579] T [MSGID: 0] [defaults.c:2446:default_setxattr] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-barrier to dht_debug-marker 
+[2020-09-07 09:57:29.779587] T [MSGID: 0] [marker.c:2593:marker_setxattr] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-marker to dht_debug-selinux 
+[2020-09-07 09:57:29.779595] T [MSGID: 0] [selinux.c:188:selinux_setxattr] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-selinux to dht_debug-io-threads 
+[2020-09-07 09:57:29.779603] D [MSGID: 0] [io-threads.c:376:iot_schedule] 0-dht_debug-io-threads: SETXATTR scheduled as normal priority fop 
+[2020-09-07 09:57:29.779616] T [MSGID: 0] [defaults.c:1748:default_setxattr_resume] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-io-threads to dht_debug-upcall 
+[2020-09-07 09:57:29.779629] T [MSGID: 0] [upcall.c:1637:up_setxattr] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-upcall to dht_debug-leases 
+[2020-09-07 09:57:29.779636] T [MSGID: 0] [defaults.c:2446:default_setxattr] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-leases to dht_debug-read-only 
+[2020-09-07 09:57:29.779643] T [MSGID: 0] [read-only-common.c:390:ro_setxattr] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-read-only to dht_debug-worm 
+[2020-09-07 09:57:29.779649] T [MSGID: 0] [defaults.c:2446:default_setxattr] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-worm to dht_debug-locks 
+[2020-09-07 09:57:29.779660] T [MSGID: 0] [posix.c:3595:pl_setxattr] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-locks to dht_debug-access-control 
+[2020-09-07 09:57:29.779669] T [MSGID: 0] [posix-acl.c:1983:posix_acl_setxattr] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-access-control to dht_debug-bitrot-stub 
+[2020-09-07 09:57:29.779679] T [MSGID: 0] [bit-rot-stub.c:1482:br_stub_setxattr] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-bitrot-stub to dht_debug-changelog 
+[2020-09-07 09:57:29.779688] T [MSGID: 0] [changelog.c:1444:changelog_setxattr] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-changelog to dht_debug-trash 
+[2020-09-07 09:57:29.779694] T [MSGID: 0] [defaults.c:2446:default_setxattr] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-trash to dht_debug-posix 
+[2020-09-07 09:57:29.779721] D [MSGID: 0] [posix-metadata.c:135:posix_fetch_mdata_xattr] 0-dht_debug-posix: No such attribute:trusted.glusterfs.mdata for file /glusterfs/data2/brick/ gfid: 00000000-0000-0000-0000-000000000001 
+[2020-09-07 09:57:29.779752] D [logging.c:1871:_gf_msg_internal] 0-logging-infra: Buffer overflow of a buffer whose size limit is 5. About to flush least recently used log message to disk
+The message "D [MSGID: 0] [posix-metadata.c:135:posix_fetch_mdata_xattr] 0-dht_debug-posix: No such attribute:trusted.glusterfs.mdata for file /glusterfs/data2/brick/ gfid: 00000000-0000-0000-0000-000000000001" repeated 2 times between [2020-09-07 09:57:29.779721] and [2020-09-07 09:57:29.779747]
+[2020-09-07 09:57:29.779751] T [MSGID: 0] [posix-inode-fd-ops.c:3010:posix_setxattr] 0-stack-trace: stack-address: 0x7f314c000aa8, dht_debug-posix returned 0 
+[2020-09-07 09:57:29.779772] T [MSGID: 0] [changelog.c:1351:changelog_setxattr_cbk] 0-stack-trace: stack-address: 0x7f314c000aa8, dht_debug-changelog returned 0 
+[2020-09-07 09:57:29.779779] T [MSGID: 0] [posix-acl.c:1957:posix_acl_setxattr_cbk] 0-stack-trace: stack-address: 0x7f314c000aa8, dht_debug-access-control returned 0 
+[2020-09-07 09:57:29.779786] T [MSGID: 0] [posix.c:3561:pl_setxattr_cbk] 0-stack-trace: stack-address: 0x7f314c000aa8, dht_debug-locks returned 0 
+[2020-09-07 09:57:29.779793] T [MSGID: 0] [upcall.c:1616:up_setxattr_cbk] 0-stack-trace: stack-address: 0x7f314c000aa8, dht_debug-upcall returned 0 
+[2020-09-07 09:57:29.779800] T [MSGID: 0] [defaults.c:1116:default_setxattr_cbk] 0-stack-trace: stack-address: 0x7f314c000aa8, dht_debug-io-threads returned 0 
+[2020-09-07 09:57:29.779806] T [MSGID: 0] [selinux.c:162:selinux_setxattr_cbk] 0-stack-trace: stack-address: 0x7f314c000aa8, dht_debug-selinux returned 0 
+[2020-09-07 09:57:29.779813] T [MSGID: 0] [marker.c:2396:marker_setxattr_cbk] 0-stack-trace: stack-address: 0x7f314c000aa8, dht_debug-marker returned 0 
+[2020-09-07 09:57:29.779819] T [MSGID: 0] [io-stats.c:2375:io_stats_setxattr_cbk] 0-stack-trace: stack-address: 0x7f314c000aa8, /glusterfs/data2/brick returned 0 
+[2020-09-07 09:57:29.779837] T [rpcsvc.c:1535:rpcsvc_submit_generic] 0-rpc-service: Tx message: 548
+[2020-09-07 09:57:29.779845] T [rpcsvc.c:1071:rpcsvc_record_build_header] 0-rpc-service: Reply fraglen 572, payload: 548, rpc hdr: 24
+[2020-09-07 09:57:29.779864] T [rpcsvc.c:1587:rpcsvc_submit_generic] 0-rpc-service: submitted reply for rpc-message (XID: 0xd, Program: GlusterFS 4.x v1, ProgVers: 400, Proc: 17) to rpc-transport (tcp.dht_debug-server)
+[2020-09-07 09:57:29.779903] D [client_t.c:394:gf_client_unref] (-->/usr/local/lib/glusterfs/2020.09.07/xlator/protocol/server.so(+0x40aff) [0x7f31778fdaff] -->/usr/local/lib/glusterfs/2020.09.07/xlator/protocol/server.so(+0xa45a) [0x7f31778c745a] -->/usr/local/lib/libglusterfs.so.0(gf_client_unref+0xe7) [0x7f318d368bc6] ) 0-client_t: CTX_ID:ca4c5b20-ce58-433b-a7a1-a5f23b561d1c-GRAPH_ID:0-PID:111693-HOST:glusterfs4-PC_NAME:dht_debug-client-1-RECON_NO:-0: ref-count 1 
+[2020-09-07 09:57:29.780109] T [socket.c:2894:socket_event_handler] 0-tcp.dht_debug-server: server (sock:10) in:1, out:0, err:0
+[2020-09-07 09:57:29.780114] T [socket.c:2920:socket_event_handler] 0-tcp.dht_debug-server: Server socket (10) is already connected
+[2020-09-07 09:57:29.780117] T [socket.c:567:__socket_ssl_readv] 0-tcp.dht_debug-server: ***** reading over non-SSL
+[2020-09-07 09:57:29.780121] T [socket.c:567:__socket_ssl_readv] 0-tcp.dht_debug-server: ***** reading over non-SSL
+[2020-09-07 09:57:29.780126] T [rpcsvc.c:746:rpcsvc_handle_rpc_call] 0-rpcsvc: Client port: 49143
+[2020-09-07 09:57:29.780130] T [rpcsvc-auth.c:444:rpcsvc_auth_request_init] 0-rpc-service: Auth handler: AUTH_GLUSTERFS-v3
+[2020-09-07 09:57:29.780133] T [rpcsvc.c:551:rpcsvc_request_create] 0-rpc-service: received rpc-message (XID: 0x14, Ver: 2, Program: 1298437, ProgVers: 400, Proc: 29) from rpc-transport (tcp.dht_debug-server)
+[2020-09-07 09:57:29.780138] T [auth-glusterfs.c:362:auth_glusterfs_v3_authenticate] 0-rpc-service: Auth Info: pid: 4294967292, uid: 0, gid: 0, owner: e81100a01f2b0000, flags: 0
+[2020-09-07 09:57:29.780142] T [rpcsvc.c:377:rpcsvc_program_actor] 0-rpc-service: Actor found: GlusterFS 4.x v1 - INODELK for 172.25.78.14:49143
+[2020-09-07 09:57:29.780147] T [socket.c:2938:socket_event_handler] 0-tcp.dht_debug-server: (sock:10) socket_event_poll_in returned 0
+[2020-09-07 09:57:29.780150] T [rpcsvc.c:377:rpcsvc_program_actor] 0-rpc-service: Actor found: GlusterFS 4.x v1 - INODELK for 172.25.78.14:49143
+[2020-09-07 09:57:29.780178] D [client_t.c:285:gf_client_ref] (-->/usr/local/lib/glusterfs/2020.09.07/xlator/protocol/server.so(+0x2dd44) [0x7f31778ead44] -->/usr/local/lib/glusterfs/2020.09.07/xlator/protocol/server.so(+0x142d9) [0x7f31778d12d9] -->/usr/local/lib/libglusterfs.so.0(gf_client_ref+0xdf) [0x7f318d3686d6] ) 0-client_t: CTX_ID:ca4c5b20-ce58-433b-a7a1-a5f23b561d1c-GRAPH_ID:0-PID:111693-HOST:glusterfs4-PC_NAME:dht_debug-client-1-RECON_NO:-0: ref-count 2 
+[2020-09-07 09:57:29.780187] D [MSGID: 0] [server-rpc-fops_v2.c:2537:server4_inodelk_resume] 0-/glusterfs/data2/brick: frame 0x7f314c001748, xlator 0x7f3178028ea0 
+[2020-09-07 09:57:29.780194] T [MSGID: 0] [server-rpc-fops_v2.c:2553:server4_inodelk_resume] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-server to /glusterfs/data2/brick 
+[2020-09-07 09:57:29.780200] T [MSGID: 0] [io-stats.c:2657:io_stats_inodelk] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from /glusterfs/data2/brick to dht_debug-quota 
+[2020-09-07 09:57:29.780206] T [MSGID: 0] [defaults.c:2867:default_inodelk] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-quota to dht_debug-index 
+[2020-09-07 09:57:29.780211] T [MSGID: 0] [defaults.c:2867:default_inodelk] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-index to dht_debug-barrier 
+[2020-09-07 09:57:29.780216] T [MSGID: 0] [defaults.c:2867:default_inodelk] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-barrier to dht_debug-marker 
+[2020-09-07 09:57:29.780222] T [MSGID: 0] [defaults.c:2867:default_inodelk] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-marker to dht_debug-selinux 
+[2020-09-07 09:57:29.780227] T [MSGID: 0] [defaults.c:2867:default_inodelk] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-selinux to dht_debug-io-threads 
+[2020-09-07 09:57:29.780233] D [MSGID: 0] [io-threads.c:376:iot_schedule] 0-dht_debug-io-threads: INODELK scheduled as normal priority fop 
+[2020-09-07 09:57:29.780244] T [socket.c:2894:socket_event_handler] 0-tcp.dht_debug-server: server (sock:10) in:1, out:0, err:0
+[2020-09-07 09:57:29.780249] T [socket.c:2920:socket_event_handler] 0-tcp.dht_debug-server: Server socket (10) is already connected
+[2020-09-07 09:57:29.780252] T [socket.c:567:__socket_ssl_readv] 0-tcp.dht_debug-server: ***** reading over non-SSL
+[2020-09-07 09:57:29.780246] T [MSGID: 0] [defaults.c:2088:default_inodelk_resume] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-io-threads to dht_debug-upcall 
+[2020-09-07 09:57:29.780256] T [socket.c:567:__socket_ssl_readv] 0-tcp.dht_debug-server: ***** reading over non-SSL
+[2020-09-07 09:57:29.780267] T [MSGID: 0] [defaults.c:2867:default_inodelk] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-upcall to dht_debug-leases 
+[2020-09-07 09:57:29.780274] T [rpcsvc.c:746:rpcsvc_handle_rpc_call] 0-rpcsvc: Client port: 49143
+[2020-09-07 09:57:29.780282] T [rpcsvc-auth.c:444:rpcsvc_auth_request_init] 0-rpc-service: Auth handler: AUTH_GLUSTERFS-v3
+[2020-09-07 09:57:29.780281] T [MSGID: 0] [defaults.c:2867:default_inodelk] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-leases to dht_debug-read-only 
+[2020-09-07 09:57:29.780285] T [rpcsvc.c:551:rpcsvc_request_create] 0-rpc-service: received rpc-message (XID: 0x15, Ver: 2, Program: 1298437, ProgVers: 400, Proc: 17) from rpc-transport (tcp.dht_debug-server)
+[2020-09-07 09:57:29.780292] T [MSGID: 0] [read-only-common.c:109:ro_inodelk] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-read-only to dht_debug-worm 
+[2020-09-07 09:57:29.780298] T [auth-glusterfs.c:362:auth_glusterfs_v3_authenticate] 0-rpc-service: Auth Info: pid: 4294967283, uid: 0, gid: 0, owner: f3ffffff, flags: 0
+[2020-09-07 09:57:29.780308] T [rpcsvc.c:377:rpcsvc_program_actor] 0-rpc-service: Actor found: GlusterFS 4.x v1 - SETXATTR for 172.25.78.14:49143
+[2020-09-07 09:57:29.780304] T [MSGID: 0] [read-only-common.c:109:ro_inodelk] 0-stack-trace: stack-address: 0x7f314c000aa8, winding from dht_debug-worm to dht_debug-locks 
+[2020-09-07 09:57:29.780317] T [rpcsvc.c:377:rpcsvc_program_actor] 0-rpc-service: Actor found: GlusterFS 4.x v1 - SETXATTR for 172.25.78.14:49143
+[2020-09-07 09:57:29.780322] T [common.c:88:get_domain] 0-posix-locks: Domain dht.layout.heal found
+[2020-09-07 09:57:29.780314] T [socket.c:2938:socket_event_handler] 0-tcp.dht_debug-server: (sock:10) socket_event_poll_in returned 0
+[2020-09-07 09:57:29.780334] D [inodelk.c:523:__inode_unlock_lock] 0-dht_debug-locks:  Matching lock found for unlock 0-9223372036854775807, by e81100a01f2b0000 on 0x7f3170007330 for gfid:00000000-0000-0000-0000-000000000001
+[2020-09-07 09:57:29.780341] T [MSGID: 0] [inodelk.c:1089:pl_common_inodelk] 0-stack-trace: stack-address: 0x7f314c000aa8, dht_debug-locks returned 0 
+[2020-09-07 09:57:29.780345] D [client_t.c:285:gf_client_ref] (-->/usr/local/lib/glusterfs/2020.09.07/xlator/protocol/server.so(+0x2dd44) [0x7f31778ead44] -->/usr/local/lib/glusterfs/2020.09.07/xlator/protocol/server.so(+0x142d9) [0x7f31778d12d9] -->/usr/local/lib/libglusterfs.so.0(gf_client_ref+0xdf) [0x7f318d3686d6] ) 0-client_t: CTX_ID:ca4c5b20-ce58-433b-a7a1-a5f23b561d1c-GRAPH_ID:0-PID:111693-HOST:glusterfs4-PC_NAME:dht_debug-client-1-RECON_NO:-0: ref-count 3 
+[2020-09-07 09:57:29.780347] T [MSGID: 0] [defaults.c:1436:default_inodelk_cbk] 0-stack-trace: stack-address: 0x7f314c000aa8, dht_debug-io-threads returned 0 
+[2020-09-07 09:57:29.780355] T [MSGID: 0] [io-stats.c:2619:io_stats_inodelk_cbk] 0-stack-trace: stack-address: 0x7f314c000aa8, /glusterfs/data2/brick returned 0 
+[2020-09-07 09:57:29.780363] T [rpcsvc.c:1535:rpcsvc_submit_generic] 0-rpc-service: Tx message: 20
+[2020-09-07 09:57:29.780361] T [MSGID: 0] [server-rpc-fops_v2.c:2918:server4_setxattr_resume] 0-stack-trace: stack-address: 0x7f314c0068c8, winding from dht_debug-server to /glusterfs/data2/brick 
+[2020-09-07 09:57:29.780369] T [rpcsvc.c:1071:rpcsvc_record_build_header] 0-rpc-service: Reply fraglen 44, payload: 20, rpc hdr: 24
+[2020-09-07 09:57:29.780380] T [MSGID: 0] [io-stats.c:3206:io_stats_setxattr] 0-stack-trace: stack-address: 0x7f314c0068c8, winding from /glusterfs/data2/brick to dht_debug-quota 
+[2020-09-07 09:57:29.780385] T [rpcsvc.c:1587:rpcsvc_submit_generic] 0-rpc-service: submitted reply for rpc-message (XID: 0xe, Program: GlusterFS 4.x v1, ProgVers: 400, Proc: 29) to rpc-transport (tcp.dht_debug-server)
+[2020-09-07 09:57:29.780387] T [MSGID: 0] [quota.c:4019:quota_setxattr] 0-stack-trace: stack-address: 0x7f314c0068c8, winding from dht_debug-quota to dht_debug-index 
+[2020-09-07 09:57:29.780399] T [MSGID: 0] [defaults.c:2446:default_setxattr] 0-stack-trace: stack-address: 0x7f314c0068c8, winding from dht_debug-index to dht_debug-barrier 
+[2020-09-07 09:57:29.780404] T [MSGID: 0] [defaults.c:2446:default_setxattr] 0-stack-trace: stack-address: 0x7f314c0068c8, winding from dht_debug-barrier to dht_debug-marker 
+[2020-09-07 09:57:29.780411] T [MSGID: 0] [marker.c:2593:marker_setxattr] 0-stack-trace: stack-address: 0x7f314c0068c8, winding from dht_debug-marker to dht_debug-selinux 
+[2020-09-07 09:57:29.780416] T [MSGID: 0] [selinux.c:188:selinux_setxattr] 0-stack-trace: stack-address: 0x7f314c0068c8, winding from dht_debug-selinux to dht_debug-io-threads 
+[2020-09-07 09:57:29.780426] D [MSGID: 0] [io-threads.c:376:iot_schedule] 0-dht_debug-io-threads: SETXATTR scheduled as least priority fop 
+[2020-09-07 09:57:29.780427] D [client_t.c:394:gf_client_unref] (-->/usr/local/lib/glusterfs/2020.09.07/xlator/protocol/server.so(+0x3e540) [0x7f31778fb540] -->/usr/local/lib/glusterfs/2020.09.07/xlator/protocol/server.so(+0xa45a) [0x7f31778c745a] -->/usr/local/lib/libglusterfs.so.0(gf_client_unref+0xe7) [0x7f318d368bc6] ) 0-client_t: CTX_ID:ca4c5b20-ce58-433b-a7a1-a5f23b561d1c-GRAPH_ID:0-PID:111693-HOST:glusterfs4-PC_NAME:dht_debug-client-1-RECON_NO:-0: ref-count 2 
+[2020-09-07 09:57:29.780447] T [MSGID: 0] [defaults.c:1748:default_setxattr_resume] 0-stack-trace: stack-address: 0x7f314c0068c8, winding from dht_debug-io-threads to dht_debug-upcall 
+[2020-09-07 09:57:29.780458] T [MSGID: 0] [upcall.c:1637:up_setxattr] 0-stack-trace: stack-address: 0x7f314c0068c8, winding from dht_debug-upcall to dht_debug-leases 
+[2020-09-07 09:57:29.780465] T [MSGID: 0] [defaults.c:2446:default_setxattr] 0-stack-trace: stack-address: 0x7f314c0068c8, winding from dht_debug-leases to dht_debug-read-only 
+[2020-09-07 09:57:29.780474] T [MSGID: 0] [read-only-common.c:390:ro_setxattr] 0-stack-trace: stack-address: 0x7f314c0068c8, winding from dht_debug-read-only to dht_debug-worm 
+[2020-09-07 09:57:29.780483] T [MSGID: 0] [defaults.c:2446:default_setxattr] 0-stack-trace: stack-address: 0x7f314c0068c8, winding from dht_debug-worm to dht_debug-locks 
+[2020-09-07 09:57:29.780493] T [MSGID: 0] [posix.c:3595:pl_setxattr] 0-stack-trace: stack-address: 0x7f314c0068c8, winding from dht_debug-locks to dht_debug-access-control 
+[2020-09-07 09:57:29.780504] T [MSGID: 0] [posix-acl.c:1983:posix_acl_setxattr] 0-stack-trace: stack-address: 0x7f314c0068c8, winding from dht_debug-access-control to dht_debug-bitrot-stub 
+[2020-09-07 09:57:29.780515] T [MSGID: 0] [bit-rot-stub.c:1482:br_stub_setxattr] 0-stack-trace: stack-address: 0x7f314c0068c8, winding from dht_debug-bitrot-stub to dht_debug-changelog 
+[2020-09-07 09:57:29.780524] T [MSGID: 0] [changelog.c:1444:changelog_setxattr] 0-stack-trace: stack-address: 0x7f314c0068c8, winding from dht_debug-changelog to dht_debug-trash 
+[2020-09-07 09:57:29.780533] T [MSGID: 0] [defaults.c:2446:default_setxattr] 0-stack-trace: stack-address: 0x7f314c0068c8, winding from dht_debug-trash to dht_debug-posix 
+[2020-09-07 09:57:29.780547] D [MSGID: 0] [posix-metadata.c:135:posix_fetch_mdata_xattr] 0-dht_debug-posix: No such attribute:trusted.glusterfs.mdata for file /glusterfs/data2/brick/ gfid: 00000000-0000-0000-0000-000000000001 
+[2020-09-07 09:57:29.780566] D [logging.c:1871:_gf_msg_internal] 0-logging-infra: Buffer overflow of a buffer whose size limit is 5. About to flush least recently used log message to disk
+[2020-09-07 09:57:29.780556] D [MSGID: 0] [posix-metadata.c:135:posix_fetch_mdata_xattr] 0-dht_debug-posix: No such attribute:trusted.glusterfs.mdata for file /glusterfs/data2/brick/ gfid: 00000000-0000-0000-0000-000000000001 
+[2020-09-07 09:57:29.780565] T [MSGID: 0] [posix-inode-fd-ops.c:3010:posix_setxattr] 0-stack-trace: stack-address: 0x7f314c0068c8, dht_debug-posix returned 0 
+[2020-09-07 09:57:29.780580] T [MSGID: 0] [changelog.c:1351:changelog_setxattr_cbk] 0-stack-trace: stack-address: 0x7f314c0068c8, dht_debug-changelog returned 0 
+[2020-09-07 09:57:29.780585] T [MSGID: 0] [posix-acl.c:1957:posix_acl_setxattr_cbk] 0-stack-trace: stack-address: 0x7f314c0068c8, dht_debug-access-control returned 0 
+[2020-09-07 09:57:29.780592] T [MSGID: 0] [posix.c:3561:pl_setxattr_cbk] 0-stack-trace: stack-address: 0x7f314c0068c8, dht_debug-locks returned 0 
+[2020-09-07 09:57:29.780597] T [MSGID: 0] [upcall.c:1616:up_setxattr_cbk] 0-stack-trace: stack-address: 0x7f314c0068c8, dht_debug-upcall returned 0 
+[2020-09-07 09:57:29.780603] T [MSGID: 0] [defaults.c:1116:default_setxattr_cbk] 0-stack-trace: stack-address: 0x7f314c0068c8, dht_debug-io-threads returned 0 
+[2020-09-07 09:57:29.780608] T [MSGID: 0] [selinux.c:162:selinux_setxattr_cbk] 0-stack-trace: stack-address: 0x7f314c0068c8, dht_debug-selinux returned 0 
+[2020-09-07 09:57:29.780614] T [MSGID: 0] [marker.c:2396:marker_setxattr_cbk] 0-stack-trace: stack-address: 0x7f314c0068c8, dht_debug-marker returned 0 
+[2020-09-07 09:57:29.780620] T [MSGID: 0] [io-stats.c:2375:io_stats_setxattr_cbk] 0-stack-trace: stack-address: 0x7f314c0068c8, /glusterfs/data2/brick returned 0 
+[2020-09-07 09:57:29.780628] T [rpcsvc.c:1535:rpcsvc_submit_generic] 0-rpc-service: Tx message: 20
+[2020-09-07 09:57:29.780632] T [rpcsvc.c:1071:rpcsvc_record_build_header] 0-rpc-service: Reply fraglen 44, payload: 20, rpc hdr: 24
+[2020-09-07 09:57:29.780644] T [rpcsvc.c:1587:rpcsvc_submit_generic] 0-rpc-service: submitted reply for rpc-message (XID: 0xf, Program: GlusterFS 4.x v1, ProgVers: 400, Proc: 17) to rpc-transport (tcp.dht_debug-server)
+[2020-09-07 09:57:29.780673] D [client_t.c:394:gf_client_unref] (-->/usr/local/lib/glusterfs/2020.09.07/xlator/protocol/server.so(+0x40aff) [0x7f31778fdaff] -->/usr/local/lib/glusterfs/2020.09.07/xlator/protocol/server.so(+0xa45a) [0x7f31778c745a] -->/usr/local/lib/libglusterfs.so.0(gf_client_unref+0xe7) [0x7f318d368bc6] ) 0-client_t: CTX_ID:ca4c5b20-ce58-433b-a7a1-a5f23b561d1c-GRAPH_ID:0-PID:111693-HOST:glusterfs4-PC_NAME:dht_debug-client-1-RECON_NO:-0: ref-count 1 
+[2020-09-07 09:57:29.781252] T [socket.c:2894:socket_event_handler] 0-tcp.dht_debug-server: server (sock:10) in:1, out:0, err:0
+[2020-09-07 09:57:29.781259] T [socket.c:2920:socket_event_handler] 0-tcp.dht_debug-server: Server socket (10) is already connected
+[2020-09-07 09:57:29.781262] T [socket.c:567:__socket_ssl_readv] 0-tcp.dht_debug-server: ***** reading over non-SSL
+[2020-09-07 09:57:29.781267] T [socket.c:567:__socket_ssl_readv] 0-tcp.dht_debug-server: ***** reading over non-SSL
+[2020-09-07 09:57:29.781272] T [rpcsvc.c:746:rpcsvc_handle_rpc_call] 0-rpcsvc: Client port: 49143
+[2020-09-07 09:57:29.781276] T [rpcsvc-auth.c:444:rpcsvc_auth_request_init] 0-rpc-service: Auth handler: AUTH_GLUSTERFS-v3
+[2020-09-07 09:57:29.781280] T [rpcsvc.c:551:rpcsvc_request_create] 0-rpc-service: received rpc-message (XID: 0x16, Ver: 2, Program: 1298437, ProgVers: 400, Proc: 27) from rpc-transport (tcp.dht_debug-server)
+[2020-09-07 09:57:29.781285] T [auth-glusterfs.c:362:auth_glusterfs_v3_authenticate] 0-rpc-service: Auth Info: pid: 111707, uid: 0, gid: 0, owner: 0000000000000000, flags: 0
+[2020-09-07 09:57:29.781288] T [rpcsvc.c:377:rpcsvc_program_actor] 0-rpc-service: Actor found: GlusterFS 4.x v1 - LOOKUP for 172.25.78.14:49143
+[2020-09-07 09:57:29.781293] T [socket.c:2938:socket_event_handler] 0-tcp.dht_debug-server: (sock:10) socket_event_poll_in returned 0
+[2020-09-07 09:57:29.781296] T [rpcsvc.c:377:rpcsvc_program_actor] 0-rpc-service: Actor found: GlusterFS 4.x v1 - LOOKUP for 172.25.78.14:49143
+[2020-09-07 09:57:29.781326] D [client_t.c:285:gf_client_ref] (-->/usr/local/lib/glusterfs/2020.09.07/xlator/protocol/server.so(+0x2dd44) [0x7f31778ead44] -->/usr/local/lib/glusterfs/2020.09.07/xlator/protocol/server.so(+0x142d9) [0x7f31778d12d9] -->/usr/local/lib/libglusterfs.so.0(gf_client_ref+0xdf) [0x7f318d3686d6] ) 0-client_t: CTX_ID:ca4c5b20-ce58-433b-a7a1-a5f23b561d1c-GRAPH_ID:0-PID:111693-HOST:glusterfs4-PC_NAME:dht_debug-client-1-RECON_NO:-0: ref-count 2 
+[2020-09-07 09:57:29.781344] T [MSGID: 0] [server-rpc-fops_v2.c:3201:server4_lookup_resume] 0-stack-trace: stack-address: 0x7f314c0068c8, winding from dht_debug-server to /glusterfs/data2/brick 
+[2020-09-07 09:57:29.781351] T [MSGID: 0] [io-stats.c:2710:io_stats_lookup] 0-stack-trace: stack-address: 0x7f314c0068c8, winding from /glusterfs/data2/brick to dht_debug-quota 
+[2020-09-07 09:57:29.781357] T [MSGID: 0] [quota.c:1696:quota_lookup] 0-stack-trace: stack-address: 0x7f314c0068c8, winding from dht_debug-quota to dht_debug-index 
+[2020-09-07 09:57:29.781364] T [MSGID: 0] [index.c:2113:index_lookup] 0-stack-trace: stack-address: 0x7f314c0068c8, winding from dht_debug-index to dht_debug-barrier 
+[2020-09-07 09:57:29.781369] T [MSGID: 0] [defaults.c:3027:default_lookup] 0-stack-trace: stack-address: 0x7f314c0068c8, winding from dht_debug-barrier to dht_debug-marker 
+[2020-09-07 09:57:29.781375] T [MSGID: 0] [marker.c:3005:marker_lookup] 0-stack-trace: stack-address: 0x7f314c0068c8, winding from dht_debug-marker to dht_debug-selinux 
+[2020-09-07 09:57:29.781380] T [MSGID: 0] [defaults.c:3027:default_lookup] 0-stack-trace: stack-address: 0x7f314c0068c8, winding from dht_debug-selinux to dht_debug-io-threads 
+[2020-09-07 09:57:29.781386] D [MSGID: 0] [io-threads.c:376:iot_schedule] 0-dht_debug-io-threads: LOOKUP scheduled as fast priority fop 
+[2020-09-07 09:57:29.781400] T [MSGID: 0] [defaults.c:2218:default_lookup_resume] 0-stack-trace: stack-address: 0x7f314c0068c8, winding from dht_debug-io-threads to dht_debug-upcall 
+[2020-09-07 09:57:29.781411] T [MSGID: 0] [upcall.c:776:up_lookup] 0-stack-trace: stack-address: 0x7f314c0068c8, winding from dht_debug-upcall to dht_debug-leases 
+[2020-09-07 09:57:29.781419] T [MSGID: 0] [defaults.c:3027:default_lookup] 0-stack-trace: stack-address: 0x7f314c0068c8, winding from dht_debug-leases to dht_debug-read-only 
+[2020-09-07 09:57:29.781424] T [MSGID: 0] [defaults.c:3027:default_lookup] 0-stack-trace: stack-address: 0x7f314c0068c8, winding from dht_debug-read-only to dht_debug-worm 
+[2020-09-07 09:57:29.781430] T [MSGID: 0] [defaults.c:3027:default_lookup] 0-stack-trace: stack-address: 0x7f314c0068c8, winding from dht_debug-worm to dht_debug-locks 
+[2020-09-07 09:57:29.781439] T [MSGID: 0] [posix.c:3081:pl_lookup] 0-stack-trace: stack-address: 0x7f314c0068c8, winding from dht_debug-locks to dht_debug-access-control 
+[2020-09-07 09:57:29.781448] T [MSGID: 0] [posix-acl.c:1052:posix_acl_lookup] 0-stack-trace: stack-address: 0x7f314c0068c8, winding from dht_debug-access-control to dht_debug-bitrot-stub 
+[2020-09-07 09:57:29.781455] T [MSGID: 0] [bit-rot-stub.c:3073:br_stub_lookup] 0-stack-trace: stack-address: 0x7f314c0068c8, winding from dht_debug-bitrot-stub to dht_debug-changelog 
+[2020-09-07 09:57:29.781460] T [MSGID: 0] [defaults.c:3027:default_lookup] 0-stack-trace: stack-address: 0x7f314c0068c8, winding from dht_debug-changelog to dht_debug-trash 
+[2020-09-07 09:57:29.781466] T [MSGID: 0] [defaults.c:3027:default_lookup] 0-stack-trace: stack-address: 0x7f314c0068c8, winding from dht_debug-trash to dht_debug-posix 
+[2020-09-07 09:57:29.781500] T [MSGID: 0] [posix-entry-ops.c:326:posix_lookup] 0-stack-trace: stack-address: 0x7f314c0068c8, dht_debug-posix returned 0 
+[2020-09-07 09:57:29.781507] T [MSGID: 0] [bit-rot-stub.c:2999:br_stub_lookup_cbk] 0-stack-trace: stack-address: 0x7f314c0068c8, dht_debug-bitrot-stub returned 0 
+[2020-09-07 09:57:29.781514] T [MSGID: 0] [posix-acl.c:1002:posix_acl_lookup_cbk] 0-stack-trace: stack-address: 0x7f314c0068c8, dht_debug-access-control returned 0 
+[2020-09-07 09:57:29.781520] T [MSGID: 0] [posix.c:3068:pl_lookup_cbk] 0-stack-trace: stack-address: 0x7f314c0068c8, dht_debug-locks returned 0 
+[2020-09-07 09:57:29.781525] T [MSGID: 0] [upcall.c:756:up_lookup_cbk] 0-stack-trace: stack-address: 0x7f314c0068c8, dht_debug-upcall returned 0 
+[2020-09-07 09:57:29.781530] T [MSGID: 0] [defaults.c:1548:default_lookup_cbk] 0-stack-trace: stack-address: 0x7f314c0068c8, dht_debug-io-threads returned 0 
+[2020-09-07 09:57:29.781538] T [MSGID: 0] [marker.c:2944:marker_lookup_cbk] 0-stack-trace: stack-address: 0x7f314c0068c8, dht_debug-marker returned 0 
+[2020-09-07 09:57:29.781543] T [MSGID: 0] [defaults.c:1548:default_lookup_cbk] 0-stack-trace: stack-address: 0x7f314c0068c8, dht_debug-index returned 0 
+[2020-09-07 09:57:29.781549] T [MSGID: 0] [io-stats.c:2239:io_stats_lookup_cbk] 0-stack-trace: stack-address: 0x7f314c0068c8, /glusterfs/data2/brick returned 0 
+[2020-09-07 09:57:29.781556] D [MSGID: 101016] [glusterfs3.h:781:dict_to_xdr] 0-dict: key 'trusted.glusterfs.dht' would not be sent on wire in the future [Invalid argument]
+[2020-09-07 09:57:29.781567] D [MSGID: 101016] [glusterfs3.h:781:dict_to_xdr] 0-dict: key 'trusted.glusterfs.mdata' would not be sent on wire in the future [Invalid argument]
+[2020-09-07 09:57:29.781578] T [rpcsvc.c:1535:rpcsvc_submit_generic] 0-rpc-service: Tx message: 504
+[2020-09-07 09:57:29.781583] T [rpcsvc.c:1071:rpcsvc_record_build_header] 0-rpc-service: Reply fraglen 528, payload: 504, rpc hdr: 24
+[2020-09-07 09:57:29.781599] T [rpcsvc.c:1587:rpcsvc_submit_generic] 0-rpc-service: submitted reply for rpc-message (XID: 0x10, Program: GlusterFS 4.x v1, ProgVers: 400, Proc: 27) to rpc-transport (tcp.dht_debug-server)
+[2020-09-07 09:57:29.781635] D [client_t.c:394:gf_client_unref] (-->/usr/local/lib/glusterfs/2020.09.07/xlator/protocol/server.so(+0x3dded) [0x7f31778faded] -->/usr/local/lib/glusterfs/2020.09.07/xlator/protocol/server.so(+0xa45a) [0x7f31778c745a] -->/usr/local/lib/libglusterfs.so.0(gf_client_unref+0xe7) [0x7f318d368bc6] ) 0-client_t: CTX_ID:ca4c5b20-ce58-433b-a7a1-a5f23b561d1c-GRAPH_ID:0-PID:111693-HOST:glusterfs4-PC_NAME:dht_debug-client-1-RECON_NO:-0: ref-count 1 
+[2020-09-07 09:57:30.240288] T [MSGID: 0] [posix-helpers.c:1518:posix_janitor_task] 0-dht_debug-posix: janitor cleaning out /glusterfs/data2/brick/.glusterfs/landfill 
+[2020-09-07 09:57:30.240342] D [MSGID: 0] [posix-metadata.c:135:posix_fetch_mdata_xattr] 0-dht_debug-posix: No such attribute:trusted.glusterfs.mdata for file /glusterfs/data2/brick/.glusterfs/landfill gfid: null 
+[2020-09-07 09:57:41.257411] T [MSGID: 0] [posix-helpers.c:1518:posix_janitor_task] 0-dht_debug-posix: janitor cleaning out /glusterfs/data2/brick/.glusterfs/landfill 
+[2020-09-07 09:57:41.257516] D [MSGID: 0] [posix-metadata.c:135:posix_fetch_mdata_xattr] 0-dht_debug-posix: No such attribute:trusted.glusterfs.mdata for file /glusterfs/data2/brick/.glusterfs/landfill gfid: null 
+[2020-09-07 09:57:52.273222] T [MSGID: 0] [posix-helpers.c:1518:posix_janitor_task] 0-dht_debug-posix: janitor cleaning out /glusterfs/data2/brick/.glusterfs/landfill 
+[2020-09-07 09:57:52.273266] D [MSGID: 0] [posix-metadata.c:135:posix_fetch_mdata_xattr] 0-dht_debug-posix: No such attribute:trusted.glusterfs.mdata for file /glusterfs/data2/brick/.glusterfs/landfill gfid: null 
+[2020-09-07 09:58:02.082205] D [logging.c:1744:gf_log_flush_timeout_cbk] 0-logging-infra: Log timer timed out. About to flush outstanding messages if present
+[2020-09-07 09:58:02.082274] D [logging.c:1706:__gf_log_inject_timer_event] 0-logging-infra: Starting timer now. Timeout = 120, current buf size = 5
+[2020-09-07 09:58:03.292651] T [MSGID: 0] [posix-helpers.c:1518:posix_janitor_task] 0-dht_debug-posix: janitor cleaning out /glusterfs/data2/brick/.glusterfs/landfill 
+[2020-09-07 09:58:03.292766] D [MSGID: 0] [posix-metadata.c:135:posix_fetch_mdata_xattr] 0-dht_debug-posix: No such attribute:trusted.glusterfs.mdata for file /glusterfs/data2/brick/.glusterfs/landfill gfid: null 
+[2020-09-07 10:00:02.082874] D [logging.c:1744:gf_log_flush_timeout_cbk] 0-logging-infra: Log timer timed out. About to flush outstanding messages if present
+The message "T [MSGID: 0] [posix-helpers.c:1518:posix_janitor_task] 0-dht_debug-posix: janitor cleaning out /glusterfs/data2/brick/.glusterfs/landfill" repeated 10 times between [2020-09-07 09:58:03.292651] and [2020-09-07 09:59:53.529094]
+The message "D [MSGID: 0] [posix-metadata.c:135:posix_fetch_mdata_xattr] 0-dht_debug-posix: No such attribute:trusted.glusterfs.mdata for file /glusterfs/data2/brick/.glusterfs/landfill gfid: null" repeated 10 times between [2020-09-07 09:58:03.292766] and [2020-09-07 09:59:53.529151]
+[2020-09-07 10:00:02.082939] D [logging.c:1706:__gf_log_inject_timer_event] 0-logging-infra: Starting timer now. Timeout = 120, current buf size = 5
+[2020-09-07 10:00:04.554298] T [MSGID: 0] [posix-helpers.c:1518:posix_janitor_task] 0-dht_debug-posix: janitor cleaning out /glusterfs/data2/brick/.glusterfs/landfill 
+[2020-09-07 10:00:04.554333] D [MSGID: 0] [posix-metadata.c:135:posix_fetch_mdata_xattr] 0-dht_debug-posix: No such attribute:trusted.glusterfs.mdata for file /glusterfs/data2/brick/.glusterfs/landfill gfid: null 
