@@ -49,6 +49,7 @@ WantedBy=multi-user.target
 
 - 每个birck对应的protocol/client的实例
 ```
+// 客户端的spec信息是通过客户端的mgmt_getspec_cbk函数请求服务端获取
 //brick1对应的protocol/client的xlator
 volume dht_debug-client-0
     type protocol/client
@@ -329,7 +330,7 @@ dht_selfheal_dir_getafix
 //brick的哈希范围设置
 dht_selfheal_layout_new_directory
 ```
-- 函数功能和简单说明
+- 调用链路函数说明
   - dht_lookup
   - dht_do_fresh_lookup
   - dht_set_dir_xattr_req
