@@ -10,6 +10,10 @@ static rpcsvc_actor_t gd_svc_cli_actors[GLUSTER_CLI_MAXVALUE] = {
     [GLUSTER_CLI_CREATE_VOLUME] = {"CLI_CREATE_VOLUME",
                                    glusterd_handle_create_volume, NULL,
                                    GLUSTER_CLI_CREATE_VOLUME, DRC_NA, 0},
+    [GLUSTER_CLI_START_VOLUME] = {"START_VOLUME",
+                                  glusterd_handle_cli_start_volume, NULL,
+                                  GLUSTER_CLI_START_VOLUME, DRC_NA, 0}
+}
 ```
 
 - 创建volume的函数核心的函数都做了什么?
