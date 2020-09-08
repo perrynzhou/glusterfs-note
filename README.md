@@ -7,6 +7,11 @@
 
 
 
+## glusterfs官方issu
+- [1.doubt for dht_selfheal_layout_new_directory and trusted.glusterfs.mdata](https://github.com/gluster/glusterfs/issues/1467)
+- [2.performance bottleneck about glusterfs](https://github.com/gluster/glusterfs/issues/1462)
+
+
 ## glusterfs源码分析
 - [1.glustefs调试](./document/glusterfs/glusterfs调试.md)
 - [2.glusterfsd启动过程](./document/glusterfs/glusterfsd启动过程.md)
