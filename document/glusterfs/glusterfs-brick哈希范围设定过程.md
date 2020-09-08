@@ -104,7 +104,7 @@ end-volume
 [dht-selfheal.c:1800:dht_selfheal_layout_new_directory] 0-dht_debug-dht: gave fix: 0xaaaaaaaa - 0xfffffffe, with commit-hash 0x1 on dht_debug-client-0 for / 
 
 ```
-- 任何节点第一次挂载时候会初始化每个brick根目录("/")哈希范围,会在每个b rick目录扩展属性里面设置哈希范围，brick的哈希函数是在volume dht_debug-dht 这个xlator中设定，同时请求服务端会把brick上设置trusted.glusterfs.dht 等于哈希范围，这个相当于持久化到brick上的文件属性上。以后直接读取brick上的这个扩展属性，卷的brick的哈希范围分配是通过dht_selfheal_layout_new_directory函数来设置，这个函数是如何被触发和调用的等，下面将会介绍
+- 任何节点第一次挂载时候会初始化每个brick根目录("/")哈希范围,会在每个b rick目录扩展属性里面设置哈希范围，brick的哈希函数是在volume dht_debug-dht 这个xlator中设定，同时请求服务端会把brick上设置trusted.glusterfs.dht 等于哈希范围，这个相当于持久化到brick上的文件属性上。以后直接读取brick上的这个扩展属性，卷的brick的哈希范围分配是通过dht_selfheal_layout_new_directory函数来设置，这个函数是当目录的哈希范围和执行heal时候会被触发，下面将会介绍
 
 
 
@@ -366,6 +366,8 @@ trusted.glusterfs.mdata=0x010000000000000000000000005f561f1c000000002ed98f530000
 trusted.glusterfs.volume-id=0x33555f3d1cd541cea2e8a6fd6657a703
 ```
 
+
+  
 ### gdb调试脚本
 
 ```
@@ -417,11 +419,24 @@ set args  --acl --process-name fuse --volfile-server=172.25.78.14 --volfile-id=d
 
 
 ```
+### 关于dht_selfheal_layout_new_directory和trusted.glusterfs.mdata说明
+- The dht_selfheal_layout_new_directory call's at the time of set layout on a directory at backend.As you can see logs are throwing below messages
+
+```
+[2020-08-31 01:29:57.098180] I [MSGID: 109063] [dht-layout.c:641:dht_layout_normalize] 0-dht3-dht: Found anomalies [{path=/}, {gfid=00000000-0000-0000-0000-000000000001},
+{holes=1}, {overlaps=0}]
+[2020-08-31 01:29:57.098187] D [MSGID: 0] [dht-common.c:1325:dht_needs_selfheal] 0-dht3-dht: fixing assignment on /
+```
+
+- Once layout has been configured and volume has been mount on another client dht_lookup_dir_cbk has found the layout and it does not call the function dht_selfheal_layout_new_directory.There are other condition also when dht call's this function like when dht found the xattr needs to be heal on backend dht call's this function.
+- The xattr ( trusted.glusterfs.mdata) is specific to ctime features if ctime feature is enable the xattr has been populate on the backend. By default feature is enabled that's why you are seeing this parameter.
+
 ### 相关日志
-- [1.glusterd服务器](../../document/logs/glusterd.log)
-- [2.glusterfs客户端日志](../../document/logs/mnt-dht_debug.log)
-- [3.glusterfsd brick1日志](../../document/logs/glusterfs-data1-brick.log)
-- [4.glusterfsd brick2日志](../../document/logs/glusterfs-data2-brick.log)
-- [5.glusterfsd brick3日志](../../document/logs/glusterfs-data3-brick.log)
+- [1.doubt for dht_selfheal_layout_new_directory and trusted.glusterfs.mdata](https://github.com/gluster/glusterfs/issues/1467)
+- [2.glusterd服务器](../../document/logs/glusterd.log)
+- [3.glusterfs客户端日志](../../document/logs/mnt-dht_debug.log)
+- [4.glusterfsd brick1日志](../../document/logs/glusterfs-data1-brick.log)
+- [5.glusterfsd brick2日志](../../document/logs/glusterfs-data2-brick.log)
+- [6.glusterfsd brick3日志](../../document/logs/glusterfs-data3-brick.log)
 
 
