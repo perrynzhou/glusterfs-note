@@ -30,5 +30,5 @@
 - 性能相关
   - [performance bottleneck about glusterfs](https://github.com/gluster/glusterfs/issues/1462)
 - 使用相关 
-  - [glusterfs sharding-mount glusterfs volume, files larger than 64Mb only show 64Mb](https://github.com/gluster/glusterfs/issues/1384)
-  - [glusterfs sharding-Copying large files (with shard on) fails](https://github.com/gluster/glusterfs/issues/1474)
+  - [{features.shard}:sharding-mount glusterfs volume, files larger than 64Mb only show 64Mb](https://github.com/gluster/glusterfs/issues/1384)
+  - [{features.shard}:Copying large files (with shard on) fails](https://github.com/gluster/glusterfs/issues/1474)
