@@ -7,10 +7,6 @@
 
 
 
-## glusterfs官方issue
-- [1.doubt for dht_selfheal_layout_new_directory and trusted.glusterfs.mdata](https://github.com/gluster/glusterfs/issues/1467)
-- [2.performance bottleneck about glusterfs](https://github.com/gluster/glusterfs/issues/1462)
-
 
 ## glusterfs源码分析
 - [1.glustefs调试](./document/glusterfs/glusterfs调试.md)
@@ -24,3 +20,15 @@
 ## gluster-block使用
 - [1.gluste-block安装](./document/gluster-block/gluste-block介绍.md)
 ## gluster-block源码分析
+
+
+
+## glusterfs官方issue
+
+- 源码分析相关
+  - [doubt for dht_selfheal_layout_new_directory and trusted.glusterfs.mdata](https://github.com/gluster/glusterfs/issues/1467)
+- 性能相关
+  - [performance bottleneck about glusterfs](https://github.com/gluster/glusterfs/issues/1462)
+- 使用相关 
+  - [glusterfs sharding-mount glusterfs volume, files larger than 64Mb only show 64Mb](https://github.com/gluster/glusterfs/issues/1384)
+  - [glusterfs sharding-Copying large files (with shard on) fails](https://github.com/gluster/glusterfs/issues/1474)
