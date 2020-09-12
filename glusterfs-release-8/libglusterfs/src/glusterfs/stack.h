@@ -60,12 +60,17 @@ struct call_pool {
     struct mem_pool *stack_mem_pool;
 };
 
+// glusterfs中的请求都是以call_frame为参数进行
 struct _call_frame {
     call_stack_t *root;   /* stack root */
+    //glusterfs一个操作由很多的xlator一起完成，每个xlator处理请求都会传递call_frame作为处理函数参数
+    //parent保存上一个xlator处理请求的call_frame
     call_frame_t *parent; /* previous BP */
     struct list_head frames;
     void *local;    /* local variables */
+    //this,保存当前xlator的指针
     xlator_t *this; /* implicit object */
+    //每个xlator在当前frame中注册的操作的回调函数
     ret_fn_t ret;   /* op_return address */
     int32_t ref_count;
     gf_lock_t lock;
@@ -302,6 +307,11 @@ get_the_pt_fop(void *base_fop, int fop_idx)
         THIS = old_THIS;                                                       \
     } while (0)
 
+//glusterfs 从上一个xlator传递到下一个xlator的方式
+//frame,当前xlator处理函数的call_frame
+//rfn,当前frame的注册回调函数
+//obj,传递需要操作下一个xlator的对象
+//fn,需要传递的下一个xlator的具体调用函数，参数是在这个红定义内组装
 /* make a call */
 #define STACK_WIND(frame, rfn, obj, fn, params...)                             \
     STACK_WIND_COMMON(frame, rfn, 0, NULL, obj, fn, params)
@@ -321,6 +331,7 @@ get_the_pt_fop(void *base_fop, int fop_idx)
         xlator_t *old_THIS = NULL;                                             \
         typeof(fn) next_xl_fn = fn;                                            \
                                                                                \
+        //初始化一个新的call_frame，提供给下一个xlator处理函数fn
         _new = mem_get0(frame->root->pool->frame_mem_pool);                    \
         if (!_new) {                                                           \
             break;                                                             \
@@ -328,12 +339,17 @@ get_the_pt_fop(void *base_fop, int fop_idx)
         typeof(fn##_cbk) tmp_cbk = rfn;                                        \
         _new->root = frame->root;                                              \
         _new->this = obj;                                                      \
+        //设置新的call_frame的回调函数
         _new->ret = (ret_fn_t)tmp_cbk;                                         \
+        //设置新的call_frame的父frame
         _new->parent = frame;                                                  \
         /* (void *) is required for avoiding gcc warning */                    \
         _new->cookie = ((has_cookie == 1) ? (void *)(cky) : (void *)_new);     \
+        //字符串保存当前调用的函数名称
         _new->wind_from = __FUNCTION__;                                        \
+        //在新的call_frame保存需要执行的函数操作的函数名称
         _new->wind_to = #fn;                                                   \
+        //在新的call_frame保存当前传递进来的回调函数
         _new->unwind_to = #rfn;                                                \
         LOCK_INIT(&_new->lock);                                                \
         LOCK(&frame->root->stack_lock);                                        \
@@ -343,7 +359,9 @@ get_the_pt_fop(void *base_fop, int fop_idx)
         }                                                                      \
         UNLOCK(&frame->root->stack_lock);                                      \
         fn##_cbk = rfn;                                                        \
+        //保存当前的xlator的实例
         old_THIS = THIS;                                                       \
+        //把需要执行的xlator obj赋值给THIS
         THIS = obj;                                                            \
         gf_msg_trace("stack-trace", 0,                                         \
                      "stack-address: %p, "                                     \
@@ -362,15 +380,20 @@ get_the_pt_fop(void *base_fop, int fop_idx)
             next_xl_fn = get_the_pt_fop(&obj->pass_through_fops->stat,         \
                                         _new->op);                             \
         }                                                                      \
+        //传递新的call_frame,和obj的xlator，执行obj的操作函数
         next_xl_fn(_new, obj, params);                                         \
+        //恢复之前的xlator实例
         THIS = old_THIS;                                                       \
     } while (0)
 
 #define STACK_UNWIND STACK_UNWIND_STRICT
 
+//每个操作都是有多个xlator来处理，每个xlator是一个存在父子的图关系
+//每个xlator操作执行完毕后调用STACK_UNWIND_STRICT调用父frame的回调函数
 /* return from function in type-safe way */
 #define STACK_UNWIND_STRICT(fop, frame, op_ret, op_errno, params...)           \
     do {                                                                       \
+        //根据fop字符串获取回调函数fn
         fop_##fop##_cbk_t fn = NULL;                                           \
         call_frame_t *_parent = NULL;                                          \
         xlator_t *old_THIS = NULL;                                             \
@@ -391,7 +414,9 @@ get_the_pt_fop(void *base_fop, int fop_idx)
                          "%s returned %d",                                     \
                          frame->root, THIS->name, (int32_t)(op_ret));          \
         }                                                                      \
+        //获取当前frame的回调函数
         fn = (fop_##fop##_cbk_t)frame->ret;                                    \
+        //获取当前frame的父亲frame
         _parent = frame->parent;                                               \
         LOCK(&frame->root->stack_lock);                                        \
         {                                                                      \
@@ -405,7 +430,9 @@ get_the_pt_fop(void *base_fop, int fop_idx)
             }                                                                  \
         }                                                                      \
         UNLOCK(&frame->root->stack_lock);                                      \
+        //保存当前的xlator
         old_THIS = THIS;                                                       \
+        //设置当前的xlator对象为parant指向的xlator对象
         THIS = _parent->this;                                                  \
         frame->complete = _gf_true;                                            \
         frame->unwind_from = __FUNCTION__;                                     \
@@ -419,6 +446,7 @@ get_the_pt_fop(void *base_fop, int fop_idx)
             GF_ATOMIC_INC(THIS->stats.total.metrics[frame->op].cbk);           \
             GF_ATOMIC_INC(THIS->stats.interval.metrics[frame->op].cbk);        \
         }                                                                      \
+        //以 父frame,父frame的xlator对象等作为参数执行回调函数
         fn(_parent, frame->cookie, _parent->this, op_ret, op_errno, params);   \
         THIS = old_THIS;                                                       \
     } while (0)
