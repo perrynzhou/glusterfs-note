@@ -15,7 +15,7 @@
 - [4.哈gluster-create-volume处理过程](./document/glusterfs/gluster-create-volume处理过程.md)
 - [4.哈希卷的xlators执行链路](./document/glusterfs/哈希卷的xlator执行链路.md)
 - [5.glusterfs-brick哈希范围设定过程](./document/glusterfs/glusterfs-brick哈希范围设定过程.md)
-
+- [6.glusterfs-write调用链分析](./document/glusterfs/glusterfs-write调用链分析.md)
 
 ## gluster-block使用
 - [1.gluste-block安装](./document/gluster-block/gluste-block介绍.md)
@@ -27,6 +27,7 @@
 
 - 源码分析相关
   - [doubt for dht_selfheal_layout_new_directory and trusted.glusterfs.mdata](https://github.com/gluster/glusterfs/issues/1467)
+
 - 性能相关
   - [performance bottleneck about glusterfs](https://github.com/gluster/glusterfs/issues/1462)
 - 使用相关 
