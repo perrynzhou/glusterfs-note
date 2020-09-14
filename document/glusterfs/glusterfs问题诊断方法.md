@@ -15,7 +15,6 @@ perf report -i perf.data
 ```
 ###  glusterfs客户端进程的statedump
 
-- perf查看glusterfs函数消耗
   
 - 生成statedump信息
 ```
