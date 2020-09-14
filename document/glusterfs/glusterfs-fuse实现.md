@@ -34,6 +34,7 @@ struct fuse_out_header {
 	uint64_t	unique;
 };
 ```
+- notify_kernel_loop
 - fuse_thread_proc:该函数循环往复从/dev/fuse读取数据，然后转发给glusterfs中的mount/fuse中的函数处理
 ```
 static void *fuse_thread_proc(void *data)
