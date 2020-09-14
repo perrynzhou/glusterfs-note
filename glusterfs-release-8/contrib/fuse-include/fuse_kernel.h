@@ -673,21 +673,32 @@ struct fuse_fallocate_in {
 	uint32_t	mode;
 	uint32_t	padding;
 };
-
+//glusterfs damon读取消息是从fuse_in_header开始
 struct fuse_in_header {
+	//数据的总大小，包括了fuse_in_header大小
 	uint32_t	len;
+	//操作类型
 	uint32_t	opcode;
+	//请求的唯一标识
 	uint64_t	unique;
+	//文件系统对象的唯一标识
 	uint64_t	nodeid;
+	//发起请求的进程uid
 	uint32_t	uid;
+	//发起请求的进程gid
 	uint32_t	gid;
+	//发起请求的进程pid
 	uint32_t	pid;
 	uint32_t	padding;
 };
 
+//glusterfs处理请求结束后，处理请求回写，是从fuse_out_header开始的
 struct fuse_out_header {
+	//写入文件描述符的总大小
 	uint32_t	len;
+	//是否遇到错误，0值表示没有遇到错误
 	int32_t		error;
+	//对应请求的唯一标识
 	uint64_t	unique;
 };
 
