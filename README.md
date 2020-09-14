@@ -16,7 +16,7 @@
 - [4.哈希卷的xlators执行链路](./document/glusterfs/哈希卷的xlator执行链路.md)
 - [5.glusterfs-brick哈希范围设定过程](./document/glusterfs/glusterfs-brick哈希范围设定过程.md)
 - [6.glusterfs-write调用链分析](./document/glusterfs/glusterfs-write调用链分析.md)
-- [7.glusterfs客户端进程的statedump](./document/glusterfs/glusterfs客户端进程的statedump.md)
+- [7.glusterfs问题诊断方法](./document/glusterfs/glusterfs问题诊断方法.md)
 ## gluster-block使用
 - [1.gluste-block安装](./document/gluster-block/gluste-block介绍.md)
 ## gluster-block源码分析
