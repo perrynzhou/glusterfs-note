@@ -24,3 +24,12 @@ kill -SIGUSR1 {glusterd/glusterfsd/glusterfs-process-pod}
 //statedump保存路径
 /var/run/gluster/
 ```
+
+### 查看文件的分布式的的信息
+
+```
+# getfattr -n trusted.glusterfs.pathinfo -e text  /data/glusterfs_speech_04_v6/11085164/espnet/vivo_input2/espnet_aishell/data/train/wav.scp 
+getfattr: Removing leading '/' from absolute path names
+# file: data/glusterfs_speech_04_v6/11085164/espnet/vivo_input2/espnet_aishell/data/train/wav.scp
+trusted.glusterfs.pathinfo="(<DISTRIBUTE:speech_v6_rep_vol-dht> (<REPLICATE:speech_v6_rep_vol-replicate-1> <POSIX(/speech_v6/data2/brick):ai-storage-center-prd-10-194-39-15.v-bj-4.vivo.lan:/speech_v6/data2/brick/11085164/espnet/vivo_input2/espnet_aishell/data/train/wav.scp> <POSIX(/speech_v6/data2/brick):ai-storage-center-prd-10-194-39-7.v-bj-4.vivo.lan:/speech_v6/data2/brick/11085164/espnet/vivo_input2/espnet_aishell/data/train/wav.scp> <POSIX(/speech_v6/data2/brick):ai-storage-center-prd-10-194-39-6.v-bj-4.vivo.lan:/speech_v6/data2/brick/11085164/espnet/vivo_input2/espnet_aishell/data/train/wav.scp>))"
+```
