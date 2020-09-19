@@ -265,7 +265,7 @@ fop：下一个xaltor操作 ，用来检查附加的参数符合函数的期望
 
 #### xlator和volume说明
 
-   ![glusterfs-xlator-relation](../images/glusterfs-subvolume-relation.png)
+   ![glusterfs-xlator-relation](../images/glusterfs-subvolume-relation.jpg)
 
 
   - 每一个volume对应一个xlator的实例，每个volume包含了一个或者多个subvolume.执行的顺序和下面的打印的顺序相反
@@ -360,7 +360,7 @@ end-volume
 
 ####  追踪write操作xlator的执行路径
 
-  ![glusterfs-xlator-relation](../images/glusterfs-xlator-function-executiong-relation.png)
+  ![glusterfs-xlator-relation](../images/glusterfs-xlator-function-executiong-relation.jpg)
 
 
 - frame->parent 保存了父xlator请求的call_frame，同时frame中的ret保存了上一个xlator操作函数的回调函数地址，主要用于从这个frame通过STACK_UNWIND调用当前xlator的上一个父亲xlator的操作的回调函数
