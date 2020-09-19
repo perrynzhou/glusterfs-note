@@ -25,6 +25,14 @@ kill -SIGUSR1 {glusterd/glusterfsd/glusterfs-process-pod}
 /var/run/gluster/
 ```
 
+### 显示file的gfid挂载方式
+
+```
+[root@CentOS1 ~]$ getfattr -n glusterfs.gfid.string  /mnt/rep_test/test1
+getfattr: Removing leading '/' from absolute path names
+# file: mnt/rep_test/test1
+glusterfs.gfid.string="b85f1ece-7d38-41c6-873d-79a4b14f99f4"
+```
 ### 查看文件的分布式的的信息
 
 ```
