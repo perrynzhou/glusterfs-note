@@ -6,19 +6,17 @@
 - 梳理glusterfs中的哈希卷、副本卷、EC卷的读写过程
 
 
-
-
 ## glusterfs源码分析
 - [1.glustefs调试](./document/glusterfs/glusterfs调试.md)
 - [2.glusterfsd启动过程](./document/glusterfs/glusterfsd启动过程.md)
 - [3.glusterfs客户端挂载init流程](./document/glusterfs/glusterfs客户端挂载init流程.md)
 - [4.哈gluster-create-volume处理过程](./document/glusterfs/gluster-create-volume处理过程.md)
-- [4.哈希卷的xlators执行链路](./document/glusterfs/哈希卷的xlator执行链路.md)
-- [5.glusterfs-brick哈希范围设定过程](./document/glusterfs/glusterfs-brick哈希范围设定过程.md)
-- [6.glusterfs-write调用链分析](./document/glusterfs/glusterfs-write调用链分析.md)
-- [7.glusterfs问题诊断方法](./document/glusterfs/glusterfs问题诊断方法.md)
-- [8.glusterfs-fuse实现(持续更新)](./document/glusterfs/glusterfs-fuse实现.md)
-- [9.cluster.read-hash-mode工作原理(持续更新)](./document/glusterfs/cluster.read-hash-mode工作原理.md)
+- [5.glusterfs架构和基本概念](./document/glusterfs/glusterfs架构和基本概念.md)
+- [6.glusterfs-brick哈希范围设定过程](./document/glusterfs/glusterfs-brick哈希范围设定过程.md)
+- [7.glusterfs-write调用链分析](./document/glusterfs/glusterfs-write调用链分析.md)
+- [8.glusterfs问题诊断方法](./document/glusterfs/glusterfs问题诊断方法.md)
+- [9.glusterfs-fuse实现(持续更新)](./document/glusterfs/glusterfs-fuse实现.md)
+- [10.cluster.read-hash-mode工作原理(持续更新)](./document/glusterfs/cluster.read-hash-mode工作原理.md)
 
 ## gluster-block使用
 - [1.gluste-block安装](./document/gluster-block/gluste-block介绍.md)
