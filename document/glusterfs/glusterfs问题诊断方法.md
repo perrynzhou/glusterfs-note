@@ -13,6 +13,34 @@ perf record -e cpu-clock -g -p 112547
 //分析采集到的数据
 perf report -i perf.data
 ```
+
+### glusterd的service模式配置
+
+```
+glusterd --log-level TRACE
+```
+```
+[root@glusterfs4 ~]# cat  /usr/lib/systemd/system/glusterd.service
+[Unit]
+Description=GlusterFS, a clustered file-system server
+Documentation=man:glusterd(8)
+Requires=
+After=network.target 
+Before=network-online.target
+
+[Service]
+Type=forking
+PIDFile=/var/run/glusterd.pid
+LimitNOFILE=65536
+Environment="LOG_LEVEL=INFO"
+EnvironmentFile=-/etc/sysconfig/glusterd
+ExecStart=/usr/local/sbin/glusterd -p /var/run/glusterd.pid  --log-level TRACE  $GLUSTERD_OPTIONS
+KillMode=process
+SuccessExitStatus=15
+
+[Install]
+WantedBy=multi-user.target
+```
 ###  glusterfs客户端进程的statedump
 
   
