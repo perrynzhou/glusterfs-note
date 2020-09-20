@@ -17,8 +17,8 @@
 - [5.glusterfs-brick哈希范围设定过程](./document/glusterfs/glusterfs-brick哈希范围设定过程.md)
 - [6.glusterfs-write调用链分析](./document/glusterfs/glusterfs-write调用链分析.md)
 - [7.glusterfs问题诊断方法](./document/glusterfs/glusterfs问题诊断方法.md)
-- [8.glusterfs-fuse实现](./document/glusterfs/glusterfs-fuse实现.md)
-
+- [8.glusterfs-fuse实现(持续更新)](./document/glusterfs/glusterfs-fuse实现.md)
+- [9.cluster.read-hash-mode工作原理(持续更新)](./document/glusterfs/cluster.read-hash-mode工作原理.md)
 
 ## gluster-block使用
 - [1.gluste-block安装](./document/gluster-block/gluste-block介绍.md)
