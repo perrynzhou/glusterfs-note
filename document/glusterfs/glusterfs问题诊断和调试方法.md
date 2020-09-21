@@ -1,6 +1,22 @@
 
 
 # glusterfs问题诊断方法
+
+### glusterfs设置进程的调试级别
+
+```
+glusterd --log-level TRACE
+
+gluster volume set dht_debug  diagnostics.client-log-level TRACE
+gluster volume set dht_debug diagnostics.brick-log-level TRACE
+```
+### glusterfs二进制调试方法
+
+```
+$ gdb /usr/local/sbin/glusterfs 
+$ set args --acl --process-name fuse --volfile-server=10.193.189.153 --volfile-id=rep3_vol /mnt/rep3_vol
+$ br main
+```
 ### perf查看gluterfs相关进程函数
 
 ```
@@ -40,6 +56,9 @@ SuccessExitStatus=15
 
 [Install]
 WantedBy=multi-user.target
+
+
+[root@glusterfs4 ~]# systemctl daemon-reload
 ```
 ###  glusterfs客户端进程的statedump
 
@@ -56,7 +75,9 @@ kill -SIGUSR1 {glusterd/glusterfsd/glusterfs-process-pod}
 ### 显示file的gfid挂载方式
 
 ```
-[root@CentOS1 ~]$ getfattr -n glusterfs.gfid.string  /mnt/rep_test/test1
+$ mount -t glusterfs -o aux-gfid-mount vm1:test /mnt/testvol
+
+$ getfattr -n glusterfs.gfid.string  /mnt/rep_test/test1
 getfattr: Removing leading '/' from absolute path names
 # file: mnt/rep_test/test1
 glusterfs.gfid.string="b85f1ece-7d38-41c6-873d-79a4b14f99f4"
