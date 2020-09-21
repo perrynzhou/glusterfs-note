@@ -1,6 +1,4 @@
-# glusterfs-note 
-
-- 是glusterfs源码的阅读笔记
+# glusterfs-note 阅读笔记
 
 ## 目标
 
@@ -12,7 +10,7 @@
 - [1.glustefs调试](./document/glusterfs/glusterfs调试.md)
 - [2.glusterfsd启动过程](./document/glusterfs/glusterfsd启动过程.md)
 - [3.glusterfs客户端挂载init流程](./document/glusterfs/glusterfs客户端挂载init流程.md)
-- [4.gluster-create-volume处理过程](./document/glusterfs/gluster-create-volume处理过程.md)
+- [4.哈gluster-create-volume处理过程](./document/glusterfs/gluster-create-volume处理过程.md)
 - [5.glusterfs架构和基本概念](./document/glusterfs/glusterfs架构和基本概念.md)
 - [6.glusterfs-brick哈希范围设定过程](./document/glusterfs/glusterfs-brick哈希范围设定过程.md)
 - [7.glusterfs-write调用链分析](./document/glusterfs/glusterfs-write调用链分析.md)
