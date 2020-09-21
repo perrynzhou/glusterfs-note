@@ -5,6 +5,16 @@
 - glusterfs的架构设计
 - 梳理glusterfs中的哈希卷、副本卷、EC卷的读写过程
 
+## 文章中的图片无法显示问题解决
+
+```
+1.打开https://www.ipaddress.com/网址
+2.查询 raw.githubusercontent.com 域名对应的ip
+3.修改C:\Windows\System32\drivers\etc\hosts文件追加如下内容
+  199.232.68.133 githubusercontent.com
+  199.232.68.133 raw.githubusercontent.com
+4.刷新windows的dns，即可访问文章中的图片
+```
 
 ## glusterfs源码分析
 - [1.glustefs调试](./document/glusterfs/glusterfs调试.md)
