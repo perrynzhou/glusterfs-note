@@ -1,4 +1,4 @@
-#  glusterfs-note 阅读笔记
+#  glusterfs源码的阅读笔记
 
 ## 目标
 
