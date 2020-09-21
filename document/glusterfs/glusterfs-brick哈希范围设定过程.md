@@ -87,7 +87,8 @@ end-volume
 
 - glusterfs哈希计算是在cluster/dht中，这个xlator是被加载到glusterfs(客户端上),重点查看客户端的日志,发现有对应的函数为"/“目录的设置对应的哈希范围
 ```
-//
+//如下日志需要调试glusterfs mount过程，可以详细看到每个brick("/")以及“/”目录下新建目录的哈希设定过过程
+//afr/ec的的目录哈希的设置都是基于dht
 
 [client-rpc-fops_v2.c:2633:client4_0_lookup_cbk] 0-stack-trace: stack-address: 0x2b1fa00011e8, dht_debug-client-1 returned 0 
 [dht-common.c:1382:dht_lookup_dir_cbk] 0-dht_debug-dht: /: lookup on dht_debug-client-1 returned with op_ret = 0, op_errno = 0 
