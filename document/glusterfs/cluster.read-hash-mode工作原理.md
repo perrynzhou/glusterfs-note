@@ -94,32 +94,120 @@ int afr_hash_child(afr_read_subvol_args_t *args, afr_private_t *priv,
 
 #### 调用链函数说明
 
+#####  调用函数关系链
 ```
 //按照从下往上的顺序调用，下面每一个xxx_lookup函数对应volume关系的xlator实例中的lookup函数，这里不多赘述
 (gdb) bt
-#0  afr_hash_child  
-#1  afr_read_subvol_select_by_policy 
-#2  afr_read_subvol_get 
-#3  afr_discover 
-#4  afr_lookup
-#5  dht_do_revalidate 
-#6  dht_lookup 
-#7  gf_utime_lookup 
-#8  wb_lookup
-#9  default_lookup
-#10 default_lookup
-#11 qr_lookup
-#12 mdc_lookup
-#13 io_stats_lookup
-#14 ga_lookup
-#15 default_lookup
-#16 meta_lookup 
-#17 fuse_getattr 
-#18 fuse_dispatch 
-#19 gf_async 
-#20 fuse_thread_proc 
+br client4_0_lookup 
+br client_lookup 
+br afr_discover_do
+br afr_discover 
+br afr_lookup (
+br dht_do_revalidate
+br dht_lookup 
+br gf_utime_lookup
+br wb_lookup 
+br default_lookup 
+br default_lookup 
+br qr_lookup 
+br mdc_lookup 
+br io_stats_lookup 
+br ga_lookup 
+br default_lookup 
+br meta_lookup 
+br fuse_getattr 
+br fuse_dispatch 
+br gf_async
+br fuse_thread_proc
 ```
 
+
+##### 函数功能说明
+
+
+- dht_lookup:该函数根据方位目录名称计算哈希值然后选择哪一个subvolume类型的rep_vol-replicate-xxx。比如这里选择了rep_vol-replicate-0,依次处理rep_vol-replicate-0的subvolume
+```
+
+int dht_lookup(call_frame_t *frame, xlator_t *this, loc_t *loc, dict_t *xattr_req)
+{
+	//根据访问的名称计算哈希,选择文件的layout
+	dht_subvol_get_hashed(this, loc);
+	dht_do_revalidate(call_frame_t *frame, xlator_t *this, loc_t *loc)
+	{
+	
+		//获取到rep_vol-replicate-xxx的subvolume,针对subvolume的xlator调用conf->subvolumes[i]->fops->lookup,这里对应afr_lookup
+        for (i = 0; i < call_cnt; i++) {
+            STACK_WIND_COOKIE(frame, dht_revalidate_cbk, conf->subvolumes[i],
+                              conf->subvolumes[i],
+                              conf->subvolumes[i]->fops->lookup, loc,
+                              local->xattr_req);
+        }
+	}
+	//注册dht_lookup回调函数
+	STACK_WIND_COOKIE(frame, dht_lookup_cbk, hashed_subvol, hashed_subvol, hashed_subvol->fops->lookup, loc, local->xattr_req);
+}
+```
+- afr_lookup:该函数根据方位目录名称计算哈希值然后选择哪一个subvolume类型的rep_vol-replicate-xxx。比如这里选择了rep_vol-replicate-0,依次处理rep_vol-replicate-0的subvolume
+
+```
+int afr_lookup(call_frame_t *frame, xlator_t *this, loc_t *loc, dict_t *xattr_req) {
+	afr_read_subvol_get(loc->parent, this, NULL, NULL, &event,AFR_DATA_TRANSACTION, NULL)
+    {
+       afr_read_subvol_select_by_policy(inode, this, intersection,args)
+       {
+       		afr_hash_child(&local_args, priv, readable)
+       }
+    }
+    afr_lookup_do(frame, this, 0)
+    {
+    	/*
+    	  获取afr_lookup_do函数参数xlator信息和当前xlator的children的xlator信息
+    	 (gdb) p priv->children[0]->name
+		 $56 = 0x2ab7b80099b0 "rep_vol-client-0"
+		 (gdb) p priv->children[1]->name
+ 		 $57 = 0x2ab7b800b560 "rep_vol-client-1"
+		 (gdb) p priv->children[2]->name
+		 $58 = 0x2ab7b800e150 "rep_vol-client-2"
+		 (gdb) p this->name
+		 $59 = 0x2ab7b80214e0 "rep_vol-replicate-0"
+		//这里的 priv->children[i]->fops->lookup 对应的是rep_vol-client-xxx的xlator的client_lookup
+		 (gdb) p priv->children[i]->fops->lookup
+		 $60 = (fop_lookup_t) 0x2ab7b6c081e7 <client_lookup>
+		*/
+    	for (i = 0; i < priv->child_count; i++) {
+        if (local->child_up[i]) {
+        	//执行下一个xlator的逻辑，这里和客户端日志中的final graph中的volume对应起来，通知注册afr_lookup回调函数，注册到frame->parent->ret
+            STACK_WIND_COOKIE( frame, afr_lookup_cbk, (void *)(long)i, priv->children[i], priv->children[i]->fops->lookup, &local->loc, local->xattr_req);
+    	}
+    }
+}
+```
+- client_lookup:该函数属于protocol/client的xlator,也是最终把请求提交到服务端的函数，这个函数里面有一个回调函数，这个回调函数是client4_0_lookup，最终的lookup的链路上回调函数按照frame->parent->ret一层一层的回调回去，这个lookup操作就完成了
+```
+static int32_t client_lookup(call_frame_t *frame, xlator_t *this, loc_t *loc, dict_t *xdata)
+{
+	 /*
+	 (gdb) p proc
+	 $61 = (rpc_clnt_procedure_t *) 0x2ab7b6e97eb0 <clnt4_0_fop_actors+432>
+	 (gdb) p proc->fn
+	 $62 = (clnt_fn_t) 0x2ab7b6c6f740 <client4_0_lookup>
+	*/
+	  proc = &conf->fops->proctable[GF_FOP_LOOKUP];
+      if (proc->fn) {
+        ret = proc->fn(frame, this, &args);
+       }
+       STACK_UNWIND_STRICT(lookup, frame, -1, ENOTCONN, NULL, NULL, NULL, NULL);
+}
+int32_t client4_0_lookup(call_frame_t *frame, xlator_t *this, void *data)
+{
+	//在client4_0_lookup_cbk中在每一层中调用frame->parent->ret的注册的链路上的lookup的回调函数
+ 	ret = client_submit_request(this, &req, frame, conf->fops, GFS3_OP_LOOKUP,  client4_0_lookup_cbk, &cp,(xdrproc_t)xdr_gfx_lookup_req);
+ 	
+}
+
+
+```
+- 执行这个lookup核心链路: dht_look  --> afr_lookup --> client4_0_lookup;回调执行链路:client4_0_lookup_cbk -->  afr_lookup_cbk  -->  dht_lookup_cbk
 
 ####  replicat 卷的volume层级关系
 - volume对应的xlator调用关系
