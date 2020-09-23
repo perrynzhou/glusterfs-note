@@ -76,9 +76,11 @@ int afr_hash_child(afr_read_subvol_args_t *args, afr_private_t *priv,
             }
             child = SuperFastHash((char *)gfid_copy, sizeof(gfid_copy))%priv->child_count;
             break;
+        //选择一个读操作最少的一个subvolume
         case AFR_READ_POLICY_LESS_LOAD:
             child = afr_least_pending_reads_child(priv, readable);
             break;
+        //选择网络延迟最小的volume
         case AFR_READ_POLICY_LEAST_LATENCY:
             child = afr_least_latency_child(priv, readable);
             break;
