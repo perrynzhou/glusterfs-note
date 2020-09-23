@@ -76,18 +76,37 @@ int afr_hash_child(afr_read_subvol_args_t *args, afr_private_t *priv,
             }
             child = SuperFastHash((char *)gfid_copy, sizeof(gfid_copy))%priv->child_count;
             break;
+        //选择一个读事务最少的一个subvolume
         case AFR_READ_POLICY_LESS_LOAD:
             child = afr_least_pending_reads_child(priv, readable);
             break;
+        //选择网络延迟最小的volume
         case AFR_READ_POLICY_LEAST_LATENCY:
             child = afr_least_latency_child(priv, readable);
             break;
+        //这个策略不明白为啥会用child的当前read回调函数次数 * child延迟，来选择最小的，具体的依据是什么？官方也没有一个定论
         case AFR_READ_POLICY_LOAD_LATENCY_HYBRID:
             child = afr_least_latency_times_pending_reads_child(priv, readable);
             break;
     }
 
     return child;
+}
+static int32_t afr_least_latency_times_pending_reads_child(afr_private_t *priv,unsigned char *readable)
+{
+
+    for (i = 0; i < priv->child_count; i++) {
+	//pending_reads代表当前volume的subvolume中read回调函数的总数
+	//priv->child_latency[i]代表当前subvolume延迟最小的,这个值会在afr_notify中设置
+    pending_read = GF_ATOMIC_GET(priv->pending_reads[i]);
+    latency = (pending_read + 1) * priv->child_latency[i];
+
+        if (child == -1 || latency < least_latency) {
+            least_latency = latency;
+            child = i;
+        }
+    }
+            return child;
 }
 
 ```
