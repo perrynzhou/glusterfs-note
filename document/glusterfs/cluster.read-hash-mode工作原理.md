@@ -1,7 +1,13 @@
-### cluster.read-hash-mode工作原理
+### cluster.read-hash-mode工作原模式分析
 
+| author | update |
+| ------ | ------ | 
+| perrynzhou@gmail.com | 2020/09/24 | 
 
-
+#### 总结
+-  read-hash-mode的意义在于能否提供IO的负载均衡，尤其是在多副本的情况，能减少IO的争用，提供更好的IOPS能力，read-hash-mode取值范围在0~5，每个值的设定会影响客户端挂载的IOPS能力。接下来分别read-hash-mode参数说明,0代表用户的IO请求存储端的生命中内选择第一个提供文件服务；1代表根据用户的文件的唯一标识gfid(内部是一个uuid的字符串)，粗暴的进行计算哈希然后针对副本卷的brick数进行取模，选择一个后端brick提供服务;2是代表挂载节点的fuse进程计算哈希然后针对副本卷的brick数取模，选择一个后端brick提供服务;3选择选择后端brick的读事务最小的提供服务;4是针对brick服务的网络延迟评估最小的延迟提供服务。5是结合网络延迟和读事务综合选择brick提供服务(内测)；
+-  read-hash-mode在数据分散很均匀的情况(一致性哈希保证)，设定为1的效果比较好，能达到IO请求比较均衡效果；0和2据测试会选择比较固定的brick。3和4属于glusterfs功能和试验阶段的参数值(内部统计不是很精确)。在我们大规模使用情况下尽量选择1的模式
+-  read-hash-mode这个算法也存在一定的缺陷，就是1和2，如果数据集中到某一个brick,那么提供服务的brick也会固定，一份数据的剩余副本不能提供服务，请求集中到某一个brick很容易把磁盘的IO打满。已经给官方提供issue,建议使用一致性哈希算法，能保证每个brick的处理请求数量均衡
 ####  read-hash-mode参数说明
 ```
 [root@CentOS1 ~]$ gluster volume set help |grep cluster.read-hash-mode -A7

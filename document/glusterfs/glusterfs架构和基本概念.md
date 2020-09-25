@@ -1,4 +1,7 @@
 
+| author | update |
+| ------ | ------ |
+| perrynzhou@gmail.com | 2020/09/24 |
 
 ## 架构介绍
   ![glusterfs-arc](../images/archtector.jpg)

@@ -1,6 +1,10 @@
 
 ## glusterfs brick哈希范围设定过程
 
+| author | update |
+| ------ | ------ |
+| perrynzhou@gmail.com | 2020/09/24 |
+
 ### 调试环境
 
 - 测试卷的部署

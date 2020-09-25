@@ -1,8 +1,8 @@
----
-title: glusterfsd启动过程
-date: 2020-04-16 17:11:54
-tags:
----
+### glusterfsd启动都经历了什么
+| author | update |
+| ------ | ------ |
+| perrynzhou@gmail.com | 2020/09/24 |
+
 ###### 0.存在的疑惑
 - glusterd启动后怎么把glusterfsd的brick进程拉起来？
 - glusterfsd启动的参数从哪里获取？
