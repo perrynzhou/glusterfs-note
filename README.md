@@ -1,5 +1,9 @@
 #  glusterfs源码的阅读笔记
 
+| author | update |
+| ------ | ------ |
+| perrynzhou@gmail.com | 2020/05/24 |
+
 ## 目标
 
 - glusterfs的架构设计
@@ -17,6 +21,7 @@
 ```
 
 ## glusterfs源码分析
+- [0.glustefs 101](./document/glusterfs101-courses)
 - [1.glustefs调试](./document/glusterfs/glusterfs调试.md)
 - [2.glusterfsd启动过程](./document/glusterfs/glusterfsd启动过程.md)
 - [3.glusterfs客户端挂载init流程](./document/glusterfs/glusterfs客户端挂载init流程.md)
