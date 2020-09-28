@@ -1,4 +1,9 @@
 ## 涉及到基本命令处理的源文件
+
+| author | update |
+| ------ | ------ |
+| perrynzhou@gmail.com | 2020/09/24 |
+
 - rpc/rpc-lib/src/protocol-common.h:定义了cli命令的一些枚举变量，包括了gluster_cli_procnum、glusterd_mgmt_procnum、glusterd_brick_procnum等
 - xlators/mgmt/glusterd/glusterd-handler.c:定义gd_svc_cli_actors、gd_svc_cli_trusted_actors，来针对客户端cli请求的处理rpcsvc_program数组，glusterd这些protocol-common中定义的枚举作为这些d_svc_cli_actors、gd_svc_cli_trusted_actors下标，数组中每一个rpcsvc_actor_t对应cli处理的一个函数
 

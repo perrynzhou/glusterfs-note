@@ -1,6 +1,8 @@
 ### Debug Glusterfs
 
-
+| author | update |
+| ------ | ------ |
+| perrynzhou@gmail.com | 2020/09/24 |
 
 #### Download source
 

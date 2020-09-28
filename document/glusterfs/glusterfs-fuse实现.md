@@ -1,5 +1,9 @@
 ## glusterfs fuse实现
 
+| author | update |
+| ------ | ------ |
+| perrynzhou@gmail.com | 2020/09/24 |
+
 ### glusterfs-fuse模块请求流转
 
 - fuse是一个简单的C/S协议，由两部分组成，一部分是linux kernel，另外一部分是文件系统的daemon;在glusterfs中linux kernel是作为客户端(mount端)，glusterfs daemon作为服务端从/dev/fuse写入和读取数据，发送到远端的glusterfsd提供文件操作的相关服务

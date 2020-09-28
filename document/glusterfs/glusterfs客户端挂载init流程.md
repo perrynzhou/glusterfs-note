@@ -1,9 +1,11 @@
----
-title: glusterfs客户端挂载init流程
-date: 2020-05-26 21:27:16
-tags:
----
 #### Glusterfs 原理
+
+
+| author | update |
+| ------ | ------ |
+| perrynzhou@gmail.com | 2020/09/24 |
+
+
 **Glusterfs 基本原理**
 	Glusterfs 是基于fuse的分布式存储，功能上支持分布式/3副本/EC三种存储方式。Glusterfs采用堆栈式的架构设计，服务端和客户端采用translator.
 	GlusterFS概念中，由一系列translator构成的完整功能栈称之为Volume，分配给一个volume的本地文件系统称为brick，被至少一个translator处理过的brick称为subvolume。客户端是由于volume类型来加载对应的translator，服务端也是一样，根据不同的volume的类型加载translator。客户端(glusterfs)通过挂载时候提供节点IP地址，很对应节点的服务端管理进程通信，获取brick源信息、客户单需要加载的配置，客户端根据配置初始化xlator，后续IO的流程按照xlator的顺序经过每个xlator的fop函数，然后直接和对应的glusterfsd的进程交互IO操作。glusterfsd也是一样，根据服务端配置文件，初始化服务端需要加载xlator，进行每个xlator的fop的操作，最终执行系统IO函数进行IO操作。节点的管理服务(glusterd),仅仅加载一个管理的xlator,处理来自glusterfs/gluster的请求，不会处理对应的IO操作操作。

@@ -2,6 +2,10 @@
 
 # glusterfs问题诊断方法
 
+| author | update |
+| ------ | ------ |
+| perrynzhou@gmail.com | 2020/09/24 |
+
 ### glusterfs设置进程的调试级别
 
 ```
