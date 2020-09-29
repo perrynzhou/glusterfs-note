@@ -20,6 +20,10 @@
 4.刷新windows的dns，即可访问文章中的图片
 ```
 
+## glusterfs代码提交流程
+- [glustefs代码提交流程](./document/glusterfs/glusterfs代码提交流程.md)
+
+  
 ## glusterfs源码分析
 - [0.glustefs 101](./document/glusterfs101-courses)
 - [1.glustefs调试](./document/glusterfs/glusterfs调试.md)
