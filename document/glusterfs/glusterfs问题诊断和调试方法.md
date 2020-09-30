@@ -6,6 +6,15 @@
 | ------ | ------ |
 | perrynzhou@gmail.com | 2020/09/24 |
 
+### 查看进程D状态
+- 进程D状态，一般是进程等待IO，处于D状态的进程是无法kill，只能reboot机器才能解决，如何查看进程处于D状态，按照如下方法
+```
+$ ps -eo ppid,pid,user,stat,pcpu,comm,wchan:32
+
+
+//这个命令可以把D状态的进程的内核栈信息trace到/var/log/messages中
+$ echo w > /proc/sysrq-trigger
+```
 ### glusterfs设置进程的调试级别
 
 ```
