@@ -14,9 +14,22 @@ git clone https://github.com/gluster/glusterfs.git
 
 #### Install Deps
 
-- centos
+- centos7
 ```
 yum install autoconf automake bison cmockery2-devel dos2unix flex fuse-devel glib2-devel libacl-devel libaio-devel libattr-devel libcurl-devel libibverbs-devel librdmacm-devel libtirpc-devel libtool libxml2-devel lvm2-devel make openssl-devel pkgconfig pyliblzma python-devel python-eventlet python-netifaces libxml2-devel python-paste-deploy python-simplejson python-sphinx python-webob pyxattr readline-devel rpm-build sqlite-devel systemtap-sdt-devel tar userspace-rcu-devel openssl-devel  -y
+```
+- centos8
+
+```
+yum -y install gcc gcc-c++ make expat-devel autoconf automake libtool flex expat-devel bison openssl-devel ibuuid-devel libacl-devel libxml2-devel libtirpc-devel gcc gcc-c++ make expat-devel autoconf automake libtool rdma-core-devel readline-devel libaio-devel python3
+
+wget https://github.com/thkukuk/rpcsvc-proto/releases/download/v1.4/rpcsvc-proto-1.4.tar.gz && tar -xf rpcsvc-proto-1.4.tar.gz
+&& cd rpcsvc-proto-1.4 &&./configure
+
+wget https://github.com/urcu/userspace-rcu/archive/v0.7.16.tar.gz -O userspace-rcu-0.7.16.tar.gz
+tar -xf userspace-rcu-0.7.16.tar.gz  && cd userspace-rcu-0.7.16 && ./bootstrap && ./configure && make &&make install
+find /usr/ -name \*liburcu-bp.so\*
+echo '/usr/local/lib' > /etc/ld.so.conf.d/userspace-rcu.conf
 ```
 - debian
 
@@ -30,7 +43,7 @@ yum install autoconf automake bison cmockery2-devel dos2unix flex fuse-devel gli
 ```shell
 # cd glusterfs-6.5
 # ./autogen.sh
-#CFLAGS="-ggdb3 -O0"  ./configure  --enable-debug --enable-gnfs  --without-libtirpc 
+#CFLAGS="-ggdb3 -O0"  ./configure  --enable-debug --enable-gnfs 
 # make -j4
 # make install
 ```
