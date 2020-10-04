@@ -21,7 +21,7 @@ yum install autoconf automake bison cmockery2-devel dos2unix flex fuse-devel gli
 - centos8
 
 ```
-yum -y install gcc gcc-c++ make expat-devel autoconf automake libtool flex expat-devel bison openssl-devel ibuuid-devel libacl-devel libxml2-devel libtirpc-devel gcc gcc-c++ make expat-devel autoconf automake libtool rdma-core-devel readline-devel libaio-devel python3
+yum -y install gcc gcc-c++ make expat-devel autoconf automake libtool flex expat-devel bison openssl-devel ibuuid-devel libacl-devel libxml2-devel libtirpc-devel gcc gcc-c++ make expat-devel autoconf automake libtool rdma-core-devel readline-devel libaio-devel python3 rpcbind
 
 wget https://github.com/thkukuk/rpcsvc-proto/releases/download/v1.4/rpcsvc-proto-1.4.tar.gz && tar -xf rpcsvc-proto-1.4.tar.gz
 && cd rpcsvc-proto-1.4 &&./configure
