@@ -1,0 +1,34 @@
+gluster-block release 0.5.1 is tagged.
+
+This is a security and bugfix release.
+
+An information-disclosure flaw was found in the way gluster-block logs
+sensitive information. This flaw allows an attacker with access to the
+gluster-block logs to read potentially sensitive information, such as
+the CHAP passwords for block volumes.
+
+When tuned to debug log-level, gluster-block captutures the targetcli exec
+commands output at gluster-blockd.log which might contain sensitive details.
+Also block volume create/modify/info cli command outputs might contain
+sensitive information, as part of the audit logging these outputs will be
+captured at cmd_history.log and gluster-blockd.log (CVE-2020-10762)
+
+Administrators may want to check old logs for gluster-block passwords if they
+created block volumes with CHAP authentication enabled. Restrict access or
+remove old logs that retain the passwords.
+
+The flaw was discovered and fixed by Prasanna Kumar Kalever of Red Hat.
+Refer: https://access.redhat.com/security/cve/CVE-2020-10762
+
+Notable Fixes:
+--------------
+* Fix CVE-2020-10762
+* Fix delete failures when backend file is absent
+* Add logo for gluster-block project
+
+Read more at [1] and [2]
+
+[1] https://github.com/gluster/gluster-block/blob/master/README.md
+[2] https://github.com/gluster/gluster-block/blob/master/INSTALL
+
+Cheers!

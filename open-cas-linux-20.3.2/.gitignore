@@ -1,0 +1,17 @@
+.*
+!\.gitignore
+*.bak
+*.log
+*.o
+*.so
+*.ko
+*.ko.*
+*.obj
+*.a
+Module.symvers
+Module.markers
+*.mod.c
+modules.order
+__pycache__/
+*.py[cod]
+*$py.class

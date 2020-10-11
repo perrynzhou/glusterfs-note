@@ -1,0 +1,1 @@
+SUBDIRS = auth client server

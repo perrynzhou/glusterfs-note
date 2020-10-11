@@ -1,0 +1,12 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+
+Name: libgfchangelog
+Description: GlusterFS Changelog Consumer Library
+Version: @LIBGFCHANGELOG_VERSION@
+Requires: @PKGCONFIG_UUID@
+Libs: -L${libdir} -lgfchangelog -lglusterfs
+Cflags: -I${includedir} -D_FILE_OFFSET_BITS=64 -D__USE_FILE_OFFSET64 -D__USE_LARGEFILE64
