@@ -1,5 +1,0 @@
----
-- name: gluster peer probe
-  shell: gluster peer probe {{ item }}
-  with_items: "{{ peer_nodes | default([]) }}"
-

@@ -1,3 +1,0 @@
-SUBDIRS = src lib
-
-CLEANFILES =
