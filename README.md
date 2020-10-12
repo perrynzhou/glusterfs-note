@@ -42,7 +42,14 @@
 ## gluster-block源码分析
 
 
+## glusterfs贡献的pr
 
+- [glusterfs read-hash-mode的bug](https://github.com/gluster/glusterfs/commit/268faabed00995537394c04ac168c018167fbe27)
+
+## glusterfs 运维
+
+- [too many files引起glusterfsd crash](./document/glusterfs/glusterfsd出现crash的分析和总结.md)
+  
 ## glusterfs官方issue
 
 - 源码分析相关
