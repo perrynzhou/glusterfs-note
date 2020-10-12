@@ -85,7 +85,23 @@ nfs.disable: on
   [2020-10-10 09:22:56.913949] M [MSGID: 113075] [posix-helpers.c:2203:posix_health_check_thread_proc] 0-sharing_vol-posix: still alive! -> SIGTERM 
   ```
 
-  
+
+- glusterfsd进程打开的文件描述文件信息和限制
+
+//crash重启之后查看文件描述符的信息
+```
+# ps -ef|grep 169810
+root     107496 175632  0 16:21 pts/1    00:00:00 grep --color=auto 169810
+root     169810      1  7 Oct10 ?        03:17:25 /usr/sbin/glusterfsd -s 10.194.8.132 --volfile-id sharing_vol.10.194.8.132.data11-brick_sharing_vol -p /var/run/gluster/vols/sharing_vol/10.194.8.132-data11-brick_sharing_vol.pid -S /var/run/gluster/4db36e75931c2470.socket --brick-name /data11/brick_sharing_vol -l /var/log/glusterfs/bricks/data11-brick_sharing_vol.log --xlator-option *-posix.glusterd-uuid=e4abe33a-6b84-4b55-becf-c6354afa0926 --process-name brick --brick-port 49158 --xlator-option sharing_vol-server.listen-port=49158
+
+# ls /proc/169810/fd |wc -l
+849
+
+[root@ai-storage-center-prd-10-194-8-132.v-bj-4.vivo.lan:/root]
+# grep open  /proc/169810/limits
+Max open files            1048576              1048576              files   
+```
+
 
 - 后端glusterfsd进程的Crash的本质原因
 
@@ -97,5 +113,5 @@ nfs.disable: on
   - 不排除当前glusterfsd在处理IO流程的时候，出现了资源泄露，目前在和官方讨论这个问题
 
 - 解决方法
-	- 需要找到too many files的本质原因，然后解决掉即可
+	- 需要找到too many files的本质原因，如果是资源泄露需要定位在那个xlator调用过程中出现，然后解决掉即可。如果是超过了glusterfsd的进程打开最大文件描述符的上线，则需要调整进程打开最大文件描述符的上线。
 	- glusterfsd heal check的检查机制有些粗暴，后续可以考虑更加优雅的方法来判断具体是那种情况
