@@ -6,6 +6,21 @@
 | ------ | ------ |
 | perrynzhou@gmail.com | 2020/09/24 |
 
+
+### 查看进程文件描述符
+
+```
+# ps -ef|grep 169810
+root     107496 175632  0 16:21 pts/1    00:00:00 grep --color=auto 169810
+root     169810      1  7 Oct10 ?        03:17:25 /usr/sbin/glusterfsd -s 10.194.8.132 --volfile-id sharing_vol.10.194.8.132.data11-brick_sharing_vol -p /var/run/gluster/vols/sharing_vol/10.194.8.132-data11-brick_sharing_vol.pid -S /var/run/gluster/4db36e75931c2470.socket --brick-name /data11/brick_sharing_vol -l /var/log/glusterfs/bricks/data11-brick_sharing_vol.log --xlator-option *-posix.glusterd-uuid=e4abe33a-6b84-4b55-becf-c6354afa0926 --process-name brick --brick-port 49158 --xlator-option sharing_vol-server.listen-port=49158
+
+# ls /proc/169810/fd |wc -l
+849
+
+# grep open  /proc/169810/limits
+Max open files            1048576              1048576              files    
+
+```
 ### 查看进程D状态
 - 进程D状态，一般是进程等待IO，处于D状态的进程是无法kill，只能reboot机器才能解决，如何查看进程处于D状态，按照如下方法
 ```
