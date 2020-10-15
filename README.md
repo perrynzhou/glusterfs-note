@@ -1,4 +1,4 @@
-#  glusterfs源码的阅读笔记
+#  分布式存储源码的阅读笔记
 
 | author | update |
 | ------ | ------ |
@@ -19,6 +19,9 @@
   199.232.68.133 raw.githubusercontent.com
 4.刷新windows的dns，即可访问文章中的图片
 ```
+
+## opencas
+- [1.opencas IO加速方案](./document/opencas/OpenCAS缓存加速方案.md)
 
 ## glusterfs代码提交流程
 - [glustefs代码提交流程](./document/glusterfs/glusterfs代码提交流程.md)
