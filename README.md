@@ -52,14 +52,3 @@
 ## glusterfs 运维
 
 - [too many files引起glusterfsd crash](./document/glusterfs/glusterfsd出现crash的分析和总结.md)
-  
-## glusterfs官方issue
-
-- 源码分析相关
-  - [doubt for dht_selfheal_layout_new_directory and trusted.glusterfs.mdata](https://github.com/gluster/glusterfs/issues/1467)
-
-- 性能相关
-  - [performance bottleneck about glusterfs](https://github.com/gluster/glusterfs/issues/1462)
-- 使用相关 
-  - [{features.shard}:sharding-mount glusterfs volume, files larger than 64Mb only show 64Mb](https://github.com/gluster/glusterfs/issues/1384)
-  - [{features.shard}:Copying large files (with shard on) fails](https://github.com/gluster/glusterfs/issues/1474)
