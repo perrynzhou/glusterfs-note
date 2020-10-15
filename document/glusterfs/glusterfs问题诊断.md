@@ -7,6 +7,11 @@
 | perrynzhou@gmail.com | 2020/09/24 |
 
 
+### 检查硬盘是否有故障
+
+```
+smartctl -H /dev/sdm1
+```
 ### 查看进程文件描述符
 
 ```
