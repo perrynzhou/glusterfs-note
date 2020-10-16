@@ -35,7 +35,7 @@
 - [4.gluster-create-volume处理过程](./document/glusterfs/gluster-create-volume处理过程.md)
 - [5.glusterfs架构和基本概念](./document/glusterfs/glusterfs架构和基本概念.md)
 - [6.glusterfs-brick哈希范围设定过程](./document/glusterfs/glusterfs-brick哈希范围设定过程.md)
-- [7.glusterfs-write调用链分析](./document/glusterfs/glusterfs-write调用链分析.md)
+- [7.glusterfs客户端写数据分析](./document/glusterfs/glusterfs客户端写数据分析.md)
 - [8.glusterfs问题诊断](./document/glusterfs/glusterfs问题诊断.md)
 - [9.glusterfs-fuse实现(持续更新)](./document/glusterfs/glusterfs-fuse实现.md)
 - [10.cluster.read-hash-mode工作原理(持续更新)](./document/glusterfs/cluster.read-hash-mode工作原理.md)
