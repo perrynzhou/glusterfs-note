@@ -52,3 +52,9 @@
 ## glusterfs 运维
 
 - [too many files引起glusterfsd crash](./document/glusterfs/glusterfsd出现crash的分析和总结.md)
+
+- [glusterfs安装及创建卷使用](./document/glusterfs/glusterfs安装及创建卷使用.md)
+
+- [glusterfs添加节点成功但状态异常](./document/glusterfs/glusterfs添加节点错误.md)
+
+  
