@@ -1,0 +1,6 @@
+[submodule "gluster-block"]
+	path = gluster-block
+	url = https://github.com/gluster/gluster-block.git
+[submodule "glusterfs"]
+	path = glusterfs
+	url = https://github.com/gluster/glusterfs.git
