@@ -1,3 +1,0 @@
----
-- name: disable iptables, need to add specific rules later
-  shell: iptables -F

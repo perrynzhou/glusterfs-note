@@ -1,2 +1,0 @@
-SUBDIRS = post pre
-CLEANFILES =

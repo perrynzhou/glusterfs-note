@@ -1,3 +1,0 @@
----
-- name: Add mock user; required for rpm.t
-  user: name=mock group=mock
