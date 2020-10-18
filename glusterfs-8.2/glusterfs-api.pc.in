@@ -1,0 +1,12 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: glusterfs-api
+Description: GlusterFS API
+/* This is the API version, NOT package version */
+Version: @GFAPI_VERSION@
+Requires: @PKGCONFIG_UUID@
+Libs: -L${libdir} @GFAPI_LIBS@ -lgfapi -lglusterfs -lgfrpc -lgfxdr
+Cflags: -I${includedir} -D_FILE_OFFSET_BITS=64 -D__USE_FILE_OFFSET64 -D__USE_LARGEFILE64 -DUSE_POSIX_ACLS=@USE_POSIX_ACLS@

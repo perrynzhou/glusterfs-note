@@ -1,0 +1,11 @@
+if BUILD_AMAZONS3_PLUGIN
+  AMAZONS3_DIR = cloudsyncs3
+endif
+
+if BUILD_CVLT_PLUGIN
+  CVLT_DIR = cvlt
+endif
+
+SUBDIRS = ${AMAZONS3_DIR} ${CVLT_DIR}
+
+CLEANFILES =

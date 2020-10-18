@@ -1,0 +1,30 @@
+# These options are used by the systemd gluster-blockd.service
+# Any changes done here will reflect in the way systemd exec gluster-blockd
+# with command arguments. See "gluster-blockd --help" output for defaults
+# and possible values.
+
+
+# The default cache capacity is 5 i.e there can be a max of five glfs
+# entries in the lru cache, anything more will lead to release/free of
+# least recently used object.
+#GB_GLFS_LRU_COUNT=5
+
+# Supported loglevels [ NONE, CRIT, ERROR, WARNING, INFO, DEBUG, TRACE ]
+# And the default logging level is INFO, if you want to change the
+# default level, uncomment it and set your level:
+#GB_LOG_LEVEL=INFO
+
+# Support setting block hosting volumes global volfile server (can be FQDN)
+# default volfile server is set to localhost
+#GB_BHV_VOLSERVER="localhost"
+
+# CLI rpc timeout,
+# it is the time in seconds that cli has to wait for daemon to respond
+#GB_CLI_TIMEOUT=300
+
+# Supported setting the log directory path from the sysconfig
+# default path is /var/log/gluster-block, uncomment it and set your path:
+#GB_LOG_DIR="/var/log/gluster-block"
+
+# Expert use only, just incase if we have any extra args to pass for daemon
+#GB_EXTRA_ARGS=""
