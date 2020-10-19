@@ -21,27 +21,27 @@
 ```
 
 ## opencas
-- [1.opencas IO加速方案](./document/opencas/OpenCAS缓存加速方案.md)
+- [opencas IO加速方案](./document/opencas/OpenCAS缓存加速方案.md)
 
 ## glusterfs代码提交流程
 - [glustefs代码提交流程](./document/glusterfs/glusterfs代码提交流程.md)
 
   
 ## glusterfs源码分析
-- [0.glustefs 101](./document/glusterfs101-courses)
-- [1.glustefs调试](./document/glusterfs/glusterfs调试.md)
-- [2.glusterfsd启动过程](./document/glusterfs/glusterfsd启动过程.md)
-- [3.glusterfs客户端挂载init流程](./document/glusterfs/glusterfs客户端挂载init流程.md)
-- [4.gluster-create-volume处理过程](./document/glusterfs/gluster-create-volume处理过程.md)
-- [5.glusterfs架构和基本概念](./document/glusterfs/glusterfs架构和基本概念.md)
-- [6.glusterfs-brick哈希范围设定过程](./document/glusterfs/glusterfs-brick哈希范围设定过程.md)
-- [7.glusterfs客户端写数据分析](./document/glusterfs/glusterfs客户端写数据分析.md)
-- [8.glusterfs问题诊断](./document/glusterfs/glusterfs问题诊断.md)
-- [9.glusterfs-fuse实现(持续更新)](./document/glusterfs/glusterfs-fuse实现.md)
-- [10.cluster.read-hash-mode工作原理(持续更新)](./document/glusterfs/cluster.read-hash-mode工作原理.md)
+- [glustefs 101](./document/glusterfs101-courses)
+- [glustefs调试](./document/glusterfs/glusterfs调试.md)
+- [glusterfsd启动过程](./document/glusterfs/glusterfsd启动过程.md)
+- [glusterfs客户端挂载init流程](./document/glusterfs/glusterfs客户端挂载init流程.md)
+- [gluster-create-volume处理过程](./document/glusterfs/gluster-create-volume处理过程.md)
+- [glusterfs架构和基本概念](./document/glusterfs/glusterfs架构和基本概念.md)
+- [glusterfs-brick哈希范围设定过程](./document/glusterfs/glusterfs-brick哈希范围设定过程.md)
+- [glusterfs客户端写数据分析](./document/glusterfs/glusterfs客户端写数据分析.md)
+- [glusterfs问题诊断](./document/glusterfs/glusterfs问题诊断.md)
+- [glusterfs-fuse实现(持续更新)](./document/glusterfs/glusterfs-fuse实现.md)
+- [cluster.read-hash-mode工作原理(持续更新)](./document/glusterfs/cluster.read-hash-mode工作原理.md)
 
 ## gluster-block使用
-- [1.gluste-block安装](./document/gluster-block/gluste-block介绍.md)
+- [gluste-block安装](./document/gluster-block/gluste-block介绍.md)
 ## gluster-block源码分析
 
 
