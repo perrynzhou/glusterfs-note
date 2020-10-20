@@ -51,6 +51,7 @@
 
 ## glusterfs 运维
 
+- [Glusterfs多副本服务端数据丢失演练](./document/glusterfs/Glusterfs多副本服务端数据丢失演练.md)
 - [too many files引起glusterfsd crash](./document/glusterfs/glusterfsd出现crash的分析和总结.md)
 
 - [glusterfs安装及创建卷使用](./document/glusterfs/glusterfs安装及创建卷使用.md)
