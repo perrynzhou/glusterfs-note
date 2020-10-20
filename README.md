@@ -38,7 +38,7 @@
 - [glusterfs客户端写数据分析](./document/glusterfs/glusterfs客户端写数据分析.md)
 - [glusterfs问题诊断](./document/glusterfs/glusterfs问题诊断.md)
 - [glusterfs-fuse实现(持续更新)](./document/glusterfs/glusterfs-fuse实现.md)
-- [cluster.read-hash-mode工作原理(持续更新)](./document/glusterfs/cluster.read-hash-mode工作原理.md)
+- [cluster.read-hash-mode工作原理](./document/glusterfs/cluster.read-hash-mode工作原理.md)
 
 ## gluster-block使用
 - [gluste-block安装](./document/gluster-block/gluste-block介绍.md)
