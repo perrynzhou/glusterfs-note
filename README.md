@@ -39,7 +39,7 @@
 - [glusterfs问题诊断](./document/glusterfs/glusterfs问题诊断.md)
 - [glusterfs-fuse实现(持续更新)](./document/glusterfs/glusterfs-fuse实现.md)
 - [cluster.read-hash-mode工作原理](./document/glusterfs/cluster.read-hash-mode工作原理.md)
-
+- [多副本情况下mount挂载目录如何选择可用的副本目录](./document/glusterfs/多副本情况下mount挂载目录如何选择可用的副本目录.md)
 ## gluster-block使用
 - [gluste-block安装](./document/gluster-block/gluste-block介绍.md)
 ## gluster-block源码分析
