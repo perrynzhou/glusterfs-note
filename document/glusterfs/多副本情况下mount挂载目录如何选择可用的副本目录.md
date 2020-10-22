@@ -90,19 +90,36 @@ WARNING: getfattr not found, certain checks will be skipped..
 [2020-10-22 00:30:27.717194] W [rpc-clnt-ping.c:219:rpc_clnt_ping_cbk] 0-rep_vol-client-2: failed to set the ping timer
 
 ```
-## 梳理的基本函数
+## 客户端调试
+
 
 ```
-SuperFastHash
-afr_hash_child
-afr_read_subvol_select_by_policy
-afr_read_subvol_decide
-afr_lookup_done
-afr_lookup_metadata_heal_check
-afr_discover_cbk
-afr_discover_do
-afr_discover
-afr_lookup
+[root@CentOS74 /var/log/glusterfs]$  gdb --args /usr/local/sbin/glusterfs --process-name fuse --volfile-server=10.211.55.9 --volfile-id=rep_vol --subdir-mount=/public/2020 /mnt/public/2020
+(gdb) br create_fuse_mount 
+(gdb) br afr_lookup
+(gdb) br afr_discover
+(gdb) br afr_discover_do
+(gdb) br afr_discover_cbk
+(gdb) br afr_lookup_done
+(gdb) br afr_read_subvol_decide
+(gdb) br afr_read_subvol_select_by_policy
+(gdb) br afr_hash_child
+```
+
+## 服务端调试
+```
+[root@CentOS71 /rep_vol/data1/brick/public]$ ps -ef|grep glusterfsd
+root      2573     1  0 08:12 ?        00:00:00 /usr/local/sbin/glusterfsd -s 10.211.55.9 --volfile-id rep_vol.10.211.55.9.rep_vol-data1-brick -p /var/run/gluster/vols/rep_vol/10.211.55.9-rep_vol-data1-brick.pid -S /var/run/gluster/b36ab5023b470153.socket --brick-name /rep_vol/data1/brick -l /var/log/glusterfs/bricks/rep_vol-data1-brick.log --xlator-option *-posix.glusterd-uuid=e88c6533-d07a-4450-b1a0-173f9e94cd59 --process-name brick --brick-port 49152 --xlator-option rep_vol-server.listen-port=49152
+[root@CentOS71 /rep_vol/data1/brick/public]$ gdb /usr/local/sbin/glusterfsd      
+(gdb) attach 2573
+(gdb) br server4_lookup_cbk
+(gdb) br posix_lookup 
+Breakpoint 2 at 0x7f862924edec: file posix-entry-ops.c, line 158.
+(gdb) info break
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   0x00007f862262daa2 in server4_lookup_cbk at server-rpc-fops_v2.c:86
+2       breakpoint     keep y   0x00007f862924edec in posix_lookup at posix-entry-ops.c:158
+(gdb) 
 ```
 ## 客户端Final graph:
 ```
