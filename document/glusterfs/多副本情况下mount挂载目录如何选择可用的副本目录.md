@@ -104,6 +104,22 @@ WARNING: getfattr not found, certain checks will be skipped..
 (gdb) br afr_read_subvol_decide
 (gdb) br afr_read_subvol_select_by_policy
 (gdb) br afr_hash_child
+(gdb) r
+Starting program: /usr/local/sbin/glusterfs --process-name fuse --volfile-server=10.211.55.9 --volfile-id=rep_vol --subdir-mount=/public/2020 /mnt/public/2020
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib64/libthread_db.so.1".
+
+Breakpoint 1, create_fuse_mount (ctx=0x63c030) at glusterfsd.c:557
+557         int ret = 0;
+596         if (cmd_args->fuse_mountopts) {
+(gdb) 
+606         ret = xlator_init(master);
+(gdb) 
+[Detaching after fork from child process 3608]
+607         if (ret) {
+(gdb) set follow-fork-mode child 
+(gdb) set detach-on-fork off
+(gdb) 
 ```
 
 ## 服务端调试
