@@ -1,0 +1,8 @@
+FROM alpine:3.12
+
+COPY mc /usr/bin/
+COPY CREDITS /
+
+RUN apk add --no-cache ca-certificates
+
+ENTRYPOINT ["mc"]
