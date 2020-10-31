@@ -23,13 +23,10 @@ yum install autoconf automake bison cmockery2-devel dos2unix flex fuse-devel gli
 ```
 yum -y install gcc gcc-c++ make expat-devel autoconf automake libtool flex expat-devel bison openssl-devel libuuid-devel libacl-devel libxml2-devel libtirpc-devel gcc gcc-c++ make expat-devel autoconf automake libtool rdma-core-devel readline-devel libaio-devel python3 rpcbind
 
-wget https://github.com/thkukuk/rpcsvc-proto/releases/download/v1.4/rpcsvc-proto-1.4.tar.gz && tar -xf rpcsvc-proto-1.4.tar.gz
-&& cd rpcsvc-proto-1.4 &&./configure
+wget https://github.com/thkukuk/rpcsvc-proto/releases/download/v1.4/rpcsvc-proto-1.4.tar.gz && tar -xf rpcsvc-proto-1.4.tar.gz && cd rpcsvc-proto-1.4 &&./configure && make -j4 && make install
 
-wget https://github.com/urcu/userspace-rcu/archive/v0.7.16.tar.gz -O userspace-rcu-0.7.16.tar.gz
-tar -xf userspace-rcu-0.7.16.tar.gz  && cd userspace-rcu-0.7.16 && ./bootstrap && ./configure && make &&make install
-find /usr/ -name \*liburcu-bp.so\*
-echo '/usr/local/lib' > /etc/ld.so.conf.d/userspace-rcu.conf
+wget https://github.com/urcu/userspace-rcu/archive/v0.7.16.tar.gz -O userspace-rcu-0.7.16.tar.gz && tar -xf userspace-rcu-0.7.16.tar.gz  && cd userspace-rcu-0.7.16 && ./bootstrap && ./configure && make &&make install
+find /usr/ -name \*liburcu-bp.so\* && echo '/usr/local/lib' > /etc/ld.so.conf.d/userspace-rcu.conf
 ```
 - debian
 
