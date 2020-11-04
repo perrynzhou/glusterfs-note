@@ -44,7 +44,8 @@
 - [glusterfs-fuse实现(持续更新)](./document/glusterfs/glusterfs-fuse实现.md)
 - [cluster.read-hash-mode工作原理](./document/glusterfs/cluster.read-hash-mode工作原理.md)
 - [多副本情况下mount挂载目录如何选择可用的副本目录](./document/glusterfs/多副本情况下mount挂载目录如何选择可用的副本目录.md)
-
+- [gfapi如何工作的](./document/glusterfs/多副本情况下mount挂载目录如何选择可用的副本目录.md)
+  
 ### glusterfs贡献的pr
 
 - [glusterfs read-hash-mode的bug](https://github.com/gluster/glusterfs/commit/268faabed00995537394c04ac168c018167fbe27)
