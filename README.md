@@ -52,8 +52,8 @@
 - [glusterfs-fuse实现(持续更新)](./document/glusterfs/glusterfs-fuse实现.md)
 - [cluster.read-hash-mode工作原理](./document/glusterfs/cluster.read-hash-mode工作原理.md)
 - [多副本情况下mount挂载目录如何选择可用的副本目录](./document/glusterfs/多副本情况下mount挂载目录如何选择可用的副本目录.md)
-- [gfapi如何工作的](./document/glusterfs/多副本情况下mount挂载目录如何选择可用的副本目录.md)
-- [gluste-block安装](./document/gluster-block/gluste-block介绍.md) 
+- [gfapi如何工作的](./document/glusterfs/2020-11-04-gfapi如何工作的.md)
+- [gluste-block安装](./document/glusterfs/gluste-block介绍.md) 
 
 
 ### glusterfs代码提交流程
