@@ -1,6 +1,0 @@
----
-# vars file for initiator
-
-initiator_packages:
-  - iscsi-initiator-utils
-  - device-mapper-multipath
