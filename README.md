@@ -27,9 +27,17 @@
 ## glusterfs
 
 
-### glusterfs代码提交流程
-- [glustefs代码提交流程](./document/glusterfs/glusterfs代码提交流程.md)
+### glusterfs贡献的pr
 
+- [glusterfs read-hash-mode的bug](https://github.com/gluster/glusterfs/commit/268faabed00995537394c04ac168c018167fbe27)
+
+### glusterfs 运维
+
+- [Glusterfs多副本服务端数据丢失演练](./document/glusterfs/Glusterfs多副本服务端数据丢失演练.md)
+- [too many files引起glusterfsd crash](./document/glusterfs/glusterfsd出现crash的分析和总结.md)
+- [glusterfs安装及创建卷使用](./document/glusterfs/glusterfs安装及创建卷使用.md)
+- [glusterfs添加节点成功但状态异常](./document/glusterfs/glusterfs添加节点错误.md)
+- [glusterfs opencas IO加速方案](./document/opencas/OpenCAS缓存加速方案.md)
   
 ### glusterfs源码分析
 - [glustefs 101](./document/glusterfs101-courses)
@@ -45,22 +53,14 @@
 - [cluster.read-hash-mode工作原理](./document/glusterfs/cluster.read-hash-mode工作原理.md)
 - [多副本情况下mount挂载目录如何选择可用的副本目录](./document/glusterfs/多副本情况下mount挂载目录如何选择可用的副本目录.md)
 - [gfapi如何工作的](./document/glusterfs/多副本情况下mount挂载目录如何选择可用的副本目录.md)
-  
-### glusterfs贡献的pr
+- [gluste-block安装](./document/gluster-block/gluste-block介绍.md) 
 
-- [glusterfs read-hash-mode的bug](https://github.com/gluster/glusterfs/commit/268faabed00995537394c04ac168c018167fbe27)
 
-### glusterfs 运维
+### glusterfs代码提交流程
+- [glustefs代码提交流程](./document/glusterfs/glusterfs代码提交流程.md)
 
-- [Glusterfs多副本服务端数据丢失演练](./document/glusterfs/Glusterfs多副本服务端数据丢失演练.md)
-- [too many files引起glusterfsd crash](./document/glusterfs/glusterfsd出现crash的分析和总结.md)
-- [glusterfs安装及创建卷使用](./document/glusterfs/glusterfs安装及创建卷使用.md)
-- [glusterfs添加节点成功但状态异常](./document/glusterfs/glusterfs添加节点错误.md)
-- [glusterfs opencas IO加速方案](./document/opencas/OpenCAS缓存加速方案.md)
 
-  
-## gluster-block原理
-- [gluste-block安装](./document/gluster-block/gluste-block介绍.md)
-## gluster-block源码分析
+
+
 
 
