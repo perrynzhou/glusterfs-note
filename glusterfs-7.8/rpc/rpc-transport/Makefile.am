@@ -1,1 +1,0 @@
-SUBDIRS = socket $(RDMA_SUBDIR)
