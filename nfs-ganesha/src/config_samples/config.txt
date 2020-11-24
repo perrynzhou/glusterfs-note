@@ -1,0 +1,760 @@
+The following config blocks exist:
+
+NFS_CORE_PARAM {}
+NFS_IP_NAME {}
+NFS_KRB5 {}
+NFSV4 {}
+EXPORT_DEFAULTS {}
+EXPORT {}
+EXPORT { CLIENT  {} }
+EXPORT { FSAL {} }
+EXPORT { FSAL { FSAL {} } }
+EXPORT { FSAL { PNFS {} } }
+LOG {}
+LOG { COMPONENTS {} }
+LOG { FACILITY {} }
+LOG { FORMAT {} }
+_9P {}
+MDCACHE {}
+CACHEINODE {}
+CEPH {}
+GPFS {}
+MEM {}
+RGW {}
+VFS {}
+XFS {}
+PROXY {}
+RADOS_KV {}
+RADOS_URLS {}
+
+Notably the following FSALs do not have a global config block:
+
+PSEUDO, PROXY, NULL, GLUSTER
+
+NFS_CORE_PARAM {}
+-----------------
+
+	NFS_Port (uint16, range 0 to UINT16_MAX, default 2049)
+
+	MNT_Port (uint16, range 0 to UINT16_MAX, default 0)
+
+	NLM_Port (uint16, range 0 to UINT16_MAX, default 0)
+
+	Rquota_Port (uint16, range 0 to UINT16_MAX, default 875)
+
+	Bind_addr(IPv4 or IPv6 addr, default 0.0.0.0)
+
+	NFS_Program(uint32, range 1 to INT32_MAX, default  100003)
+
+	MNT_Program(uint32, range 1 to INT32_MAX, default  100005)
+
+	NLM_Program(uint32, range 1 to INT32_MAX, default  100021)
+
+	Rquota_Program(uint32, range 1 to INT32_MAX, default  100011)
+
+	Drop_IO_Errors(bool, default false)
+
+	Drop_Inval_Errors(bool, default false)
+
+	Drop_Delay_Errors(bool, default false)
+
+	DRC_Disabled(boo, default false)
+
+	DRC_TCP_Npart(uint32, range 1 to 20, default 1)
+
+	DRC_TCP_Size(uint32, range 1 to 32767, default 1024)
+
+	DRC_TCP_Cachesz(uint32, range 1 to 255, default 127)
+
+	DRC_TCP_Hiwat(uint32, range 1 to 256, default 64)
+
+	DRC_TCP_Recycle_Npart(uint32, range 1 to 20, default 7)
+
+	DRC_TCP_Recycle_Expire_S(uint32, range 0 to 60*60, default 600)
+
+	DRC_TCP_Checksum(bool, default true)
+
+	DRC_UDP_Npart(uint32, range 1 to 100, default 7)
+
+	DRC_UDP_Size(uint32, range 512, to 32768, default 32768)
+
+	DRC_UDP_Cachesz(uint32, range 1 to 2047, default 599)
+
+	DRC_UDP_Hiwat(uint32, range 1 to 32768, default 16384)
+
+	DRC_UDP_Checksum(bool, default true)
+
+	RPC_Max_Connections(uint32, range 1 to 10000, default 1024)
+
+	RPC_Idle_Timeout_S(uint32, range 0 to 60*60, default 300)
+
+	MaxRPCSendBufferSize(uint32, range 1 to 1048576*9, default 1048576)
+
+	MaxRPCRecvBufferSize(uint32, range 1 to 1048576*9, default 1048576)
+
+	RPC_Ioq_ThrdMax(uint32, range 1 to 1024*128 default 200)
+
+	RPC_GSS_Npart(uint32, range 1 to 1021, default 13)
+
+	RPC_GSS_Max_Ctx(uint32, range 1 to 1048576, default 16384)
+
+	RPC_GSS_Max_Gc(uint32, range 1 to 1048576, default 200)
+
+	Blocked_Lock_Poller_Interval(int64, range 0 to 180, default 10)
+
+	NFS_Protocols(list, valid values [3, 4], default 3,4)
+
+	NSM_Use_Caller_Name(bool, default false)
+
+	Clustered(bool, default true)
+
+	Enable_NLM(bool, default true)
+
+	Enable_RQUOTA(bool, default true)
+
+	Enable_TCP_keepalive(bool, default true)
+
+	TCP_KEEPCNT(UINT32, range 0 to 255, default 0 -> use system defaults)
+
+	TCP_KEEPIDLE(UINT32, range 0 to 65535, default 0 -> use system defautls)
+
+	TCP_KEEPINTVL(INT32, range 0 to 65535, default 0 -> use system defaults)
+
+	Enable_NFS_Stats(bool, default true)
+
+	Enable_Fast_Stats(bool, default false)
+
+	Enable_FSAL_Stats(bool, default false)
+
+	Enable_FULLV3_Stats(bool, default false)
+
+	Enable_FULLV4_Stats(bool, default false)
+
+	Enable_CLNT_AllOps_Stats(bool, default false)
+
+	Short_File_Handle(bool, default false)
+
+	Manage_Gids_Expiration(int64, range 0 to 7*24*60*60, default 30*60)
+
+	Plugins_Dir(path, default "/usr/lib64/ganesha")
+
+	heartbeat_freq(uint32, range 0 to 5000 default 1000)
+
+	fsid_device(bool, default false)
+
+	mount_path_pseudo(bool, default false)
+
+	Enable_UDP(bool, default true)
+
+	Dbus_Name_Prefix(string, default NULL)
+
+NFS_IP_NAME {}
+--------------
+
+	Index_Size(uint32, range 1 to 51, default 17)
+
+	Expiration_Time(uint32, range 1 to 60*60*24, default 3600)
+
+NFS_KRB5 {}
+-----------
+
+	PrincipalName(string, default "nfs")
+
+	KeytabPath(path, default "")
+
+	CCacheDir(path, default "/var/run/ganesha")
+
+	Active_krb5(bool, default true)
+
+
+NFSV4 {}
+--------
+
+	Graceless(bool, default false)
+
+	Lease_Lifetime(uint32, range 0 to 120, default 60)
+
+	Grace_Period(uint32, range 0 to 180, default 90)
+
+	DomainName(string, default "localdomain")
+
+	IdmapConf(path, default "/etc/idmapd.conf")
+
+	UseGetpwnam(bool, default false if using idmap, true otherwise)
+
+	Allow_Numeric_Owners(bool, default true)
+
+	Only_Numeric_Owners(bool, default false)
+
+	Delegations(bool, default false)
+
+	RecoveryBackend(enum, values [fs, fs_ng, rados_kv, rados_ng],
+			default fs)
+
+	Minor_Versions(enum list, values [0, 1, 2], default [0, 1, 2])
+
+	Slot_Table_Size(uint32, range 1 to 1024, default 64)
+
+	Enforce_UTF8_Validation(bool, default false)
+
+EXPORT_DEFAULTS {}
+------------------
+
+	These options are all "export permissions" options, and will be
+	repeated in the EXPORT {} and EXPORT { CLIENT {} } blocks.
+
+	These options will all be dynamically updateable.
+
+	Access_Type(enum, values [None, RW, RO, MDONLY, MDONLY_RO],
+		    default None)
+
+	Protocols(enum list,
+		  values [3, 4, NFS3, NFS4, V3, V4, NFSv3, NFSv4, 9P],
+		  default [3, 4])
+
+	Transports(enum list, values [UDP, TCP, RDMA], default [UDP, TCP])
+
+	Anonymous_uid(anonid, range INT32MIN to UINT32MAX, default -2)
+
+	Anonymous_gid(anonid, range INT32MIN to UINT32MAX, default -2)
+
+	SecType(enum list, values [none, sys, krb5, krb5i, krb5p],
+	        default [none, sys])
+
+	PrivilegedPort(bool, default false)
+
+	Manage_Gids(bool, default false)
+
+	Squash(enum, values [root, root_squash, rootsquash,
+			     rootid, root_id_squash, rootidsquash,
+			     all, all_squash, allsquash,
+				all_anomnymous, allanonymous,
+			     no_root_squash, none, noidsquash],
+	       default root_squash)
+
+	* Each line of defaults above are synonyms
+
+	NFS_Commit(bool, default false)
+
+	Delegations(enum, values [None, read, write, readwrite, r, w, rw],
+		    default None)
+
+	Attr_Expiration_Time(int32, range -1 to INT32_MAX, default 60)
+
+
+EXPORT {}
+---------
+
+	* Take all the "export permissions" options from EXPORT_DEFAULTS.
+
+	* The first 5 options are considered static from the perspective of
+	  dynamic update.
+
+	Path(path, no default, must be supplied)
+
+	Pseudo(path, no default)
+
+	Tag(string, no default)
+
+	Export_id(uint16, range 0 to UINT16_MAX, default 1)
+
+	Filesystem_id(fsid, format is uint64.uint64, default 666.666)
+
+		* Updating Filesystem_id would have an adverse impact on
+		  existing client mounts and it's not currently a type that
+		  can be atomically updated.
+
+	* The following options may be dynamically updated
+
+	MaxRead(uint64, range 512 to 64*1024*1024, default 64*1024*1024)
+
+	MaxWrite(uint64, range 512 to 64*1024*1024, default 64*1024*1024)
+
+	PrefRead(uint64, range 512 to 64*1024*1024, default 64*1024*1024)
+
+	PrefWrite(uint64, range 512 to 64*1024*1024, default 64*1024*1024)
+
+	PrefReaddir(uint64, range 512 to 64*1024*1024, default 16384)
+
+	MaxOffsetWrite(uint64, range 512 to UINT64_MAX, default INT64_MAX)
+
+	MaxOffsetRead(uint64, range 512 to UINT64_MAX, default INT64_MAX)
+
+	DisableReaddirPlus(bool, default false)
+
+	Trust_Readdir_Negative_Cache(bool, default false)
+
+	* The following options may have limits on dynamic effect
+
+	UseCookieVerifier(bool, default true)
+
+		* Updating UseCookieVerifier while a readdir is in
+		  progress may result in unexpected behavior.
+
+	Disable_ACL(bool, default false)
+
+		* Disable_ACL is processed at create_export time currently
+		  which makes it effectively a static option.
+
+	Security_Label(bool, default false)
+
+		* Enable NFSv4.2 security label attribute. Ganesha supports
+		  "Limited Server Mode" as detailed in RFC 7204. Note that
+		  not all FSALs support security labels.
+
+	Attr_Expiration_Time(int32, range -1 to INT32_MAX, default 60)
+
+		* Attr_Expiration_Time is evaluated when an MDCACHE entry
+		  is created, so the dynamic effect of this option may
+		  be constrained to new entries.
+
+
+EXPORT { CLIENT  {} }
+---------------------
+
+	* Take all the "export permissions" options from EXPORT_DEFAULTS.
+
+	* The client lists are dynamically updateable.
+
+	Clients(client list, empty)
+
+	* Client list entries can take on one of the following forms:
+
+	*		Match any client
+	@name		Netgroup name
+	x.x.x.x/y	IPv4 network address
+	wildcarded	If the string contains at least one ? or *
+			character (and is not simply "*"), the string is
+			used to pattern match host names. Note that [] may
+			also be used, but the pattern MUST have at least one
+			? or *
+	hostname	Match a single client (match is by IP address, all
+			addresses returned by getaddrinfo will match, the
+			getaddrinfo call is made at config parsing time)
+	IP address	Match a single client
+
+EXPORT { FSAL {} }
+------------------
+
+	Name(string, default "VFS")
+
+	FSAL_CEPH:
+	----------
+	User_Id(string, no default)
+
+	* User_Id: cephx userid used to open the MDS session. This string is
+	  what gets appended to "client.". If not set, the ceph client libs
+	  will sort this out based on ceph configuration.
+
+	Secret_Access_Key(string, no default)
+
+	* Secret_Access_Key: key to use for the session (if any). If not set,
+	  then it uses the normal search path for cephx keyring files to find
+	  a key.
+
+	FSAL_GLUSTER:
+	-------------
+
+	volume(string, no default, must be supplied)
+
+	hostname(string, no default, must be supplied)
+
+	volpath(path, default "/")
+
+	glfs_log(path, default "/tmp/gfapi.log")
+
+        up_poll_usec(uint64, range 1 to 60*1000*1000, default 10)
+
+        * up_poll_usec: The time interval (in micro-seconds) between any
+          two consecutive upcall polls. By default set to 10us.
+
+	enable_upcall(bool, default true)
+
+	transport(enum, values [tcp, rdma], default tcp)
+
+	FSAL_VFS or FSAL_LUSTRE:
+	------------------------
+
+	pnfs(bool, default false)
+
+	fsid_type(enum, values [None, One64, Major64, Two64, uuid, Two32, Dev,
+			        Device], no default)
+
+	FSAL_LUSTRE:
+	------------
+	async_hsm_restore(bool, default true)
+
+	FSAL_PROXY:
+	-----------
+
+	Retry_SleepTime(uint32, range 0 to 60, default 10)
+
+	Srv_Addr(ipv4_addr default "127.0.0.1")
+
+	NFS_Service(uint32, range 0 to UINT32_MAX, default 100003)
+
+	/*NFS_SendSize must be greater than maxwrite+SEND_RECV_HEADER_SPACE .*/
+	/*NFS_RecvSize must be greater than maxread+SEND_RECV_HEADER_SPACE .*/
+	/*MAX_READ_WRITE_SIZE == 1 MB*/
+	/*SEND_RECV_HEADER_SPACE == 512 Bytes*/
+	/*FSAL_MAXIOSIZE = 64 MB*/
+	NFS_SendSize(uint64, range 512 + SEND_RECV_HEADER_SPACE
+					to FSAL_MAXIOSIZE,
+		     default MAX_READ_WRITE_SIZE + SEND_RECV_HEADER_SPACE)
+
+	NFS_RecvSize(uint64, range 512 + SEND_RECV_HEADER_SPACE
+					to FSAL_MAXIOSIZE,
+		     default MAX_READ_WRITE_SIZE + SEND_RECV_HEADER_SPACE)
+
+	NFS_Port(uint16, range 0 to UINT16_MAX, default 2049)
+
+	Use_Privileged_Client_Port(bool, default true)
+
+	RPC_Client_Timeout(uint32, range 1 to 60*4, default 60)
+
+	Remote_PrincipalName(string, no default)
+
+	KeytabPath(string, default "/etc/krb5.keytab")
+
+	Credential_LifeTime(uint32, range 0 to 86400*2, default 86400)
+
+	Sec_Type(enum, values [krb5, krb5i, krb5p], default krb5)
+
+	Active_krb5(bool, default false)
+
+	Enable_Handle_Mapping(bool, default false)
+
+	HandleMap_DB_Dir(string, default "/var/ganesha/handlemap")
+
+	HandleMap_Tmp_Dir(string, default "/var/ganesha/tmp")
+
+	HandleMap_DB_Count(uint32, range 1 to 16, default 8)
+
+	HandleMap_HashTable_Size(uint32, range 1 to 127, default 103)
+
+	FSAL_MEM:
+	---------
+	Async_Delay(uint32, range 0 to 1000, defaults to 0)
+
+	Async_Type(enum, values [inline, fixed, random, random_or_inline],
+		   defaults to inline)
+
+	Async_Stall_Delay(uint32, range 0 to 1000, defaults to 0)
+
+	EXPORT { FSAL { PNFS { } } }
+	----------------------------
+		Stripe_Unit(uint32, range 1024 to 1024*1024, default 8192)
+
+		pnfs_enabled(bool, default false)
+
+	FSAL_NULL:
+	----------
+
+	EXPORT { FSAL { FSAL {} } }
+
+	describes the stacked FSAL's parameters
+
+LOG {}
+------
+
+	Default_log_level(token, values [NULL, FATAL, MAJ, CRIT, WARN, EVENT,
+					 INFO, DEBUG, MID_DEBUG, M_DBG,
+					 FULL_DEBUG, F_DBG], default EVENT)
+
+	RPC_Debug_Flags(uint32, range 0 to UINT32_MAX, default 7)
+
+LOG { COMPONENTS {} }
+---------------------
+
+	These entries are of the form:
+
+	COMPONENT = LEVEL;
+
+	The components are: ALL, LOG, LOG_EMERG, MEMLEAKS, FSAL, NFSPROTO,
+			    NFS_V4, EXPORT, FILEHANDLE, DISPATCH, CACHE_INODE,
+			    CACHE_INODE_LRU, HASHTABLE, HASHTABLE_CACHE, DUPREQ,
+			    INIT, MAIN, IDMAPPER, NFS_READDIR, NFS_V4_LOCK,
+			    CONFIG, CLIENTID, SESSIONS, PNFS, RW_LOCK, NLM, RPC,
+			    NFS_CB, THREAD, NFS_V4_ACL, STATE, 9P, 9P_DISPATCH,
+			    FSAL_UP, DBUS
+
+	Some synonyms are:
+
+	FH = FILEHANDLE
+	HT = HASHTABLE
+	INODE_LRU = CACHE_INODE_LRU
+	INODE = CACHE_INODE
+	DISP = DISPATCH
+	LEAKS = MEMLEAKS
+	NFS3 = NFSPROTO
+	NFS4 = NFS_V4
+	HT_CACHE = HASHTABLE_CACHE
+	NFS_STARTUP = INIT
+	NFS4_LOCK = NFS_V4_LOCK
+	NFS4_ACL = NFS_V4_ACL
+	9P_DISP = 9P_DISPATCH
+
+	The log levels are: NULL, FATAL, MAJ, CRIT, WARN, EVENT,
+			    INFO, DEBUG, MID_DEBUG, M_DBG,
+			    FULL_DEBUG, F_DBG], default EVENT
+
+LOG { FACILITY {} }
+-------------------
+
+	name(string, no default)
+
+	destination(string, no default, must be supplied)
+
+	max_level(token, values [NULL, FATAL, MAJ, CRIT, WARN, EVENT,
+				 INFO, DEBUG, MID_DEBUG, M_DBG,
+				 FULL_DEBUG, F_DBG], default FULL_DEBUG)
+
+	headers(token, values [none, component, all], default all)
+
+	enable(token, values [idle, active, default], default idle)
+
+LOG { FORMAT {} }
+-----------------
+
+	date_format(enum, values [ganesha, true, local, 8601, ISO-8601,
+				  ISO 8601, ISO, syslog, syslog_usec,
+				  false, none, user_defined], default ganesha)
+
+	time_format(enum, values [ganesha, true, local, 8601, ISO-8601,
+				  ISO 8601, ISO, syslog, syslog_usec,
+				  false, none, user_defined], default ganesha)
+
+	user_date_format(string, no default)
+
+	user_time_format(string, no default)
+
+	EPOCH(bool, default true)
+
+	CLIENTIP(bool, default false)
+
+	HOSTNAME(bool, default true)
+
+	PROGNAME(bool, default true)
+
+	PID(bool, default true)
+
+	THREAD_NAME(bool, default true)
+
+	FILE_NAME(bool, default true)
+
+	LINE_NUM(bool, default true)
+
+	FUNCTION_NAME(bool, default true)
+
+	COMPONENT(bool, default true)
+
+	LEVEL(bool, default true)
+
+
+MDCACHE / CACHEINODE
+----------
+
+	NParts(uint32, range 1 to 32633, default 7)
+
+	Cache_Size(uint32, range 1 to UINT32_MAX, default 32633)
+
+	Use_Getattr_Directory_Invalidation(bool, default false)
+
+	Dir_Chunk(uint32, range 0 to UINT32_MAX, default 128)
+
+	Detached_Mult(uint32, range 1 to UINT32_MAX, default 1)
+
+	Chunks_HWMark(uint32, range 1 to UINT32_MAX, default 100000)
+
+	Entries_HWMark(uint32, range 1 to UINT32_MAX, default 100000)
+
+	LRU_Run_Interval(uint32, range 1 to 24 * 3600, default 90)
+
+	FD_Limit_Percent(uint32, range 0 to 100, default 99)
+
+	FD_HWMark_Percent(uint32, range 0 to 100, default 90)
+
+	FD_LWMark_Percent(uint32, range 0 to 100, default 50)
+
+	Reaper_Work(uint32, range 1 to 2000, default 0)
+
+	Reaper_Work_Per_Lane(uint32, range 1 to UINT32_MAX, default 50)
+
+	Biggest_Window(uint32, range 1 to 100, default 40)
+
+	Required_Progress(uint32, range 1 to 50, default 5)
+
+	Futility_Count(uint32, range 1 to 50, default 8)
+
+_9P {}
+-----
+
+	Nb_Worker(uint32, range 1 to 1024*128, default 256)
+
+	_9P_TCP_Port(uint16, range 1 to UINT16_MAX, default 564)
+
+	_9P_RDMA_Port(uint16, range 1 to UINT16_MAX, default 5640)
+
+	_9P_TCP_Msize(uint32, range 1024 to UINT32_MAX, default 65536)
+
+	_9P_RDMA_Msize(uint32, range 1024 to UINT32_MAX, default 1048576)
+
+	_9P_RDMA_Backlog(uint16, range 1 to UINT16_MAX, default 10)
+
+	_9P_RDMA_Inpool_size(uint16, range 1 to UINT16_MAX, default 64)
+
+	_9P_RDMA_Outpool_Size(uint16, range 1 to UINT16_MAX, default 32)
+
+CEPH {}
+-------
+
+	Ceph_Conf(path, default "")
+
+	umask(mode, range 0 to 0777, default 0)
+
+GPFS {}
+-------
+
+	link_support(bool, default true)
+
+	symlink_support(bool, default true)
+
+	cansettime(bool, default true)
+
+	umask(mode, range 0 to 0777, default 0)
+
+	auth_xdev_export(bool, default false)
+
+	Delegations(enum, values [None, read, write, readwrite, r, w, rw],
+		    default read)
+
+	pnfs_file(bool, default false)
+
+	fsal_trace(bool, default true)
+
+	fsal_grace(bool, default false)
+
+MEM {}
+-------
+
+	Inode_Size(uint32, range 0 to 2097152, default 0)
+
+	Up_Test_Interval(uint32, range 0 to UINT32_MAX, default 0)
+
+	Async_Threads(uint32, range 0 to 100, default to 0)
+
+RGW {}
+-------
+
+	The following configuration variables customize the
+	startup of the FSAL's radosgw instance.
+
+	* ceph_conf -- optional full-path to the Ceph configuration
+      file (equivalent to passing "-c /path/to/ceph.conf" to any
+	  Ceph binary
+
+	* name -- optional instance name (equivalent to passing
+	  "--name client.rgw.foohost" to the radosgw binary);  the value
+	  provided here should be the same as the section name (sans
+	  brackets) of the radosgw facility in the Ceph configuration
+	  file (which must exist)
+
+	* cluster -- optional cluster name (equivalent to passing
+	  "--cluster foo" to any Ceph binary);  use of a non-default
+	  value for cluster name is uncommon, but can be verified by
+	  examining the startup options of Ceph binaries
+
+	* init_args -- additional argument strings which will be
+	  passed verbatim to the radosgw instance startup process as
+	  if they had been given on the radosgw command line;  provided
+	  for customization in uncommon setups
+
+	ceph_conf(path, default "")
+
+	name(string, default "")
+
+	cluster(string, default "")
+
+	init_args(string, default "")
+
+VFS {}
+------
+
+	link_support(bool, default true)
+
+	symlink_support(bool, default true)
+
+	cansettime(bool, default true)
+
+	maxread(uint64, range 512 to 64*1024*1024, default 64*1024*1024)
+
+	maxwrite(uint64, range 512 to 64*1024*1024, default 64*1024*1024)
+
+	umask(mode, range 0 to 0777, default 0)
+
+	auth_xdev_export(bool, default false)
+
+    only_one_user(bool, default false)
+
+XFS {}
+------
+
+	link_support(bool, default true)
+
+	symlink_support(bool, default true)
+
+	cansettime(bool, default true)
+
+	maxread(uint64, range 512 to 64*1024*1024, default 64*1024*1024)
+
+	maxwrite(uint64, range 512 to 64*1024*1024, default 64*1024*1024)
+
+	umask(mode, range 0 to 0777, default 0)
+
+	auth_xdev_export(bool, default false)
+
+PROXY {}
+--------
+
+	link_support(bool, default true)
+
+	symlink_support(bool, default true)
+
+	cansettime(bool, default true)
+
+	/*MAX_READ_WRITE_SIZE == 1MB*/
+	/*FSAL_MAXIOSIZE = 64 MB*/
+	/*SEND_RECV_HEADER_SPACE == 512 Bytes*/
+	maxread(uint64, range 512 to FSAL_MAXIOSIZE - SEND_RECV_HEADER_SPACE,
+		default MAX_READ_WRITE_SIZE)
+
+	maxwrite(uint64, range 512 to FSAL_MAXIOSIZE - SEND_RECV_HEADER_SPACE,
+		 default MAX_READ_WRITE_SIZE)
+
+	umask(mode, range 0 to 0777, default 0)
+
+	auth_xdev_export(bool, default false)
+
+RADOS_KV {}
+--------
+
+	ceph_conf(string, no default)
+
+	userid(path, no default)
+
+	namespace(string, default NULL)
+
+	pool(string, default "nfs-ganesha")
+
+	grace_oid(string, default "grace")
+
+	nodeid(string, default result of gethostname())
+
+RADOS_URLS {}
+--------
+
+	ceph_conf(string, no default)
+
+	userid(path, no default)
+
+	watch_url(url, no default)
