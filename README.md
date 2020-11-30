@@ -38,7 +38,6 @@
 - [glusterfs安装及创建卷使用](./document/glusterfs/glusterfs安装及创建卷使用.md)
 - [glusterfs添加节点成功但状态异常](./document/glusterfs/glusterfs添加节点错误.md)
 - [glusterfs opencas IO加速方案](./document/opencas/OpenCAS缓存加速方案.md)
-
 - [glusterfs-nfs-ganesha部署](./document/glusterfs/2020-11-24-基于glusterfs的nfs-ganesha方案.md)
   
 ### glusterfs源码分析
