@@ -100,7 +100,7 @@ EXPORT{
 
     FSAL {
         name = GLUSTER;
-        hostname = "10.193.226.12"; 
+        hostname = "10.191.13.12"; 
         volume = "speech_v5_rep_vol";  
     }
 
