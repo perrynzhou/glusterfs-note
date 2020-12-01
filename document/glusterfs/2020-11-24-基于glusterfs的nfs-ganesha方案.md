@@ -85,7 +85,8 @@ cluster.enable-shared-storage: disable
 #### 安装nfs-ganesha
 
 ```
-// 每个glusterfs后端节点需要安装
+//三台机器IP分别为:10.193.18.141,10.193.18.142,10.193.18.143
+// 找三台后端大内存机器，每台机器必须安装如下包
 yum install epel-release centos-release-nfs-ganesha -y
 yum install nfs-ganesha nfs-ganesha-gluster -y
 rpm -qa|grep nfs-ganesha
@@ -93,9 +94,9 @@ rpm -qa|grep nfs-ganesha
 
 #### 配置启动nfs-ganesha
 
-- 每个glusterfs后端节点配置nfs-ganesha
+- 每个节点配置nfs-ganesha
 ```
-//每个glusterfs后端节点需要配置
+//10.193.18.141,10.193.18.142,10.193.18.143都节点需要配置
 vi /etc/ganesha/ganesha.conf 
 
 NFS_CORE_PARAM {
@@ -131,7 +132,7 @@ EXPORT{
 
 ```
 
-- 每个glusterfs节点启动nfs-ganesha
+- 每个节点启动nfs-ganesha
 
 ```
 systemctl start nfs-ganesha
@@ -147,5 +148,5 @@ tail -f /var/log/ganesha/ganesha.log
 yum install –y nfs-utils
 
 //支持挂载子目录
-mount -t nfs4  10.193.226.11:/speech_v5_rep_vol  /mnt/nfs
+mount -t nfs4  10.193.18.141:/speech_v5_rep_vol  /mnt/nfs
 ```
