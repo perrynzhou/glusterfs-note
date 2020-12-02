@@ -135,12 +135,15 @@ spec:
     spec:
       containers:
         - name: test-container
-          image: xxx/nfs-ganesha
+          image: ai-registry.vivo.xyz/romai_dev/nfs-ganesha
+          imagePullPolicy: Always
           ports:
           - containerPort: 2049
-          command: 
-          - /usr/sbin/init
-          - /usr/bin/ganesha.nfsd -L /var/log/ganesha/ganesha.log -f /etc/ganesha/ganesha.conf -N NIV_EVENT
+          command: ["/usr/sbin/init"] 
+          lifecycle:
+           postStart:
+            exec:
+              command: ["sh","-c","/usr/bin/ganesha.nfsd -L /var/log/ganesha/ganesha.log -f /etc/ganesha/ganesha.conf -N NIV_EVENT"]
           volumeMounts:
           - name: config-volume
             mountPath: /etc/ganesha
