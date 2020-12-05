@@ -215,8 +215,7 @@ volume rep3_vol-client-0
     option transport.socket.keepalive-time 20
     option transport.tcp-user-timeout 0
     option transport.socket.ssl-enabled off
-    option password 7e9a1877-0837-4563-b73d-aa4cde754c91
-    option username bdb0a45d-e70d-445d-8fe6-76118dfdb738
+
     option transport.address-family inet
     option transport-type tcp
     option remote-subvolume /debug/glusterfs/rep3_vol/brick
@@ -232,8 +231,7 @@ volume rep3_vol-client-1
     option transport.socket.keepalive-time 20
     option transport.tcp-user-timeout 0
     option transport.socket.ssl-enabled off
-    option password 7e9a1877-0837-4563-b73d-aa4cde754c91
-    option username bdb0a45d-e70d-445d-8fe6-76118dfdb738
+
     option transport.address-family inet
     option transport-type tcp
     option remote-subvolume /debug/glusterfs/rep3_vol/brick
@@ -249,8 +247,7 @@ volume rep3_vol-client-2
     option transport.socket.keepalive-time 20
     option transport.tcp-user-timeout 0
     option transport.socket.ssl-enabled off
-    option password 7e9a1877-0837-4563-b73d-aa4cde754c91
-    option username bdb0a45d-e70d-445d-8fe6-76118dfdb738
+
     option transport.address-family inet
     option transport-type tcp
     option remote-subvolume /debug/glusterfs/rep3_vol/brick
