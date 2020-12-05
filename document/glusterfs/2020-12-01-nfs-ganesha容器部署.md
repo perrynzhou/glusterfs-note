@@ -135,7 +135,7 @@ spec:
     spec:
       containers:
         - name: test-container
-          image: ai-registry.vivo.xyz/romai_dev/nfs-ganesha
+          image: registry/romai_dev/nfs-ganesha
           imagePullPolicy: Always
           ports:
           - containerPort: 2049
