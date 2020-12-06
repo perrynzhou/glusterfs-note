@@ -1,8 +1,8 @@
 #  分布式存储系统源码的阅读笔记
 
-| author | update |
-| ------ | ------ |
-| perrynzhou@gmail.com | 2020/05/24 |
+| 作者 | 时间 |QQ技术交流群 |
+| ------ | ------ |------ |
+| perrynzhou@gmail.com |2020/12/01 |中国开源存储技术交流群(672152841) |
 
 ## 目标
 
@@ -22,7 +22,10 @@
 4.刷新windows的dns，即可访问文章中的图片
 ```
 
-## libfuse实现
+## libfuse
+
+- [libfuse3-10源码编译](./document/libfuse/2020-12-06-libfuse-3.10源码编译.md)
+
 
 ## glusterfs
 

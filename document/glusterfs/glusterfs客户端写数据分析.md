@@ -2,9 +2,9 @@
 
 ## glusterfs-write调用链分析
 
-| author | update |
-| ------ | ------ |
-| perrynzhou@gmail.com | 2020/09/24 |
+| 作者 | 时间 |QQ技术交流群 |
+| ------ | ------ |------ |
+| perrynzhou@gmail.com |2020/12/01 |中国开源存储技术交流群(672152841) |
 
 ###  glusterfs 中的STACK_WIND和STACK_UNWIND如何协调工作?
 - 比如glusterfs客户端需要加载三个xlator，每一个xlator都有write和write回调方法方法，三个xaltor定义如下：
