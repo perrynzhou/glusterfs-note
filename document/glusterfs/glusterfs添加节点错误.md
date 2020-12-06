@@ -1,5 +1,9 @@
 ## glusterfs添加节点成功后状态不正常
 
+| 作者 | 时间 |QQ技术交流群 |
+| ------ | ------ |------ |
+| perrynzhou@gmail.com |2020/12/01 |中国开源存储技术交流群(672152841) |
+
 1、现象:
 
 添加节点成功，但是状态为 Accepted peer request (Connected)

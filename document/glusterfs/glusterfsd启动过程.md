@@ -1,7 +1,8 @@
 ### glusterfsd启动都经历了什么
-| author | update |
-| ------ | ------ |
-| perrynzhou@gmail.com | 2020/09/24 |
+
+| 作者 | 时间 |QQ技术交流群 |
+| ------ | ------ |------ |
+| perrynzhou@gmail.com |2020/12/01 |中国开源存储技术交流群(672152841) |
 
 ###### 0.存在的疑惑
 - glusterd启动后怎么把glusterfsd的brick进程拉起来？

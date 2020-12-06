@@ -1,9 +1,9 @@
 
 ### Glusterfs多副本服务端数据丢失演练
 
-| author | update |
-| ------ | ------ | 
-| perrynzhou@gmail.com | 2020/10/20 | 
+| 作者 | 时间 |QQ技术交流群 |
+| ------ | ------ |------ |
+| perrynzhou@gmail.com |2020/12/01 |中国开源存储技术交流群(672152841) |
 
 - 三副本模式，采用read-hash-mode=2,以文件gfid和mount的pid进行哈希计算然一个副本进行文件操作
 
