@@ -81,41 +81,41 @@ gluster volume info test_volume
 
 #创建复制卷，复制卷brick副本最好分布在不同的机器上，这样才能够保证当有机器宕机时候不会影响整个卷使用.
 #创建3副本的复制卷
-gluster volume create sz_cv_aimark_rep_vol replica 3 \
-10.193.227.32:/sz_cv_aimark/data1/brick \
-10.193.226.34:/sz_cv_aimark/data1/brick \
-10.193.226.4:/sz_cv_aimark/data1/brick \
-10.193.227.32:/sz_cv_aimark/data2/brick \
-10.193.226.34:/sz_cv_aimark/data2/brick \
-10.193.226.4:/sz_cv_aimark/data2/brick \
-10.193.227.32:/sz_cv_aimark/data3/brick \
-10.193.226.34:/sz_cv_aimark/data3/brick \
-10.193.226.4:/sz_cv_aimark/data3/brick \
-10.193.227.32:/sz_cv_aimark/data4/brick \
-10.193.226.34:/sz_cv_aimark/data4/brick \
-10.193.226.4:/sz_cv_aimark/data4/brick
+gluster volume create sz_test_rep_vol replica 3 \
+192.168.227.32:/sz_test/data1/brick \
+192.168.226.34:/sz_test/data1/brick \
+192.168.226.4:/sz_test/data1/brick \
+192.168.227.32:/sz_test/data2/brick \
+192.168.226.34:/sz_test/data2/brick \
+192.168.226.4:/sz_test/data2/brick \
+192.168.227.32:/sz_test/data3/brick \
+192.168.226.34:/sz_test/data3/brick \
+192.168.226.4:/sz_test/data3/brick \
+192.168.227.32:/sz_test/data4/brick \
+192.168.226.34:/sz_test/data4/brick \
+192.168.226.4:/sz_test/data4/brick
 
 #ec卷创建，系统推荐使用4+2的方式使用，所以一组brick最好是分布在6台机器上，不这样分布也是可以创建的
 #下面的backup_szcv_ec2_vol卷分布在3台机器上
 gluster volume create backup_szcv_ec2_vol disperse-data 4 redundancy 2 \
-10.193.27.1:/backup_szcv_ec2/data1/brick \
-10.193.27.2:/backup_szcv_ec2/data1/brick \
-10.193.27.15:/backup_szcv_ec2/data1/brick \
-10.193.27.1:/backup_szcv_ec2/data2/brick \
-10.193.27.2:/backup_szcv_ec2/data2/brick \
-10.193.27.15:/backup_szcv_ec2/data2/brick \
-10.193.27.1:/backup_szcv_ec2/data3/brick \
-10.193.27.2:/backup_szcv_ec2/data3/brick \
-10.193.27.15:/backup_szcv_ec2/data3/brick \
-10.193.27.1:/backup_szcv_ec2/data4/brick \
-10.193.27.2:/backup_szcv_ec2/data4/brick \
-10.193.27.15:/backup_szcv_ec2/data4/brick \
-10.193.27.1:/backup_szcv_ec2/data5/brick \
-10.193.27.2:/backup_szcv_ec2/data5/brick \
-10.193.27.15:/backup_szcv_ec2/data5/brick \
-10.193.27.1:/backup_szcv_ec2/data6/brick \
-10.193.27.2:/backup_szcv_ec2/data6/brick \
-10.193.27.15:/backup_szcv_ec2/data6/brick
+192.168.27.1:/backup_szcv_ec2/data1/brick \
+192.168.27.2:/backup_szcv_ec2/data1/brick \
+192.168.27.15:/backup_szcv_ec2/data1/brick \
+192.168.27.1:/backup_szcv_ec2/data2/brick \
+192.168.27.2:/backup_szcv_ec2/data2/brick \
+192.168.27.15:/backup_szcv_ec2/data2/brick \
+192.168.27.1:/backup_szcv_ec2/data3/brick \
+192.168.27.2:/backup_szcv_ec2/data3/brick \
+192.168.27.15:/backup_szcv_ec2/data3/brick \
+192.168.27.1:/backup_szcv_ec2/data4/brick \
+192.168.27.2:/backup_szcv_ec2/data4/brick \
+192.168.27.15:/backup_szcv_ec2/data4/brick \
+192.168.27.1:/backup_szcv_ec2/data5/brick \
+192.168.27.2:/backup_szcv_ec2/data5/brick \
+192.168.27.15:/backup_szcv_ec2/data5/brick \
+192.168.27.1:/backup_szcv_ec2/data6/brick \
+192.168.27.2:/backup_szcv_ec2/data6/brick \
+192.168.27.15:/backup_szcv_ec2/data6/brick
 ```
 
 4、挂载卷
@@ -128,8 +128,8 @@ glusterfs
 glusterfs-fuse
 glusterfs-client-xlators
 #创建挂载目录
-mkdir /data/glusterfs_sz_cv_aimark
+mkdir /data/glusterfs_sz_test
 #挂载卷
-mount -t glusterfs -o acl,backup-volfile-servers=10.193.226.34:10.193.226.4 10.193.227.32:sz_cv_aimark_rep_vol /data/glusterfs_sz_cv_aimark
+mount -t glusterfs -o acl,backup-volfile-servers=192.168.226.34:192.168.226.4 192.168.227.32:sz_test_rep_vol /data/glusterfs_sz_test
 ```
 
