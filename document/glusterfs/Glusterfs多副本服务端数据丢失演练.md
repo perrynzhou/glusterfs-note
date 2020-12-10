@@ -8,7 +8,7 @@
 - 三副本模式，采用read-hash-mode=2,以文件gfid和mount的pid进行哈希计算然一个副本进行文件操作
 
 ```
-root@172.25.78.11 ~ $ gluster volume info
+root@132.21.60.10 ~ $ gluster volume info
  
 Volume Name: ssd_rep_vol
 Type: Replicate
@@ -18,7 +18,7 @@ Snapshot Count: 0
 Number of Bricks: 1 x 3 = 3
 Transport-type: tcp
 Bricks:
-Brick1: 172.25.78.11:/glusterfs/rep_vol/data1/brick
+Brick1: 132.21.60.10:/glusterfs/rep_vol/data1/brick
 Brick2: 172.25.78.12:/glusterfs/rep_vol/data1/brick
 Brick3: 172.25.78.13:/glusterfs/rep_vol/data1/brick
 Options Reconfigured:
@@ -41,9 +41,7 @@ devtmpfs                           63G     0   63G   0% /dev
 tmpfs                              63G     0   63G   0% /dev/shm
 tmpfs                              63G   19M   63G   1% /run
 tmpfs                              63G     0   63G   0% /sys/fs/cgroup
-/dev/mapper/vivoOSVG00-lv_root    200G   11G  190G   6% /
 /dev/sda2                        1014M  154M  861M  16% /boot
-/dev/mapper/vivoOSVG00-lv_r1home  512G   33M  512G   1% /home
 tmpfs                              13G     0   13G   0% /run/user/5989
 tmpfs                              13G     0   13G   0% /run/user/5001
 172.25.78.19:train_vol            139T   73T   66T  53% /mnt/train_vol
@@ -63,7 +61,7 @@ drwxr-xr-x 4 root root     87 Oct 19 18:24 public
 - 在Brick1上的删除ddd文件
 ```
 //查看客户端挂载情况
-root@172.25.78.11 /glusterfs/rep_vol/data1/brick $ df -h
+root@132.21.60.10 /glusterfs/rep_vol/data1/brick $ df -h
 Filesystem                Size  Used Avail Use% Mounted on
 devtmpfs                   63G     0   63G   0% /dev
 tmpfs                      63G     0   63G   0% /dev/shm
@@ -76,9 +74,9 @@ tmpfs                      63G     0   63G   0% /sys/fs/cgroup
 /dev/mapper/ssd_vg-lvol1   50G   33M   50G   1% /glusterfs/dht_vol/data1
 tmpfs                      13G     0   13G   0% /run/user/5989
 tmpfs                      13G     0   13G   0% /run/user/5001
-172.25.78.11:ssd_rep_vol  100G   89G   12G  89% /mnt/ssd_rep_vol
+132.21.60.10:ssd_rep_vol  100G   89G   12G  89% /mnt/ssd_rep_vol
 //未删除文件之前的情况
-root@172.25.78.11 /glusterfs/rep_vol/data1/brick $ ls -l
+root@132.21.60.10 /glusterfs/rep_vol/data1/brick $ ls -l
 total 832
 -rwxr-xr-x 2 root root 212632 Oct 20 14:23 data1
 -rwxr-xr-x 2 root root 212632 Oct 20 14:26 data2
@@ -88,8 +86,8 @@ drwxr-xr-x 4 root root     87 Oct 19 18:24 public
 -rwxr-xr-x 2 root root 212632 Oct 19 17:48 test_gfs
 
 //手动删除ddd和data2两个文件
-root@172.25.78.11 /glusterfs/rep_vol/data1/brick $ rm -rf ddd data2
-root@172.25.78.11 /glusterfs/rep_vol/data1/brick $ ls -l
+root@132.21.60.10 /glusterfs/rep_vol/data1/brick $ rm -rf ddd data2
+root@132.21.60.10 /glusterfs/rep_vol/data1/brick $ ls -l
 total 416
 -rwxr-xr-x 2 root root 212632 Oct 20 14:23 data1
 drwxr-xr-x 2 root root     22 Oct 20 14:09 fuck
@@ -118,7 +116,7 @@ root@172.25.78.25 /mnt/ssd_rep_vol $ find /mnt/ssd_rep_vol/data2 -type f -print0
 - 查看brick1修复情况
 ```
 //在brick1上查看ddd和data1，已经恢复了
-root@172.25.78.11 /glusterfs/rep_vol/data1/brick $ ls -l
+root@132.21.60.10 /glusterfs/rep_vol/data1/brick $ ls -l
 total 832
 -rwxr-xr-x 2 root root 212632 Oct 20 14:23 data1
 -rwxr-xr-x 2 root root 212632 Oct 20 14:26 data2
@@ -126,5 +124,5 @@ total 832
 drwxr-xr-x 2 root root     22 Oct 20 14:09 fuck
 drwxr-xr-x 4 root root     87 Oct 19 18:24 public
 -rwxr-xr-x 2 root root 212632 Oct 19 17:48 test_gfs
-root@172.25.78.11 /glusterfs/rep_vol/data1/brick $ 
+root@132.21.60.10 /glusterfs/rep_vol/data1/brick $ 
 ```

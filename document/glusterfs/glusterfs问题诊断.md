@@ -17,7 +17,7 @@ smartctl -H /dev/sdm1
 ```
 # ps -ef|grep 169810
 root     107496 175632  0 16:21 pts/1    00:00:00 grep --color=auto 169810
-root     169810      1  7 Oct10 ?        03:17:25 /usr/sbin/glusterfsd -s 10.194.8.132 --volfile-id sharing_vol.10.194.8.132.data11-brick_sharing_vol -p /var/run/gluster/vols/sharing_vol/10.194.8.132-data11-brick_sharing_vol.pid -S /var/run/gluster/4db36e75931c2470.socket --brick-name /data11/brick_sharing_vol -l /var/log/glusterfs/bricks/data11-brick_sharing_vol.log --xlator-option *-posix.glusterd-uuid=e4abe33a-6b84-4b55-becf-c6354afa0926 --process-name brick --brick-port 49158 --xlator-option sharing_vol-server.listen-port=49158
+root     169810      1  7 Oct10 ?        03:17:25 /usr/sbin/glusterfsd -s 192.168.12.132 --volfile-id sharing_vol.192.168.12.132.data11-brick_sharing_vol -p /var/run/gluster/vols/sharing_vol/192.168.12.132-data11-brick_sharing_vol.pid -S /var/run/gluster/4db36e75931c2470.socket --brick-name /data11/brick_sharing_vol -l /var/log/glusterfs/bricks/data11-brick_sharing_vol.log --xlator-option *-posix.glusterd-uuid=e4abe33a-6b84-4b55-becf-c6354afa0926 --process-name brick --brick-port 49158 --xlator-option sharing_vol-server.listen-port=49158
 
 # ls /proc/169810/fd |wc -l
 849
@@ -118,8 +118,8 @@ glusterfs.gfid.string="b85f1ece-7d38-41c6-873d-79a4b14f99f4"
 ### 查看文件的分布式的的信息
 
 ```
-# getfattr -n trusted.glusterfs.pathinfo -e text  /data/glusterfs_speech_04_v6/11085164/espnet/vivo_input2/espnet_aishell/data/train/wav.scp 
+# getfattr -n trusted.glusterfs.pathinfo -e text  /data/glusterfs_speech_04_v6/11085164/espnet/hello_input2/espnet_aishell/data/train/wav.scp 
 getfattr: Removing leading '/' from absolute path names
-# file: data/glusterfs_speech_04_v6/11085164/espnet/vivo_input2/espnet_aishell/data/train/wav.scp
-trusted.glusterfs.pathinfo="(<DISTRIBUTE:speech_v6_rep_vol-dht> (<REPLICATE:speech_v6_rep_vol-replicate-1> <POSIX(/speech_v6/data2/brick):ai-storage-center-prd-10-194-39-15.v-bj-4.vivo.lan:/speech_v6/data2/brick/11085164/espnet/vivo_input2/espnet_aishell/data/train/wav.scp> <POSIX(/speech_v6/data2/brick):ai-storage-center-prd-10-194-39-7.v-bj-4.vivo.lan:/speech_v6/data2/brick/11085164/espnet/vivo_input2/espnet_aishell/data/train/wav.scp> <POSIX(/speech_v6/data2/brick):ai-storage-center-prd-10-194-39-6.v-bj-4.vivo.lan:/speech_v6/data2/brick/11085164/espnet/vivo_input2/espnet_aishell/data/train/wav.scp>))"
+# file: data/glusterfs_speech_04_v6/11085164/espnet/hello_input2/espnet_aishell/data/train/wav.scp
+trusted.glusterfs.pathinfo="(<DISTRIBUTE:speech_v6_rep_vol-dht> (<REPLICATE:speech_v6_rep_vol-replicate-1> <POSIX(/speech_v6/data2/brick):node.hello.lan:/speech_v6/data2/brick/11085164/espnet/hello_input2/espnet_aishell/data/train/wav.scp> <POSIX(/speech_v6/data2/brick):test-node:/speech_v6/data2/brick/11085164/espnet/hello_input2/espnet_aishell/data/train/wav.scp> <POSIX(/speech_v6/data2/brick):ai-storage-center-prd-10-194-39-6.v-bj-4.hello.lan:/speech_v6/data2/brick/11085164/espnet/hello_input2/espnet_aishell/data/train/wav.scp>))"
 ```

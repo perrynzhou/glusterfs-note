@@ -75,9 +75,9 @@ nfs.disable: on
   [2020-10-10 09:22:50.117901] W [socket.c:3126:socket_server_event_handler] 0-tcp.sharing_vol-server: accept on 11 failed (Too many open files)
   
   /*-------------------------------open file and opendir failed many times-------------*/
-  [2020-10-10 09:22:56.499536] E [MSGID: 115070] [server-rpc-fops_v2.c:1502:server4_open_cbk] 0-sharing_vol-server: 5756661176: OPEN /public_data/speech_wakeup/datasets/PD2001/multi-noisy/data/panhaiquan/XVXV/20200726_A/drive_closewindow/eval/panhaiquan_XVXV_20200726_A_drive_closewindow_eval_69.wav (ab21069a-8344-4122-9f82-9a658b76f995), client: CTX_ID:d1b7e7b6-30be-4572-9509-a2c8d7d49544-GRAPH_ID:0-PID:44983-HOST:ai-vtraining-prd-10-193-85-11.v-bj-4.vivo.lan-PC_NAME:sharing_vol-client-31-RECON_NO:-0, error-xlator: sharing_vol-posix [Too many open files]
+  [2020-10-10 09:22:56.499536] E [MSGID: 115070] [server-rpc-fops_v2.c:1502:server4_open_cbk] 0-sharing_vol-server: 5756661176: OPEN /public_data/speech_wakeup/datasets/PD2001/multi-noisy/data/panhaiquan/XVXV/20200726_A/drive_closewindow/eval/panhaiquan_XVXV_20200726_A_drive_closewindow_eval_69.wav (ab21069a-8344-4122-9f82-9a658b76f995), client: CTX_ID:d1b7e7b6-30be-4572-9509-a2c8d7d49544-GRAPH_ID:0-PID:44983-HOST:test-node.lan-PC_NAME:sharing_vol-client-31-RECON_NO:-0, error-xlator: sharing_vol-posix [Too many open files]
   [2020-10-10 09:22:56.499904] E [MSGID: 113039] [posix-inode-fd-ops.c:1523:posix_open] 0-sharing_vol-posix: open on gfid-handle /data11/brick_sharing_vol/.glusterfs/10/78/10784702-07b8-432f-937e-9f6a037bfa6c (path: /public_data/speech_wakeup/datasets/PD2001/multi-noisy/data/panhaiquan/XVXV/20200726_A/drive_closewindow/eval/panhaiquan_XVXV_20200726_A_drive_closewindow_eval_70.wav), flags: 0 [Too many open files]
-  [2020-10-10 09:22:56.499933] E [MSGID: 115070] [server-rpc-fops_v2.c:1502:server4_open_cbk] 0-sharing_vol-server: 5756661178: OPEN /public_data/speech_wakeup/datasets/PD2001/multi-noisy/data/panhaiquan/XVXV/20200726_A/drive_closewindow/eval/panhaiquan_XVXV_20200726_A_drive_closewindow_eval_70.wav (10784702-07b8-432f-937e-9f6a037bfa6c), client: CTX_ID:d1b7e7b6-30be-4572-9509-a2c8d7d49544-GRAPH_ID:0-PID:44983-HOST:ai-vtraining-prd-10-193-85-11.v-bj-4.vivo.lan-PC_NAME:sharing_vol-client-31-RECON_NO:-0, error-xlator: sharing_vol-posix [Too many open files]
+  [2020-10-10 09:22:56.499933] E [MSGID: 115070] [server-rpc-fops_v2.c:1502:server4_open_cbk] 0-sharing_vol-server: 5756661178: OPEN /public_data/speech_wakeup/datasets/PD2001/multi-noisy/data/panhaiquan/XVXV/20200726_A/drive_closewindow/eval/panhaiquan_XVXV_20200726_A_drive_closewindow_eval_70.wav (10784702-07b8-432f-937e-9f6a037bfa6c), client: CTX_ID:d1b7e7b6-30be-4572-9509-a2c8d7d49544-GRAPH_ID:0-PID:44983-HOST:test-node.lan-PC_NAME:sharing_vol-client-31-RECON_NO:-0, error-xlator: sharing_vol-posix [Too many open files]
   [2020-10-10 09:22:56.547027] E [MSGID: 113015] [posix-inode-fd-ops.c:1235:posix_opendir] 0-sharing_vol-posix: opendir failed on gfid-handle: /data11/brick_sharing_vol/11101488/ly-data/imagenet/train/n04285008 (path: /11101488/ly-data/imagenet/train/n04285008) [Too many open files]
   
   
@@ -100,7 +100,6 @@ root     169810      1  7 Oct10 ?        03:17:25 /usr/sbin/glusterfsd -s 10.194
 # ls /proc/169810/fd |wc -l
 849
 
-[root@ai-storage-center-prd-10-194-8-132.v-bj-4.vivo.lan:/root]
 # grep open  /proc/169810/limits
 Max open files            1048576              1048576              files   
 ```

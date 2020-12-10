@@ -27,9 +27,9 @@ Snapshot Count: 0
 Number of Bricks: 1 x 3 = 3
 Transport-type: tcp
 Bricks:
-Brick1: 10.193.189.153:/debug/glusterfs/rep3_vol/brick
-Brick2: 10.193.189.154:/debug/glusterfs/rep3_vol/brick
-Brick3: 10.193.189.155:/debug/glusterfs/rep3_vol/brick
+Brick1: 192.168.15.153:/debug/glusterfs/rep3_vol/brick
+Brick2: 192.168.15.154:/debug/glusterfs/rep3_vol/brick
+Brick3: 192.168.15.155:/debug/glusterfs/rep3_vol/brick
 Options Reconfigured:
 diagnostics.brick-log-level: INFO
 performance.client-io-threads: off
@@ -43,12 +43,12 @@ diagnostics.client-log-level: DEBUG
 **1.通过mount命令挂载**
 
 ```
-mount -t glusterfs -o acl 10.193.189.153:/rep3_vol /mnt/rep3_vol2
+mount -t glusterfs -o acl 192.168.15.153:/rep3_vol /mnt/rep3_vol2
 ```
 **2.直接使用glusterfs二进制挂载**
 
 ```
- /usr/local/sbin/glusterfs --acl --process-name fuse --volfile-server=10.193.189.153 --volfile-id=rep3_vol /mnt/rep3_vol
+ /usr/local/sbin/glusterfs --acl --process-name fuse --volfile-server=192.168.15.153 --volfile-id=rep3_vol /mnt/rep3_vol
 
 ```
 #### Mount Glusterfs 整个流程
@@ -121,7 +121,7 @@ static int glusterfs_volfile_fetch_one(glusterfs_ctx_t *ctx, char *volfile_id)
                               (xdrproc_t)xdr_gf_getspec_req);
 }
 //mgmt_submit_request函数会调用服务端的gluster_handshake_actors[GETSPEC]对应的函数，获取spec信息后会调用mgmt_getspec_cbk回调函数.
-//在gdb参数中设置--volfile-server=10.193.189.154 这个节点上gdb attach glusterd进程，然后设置在server_getspec，然后客户端请求，然后10.193.189.154节点的glusterd在server_getspec响应
+//在gdb参数中设置--volfile-server=192.168.15.154 这个节点上gdb attach glusterd进程，然后设置在server_getspec，然后客户端请求，然后192.168.15.154节点的glusterd在server_getspec响应
 rpcsvc_actor_t gluster_handshake_actors[GF_HNDSK_MAXVALUE] = {
     [GF_HNDSK_GETSPEC] = {"GETSPEC", GF_HNDSK_GETSPEC, server_getspec, NULL, 0, DRC_NA}
 };
@@ -148,7 +148,7 @@ mgmt_getspec_cbk(struct rpc_req *req, struct iovec *iov, int count,
 - 2.进入gdb的交互控制界面，需要设置参数,参数设置如下
 ```
 gdb /usr/local/sbin/glusterfs
-set args  --acl --process-name fuse --volfile-server=10.193.189.153 --volfile-id=rep3_vol /mnt/rep3_vol
+set args  --acl --process-name fuse --volfile-server=192.168.15.153 --volfile-id=rep3_vol /mnt/rep3_vol
 (gdb) set print pretty on
 (gdb) br main
 (gdb) br create_fuse_mount  
@@ -218,7 +218,7 @@ volume rep3_vol-client-0
     option transport.address-family inet
     option transport-type tcp
     option remote-subvolume /debug/glusterfs/rep3_vol/brick
-    option remote-host 10.193.189.153
+    option remote-host 192.168.15.153
     option ping-timeout 42
 end-volume
 
@@ -234,7 +234,7 @@ volume rep3_vol-client-1
     option transport.address-family inet
     option transport-type tcp
     option remote-subvolume /debug/glusterfs/rep3_vol/brick
-    option remote-host 10.193.189.154
+    option remote-host 192.168.15.154
     option ping-timeout 42
 end-volume
 
@@ -250,7 +250,7 @@ volume rep3_vol-client-2
     option transport.address-family inet
     option transport-type tcp
     option remote-subvolume /debug/glusterfs/rep3_vol/brick
-    option remote-host 10.193.189.155
+    option remote-host 192.168.15.155
     option ping-timeout 42
 end-volume
 
