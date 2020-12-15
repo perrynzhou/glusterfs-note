@@ -85,7 +85,8 @@ cluster.enable-shared-storage: disable
 #### 安装nfs-ganesha
 
 ```
-
+// 在客户端安装如下这些包
+// 找三台后端大内存机器，每台机器必须安装如下包
 yum install epel-release centos-release-nfs-ganesha -y
 yum install nfs-ganesha nfs-ganesha-gluster -y
 rpm -qa|grep nfs-ganesha
