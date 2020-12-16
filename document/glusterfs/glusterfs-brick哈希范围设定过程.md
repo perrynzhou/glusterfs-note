@@ -135,6 +135,10 @@ Detaching after fork from child process 275182.
 (gdb) set follow-fork-mode child 
 (gdb) set detach-on-fork off
 (gdb) set print pretty on
+(gdb) br glusterfs_volumes_init
+(gdb) br glusterfs_process_volfp
+(gdb) br glusterfs_graph_construct
+(gdb) br dht_init
 (gdb) br dht_lookup
 (gdb) c
 Reading symbols from /usr/local/lib/glusterfs/2020.09.07/rpc-transport/socket.so...done.
