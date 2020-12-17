@@ -35,6 +35,32 @@ $ ps -eo ppid,pid,user,stat,pcpu,comm,wchan:32
 //这个命令可以把D状态的进程的内核栈信息trace到/var/log/messages中
 $ echo w > /proc/sysrq-trigger
 ```
+
+
+### 查看glusterfs卷相关状态  
+
+```
+gluster volume status volume_name
+Lists status information for each brick in the volume.
+
+gluster volume status volume_name detail
+Lists more detailed status information for each brick in the volume.
+
+gluster volume status volume_name clients
+Lists the clients connected to the volume.
+
+gluster volume status volume_name mem
+Lists the memory usage and memory pool details for each brick in the volume.
+
+gluster volume status volume_name inode
+Lists the inode tables of the volume.
+
+gluster volume status volume_name fd
+Lists the open file descriptor tables of the volume.
+
+gluster volume status volume_name callpool
+Lists the pending calls for the volume.
+```
 ### glusterfs设置进程的调试级别
 
 ```
