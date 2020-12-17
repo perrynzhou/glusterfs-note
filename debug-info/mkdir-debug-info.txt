@@ -1,0 +1,307 @@
+
+
+- 客户端 执行mkdir /mnt/rep_vol/test_dir
+ dht_pt_mkdir {
+      dht_selfheal_layout_new_directory(frame, loc, layout);
+
+    dht_disk_layout_extract(this, layout, 0, &disk_layout_p);
+
+    ret = dict_set_bin(xdata, conf->xattr_name, disk_layout_p, 4 * 4);
+    STACK_WIND(frame, dht_pt_mkdir_cbk, FIRST_CHILD(this),
+               FIRST_CHILD(this)->fops->mkdir, loc, mode, umask, xdata);
+  }
+int afr_mkdir(call_frame_t *frame, xlator_t *this, loc_t *loc, mode_t mode,
+          mode_t umask, dict_t *xdata)
+{
+   local->op = GF_FOP_MKDIR;
+    local->transaction.wind = afr_mkdir_wind;
+    local->transaction.unwind = afr_mkdir_unwind;
+    ret = afr_transaction(transaction_frame, this, AFR_ENTRY_TRANSACTION);
+    AFR_STACK_DESTROY(transaction_frame);
+    AFR_STACK_UNWIND(mkdir, frame, -1, op_errno, NULL, NULL, NULL, NULL, NULL);
+}
+ int afr_transaction(call_frame_t *frame, xlator_t *this, afr_transaction_type type)
+{
+	afr_transaction_start(local, this);
+}
+void afr_transaction_start(afr_local_t *local, xlator_t *this)
+{
+	afr_changelog_pre_op(local->transaction.frame, this);
+	
+}
+int afr_changelog_pre_op(call_frame_t *frame, xlator_t *this)
+{
+	next:
+   	 	afr_transaction_perform_fop(frame, this);
+    	return 0;
+	err:
+    	local->internal_lock.lock_cbk = afr_transaction_done;
+}
+int afr_transaction_perform_fop(call_frame_t *frame, xlator_t *this)
+{
+	afr_transaction_fop(frame, this);
+}
+int afr_transaction_fop(call_frame_t *frame, xlator_t *this)
+{
+    local->call_count = call_count;
+    for (i = 0; i < priv->child_count; i++) {
+        if (local->transaction.pre_op[i] && !failed_subvols[i]) {
+            local->transaction.wind(frame, this, i);
+
+            if (!--call_count)
+                break;
+        }
+    }
+}
+ 
+
+
+root@172.16.84.54 /home/admin/glusterfs-8.3 $ gdb /usr/local/sbin/glusterfs
+GNU gdb (GDB) Red Hat Enterprise Linux 7.6.1-119.el7
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-redhat-linux-gnu".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+Reading symbols from /usr/local/sbin/glusterfsd...done.
+(gdb) br create_fuse_mount 
+Breakpoint 1 at 0x4075f5: file glusterfsd.c, line 557.
+(gdb) set args  --acl --process-name fuse --volfile-server=172.16.84.37 --volfile-id=rep_vol  /mnt/rep_vol
+(gdb) r
+Starting program: /usr/local/sbin/glusterfs --acl --process-name fuse --volfile-server=172.16.84.37 --volfile-id=rep_vol  /mnt/rep_vol
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib64/libthread_db.so.1".
+
+Breakpoint 1, create_fuse_mount (ctx=0x63c010) at glusterfsd.c:557
+557         int ret = 0;
+Missing separate debuginfos, use: debuginfo-install glibc-2.17-307.el7.1.x86_64 keyutils-libs-1.5.8-3.el7.x86_64 krb5-libs-1.15.1-46.el7.x86_64 libcom_err-1.42.9-17.el7.x86_64 libselinux-2.5-15.el7.x86_64 libtirpc-0.2.4-0.16.el7.x86_64 libuuid-2.23.2-63.el7.x86_64 openssl-libs-1.0.2k-19.el7.x86_64 pcre-8.32-17.el7.x86_64 zlib-1.2.7-18.el7.x86_64
+(gdb) n
+558         cmd_args_t *cmd_args = NULL;
+(gdb) 
+559         xlator_t *master = NULL;
+(gdb) 
+561         cmd_args = &ctx->cmd_args;
+(gdb) 
+562         if (!cmd_args->mount_point) {
+(gdb) 
+568         if (ctx->process_mode != GF_CLIENT_PROCESS) {
+(gdb) 
+573         master = GF_CALLOC(1, sizeof(*master), gfd_mt_xlator_t);
+(gdb) 
+574         if (!master)
+(gdb) 
+577         master->name = gf_strdup("fuse");
+(gdb) 
+578         if (!master->name)
+(gdb) 
+581         if (xlator_set_type(master, "mount/fuse") == -1) {
+(gdb) 
+587         master->ctx = ctx;
+(gdb) 
+588         master->options = dict_new();
+(gdb) 
+589         if (!master->options)
+(gdb) 
+592         ret = set_fuse_mount_options(ctx, master->options);
+(gdb) 
+593         if (ret)
+(gdb) 
+596         if (cmd_args->fuse_mountopts) {
+(gdb) 
+606         ret = xlator_init(master);
+(gdb) 
+[Detaching after fork from child process 105399]
+607         if (ret) {
+(gdb) 
+612         ctx->master = master;
+(gdb) 
+614         return 0;
+(gdb)  set follow-fork-mode child
+(gdb) set detach-on-fork off
+(gdb) br glusterfs_volumes_init
+Breakpoint 2 at 0x40c090: file glusterfsd.c, line 2551.
+(gdb) br glusterfs_process_volfp
+Breakpoint 3 at 0x40be32: file glusterfsd.c, line 2476.
+(gdb) br glusterfs_graph_construct
+Breakpoint 4 at 0x2aaaaada8a9b: file ./graph.y, line 558.
+(gdb) c
+Continuing.
+[Attaching after process 105973 fork to child process 105973]
+[New inferior 2 (process 105973)]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib64/libthread_db.so.1".
+[New Thread 0x2aaab56e0700 (LWP 105974)]
+[New Thread 0x2aaab58e1700 (LWP 105975)]
+[New Thread 0x2aaab5ae2700 (LWP 105976)]
+[New Thread 0x2aaab5ce3700 (LWP 105977)]
+[New Thread 0x2aaab5ee4700 (LWP 105978)]
+[New Thread 0x2aaab60e5700 (LWP 105979)]
+[Switching to Thread 0x2aaaaaae4e00 (LWP 105973)]
+
+Breakpoint 2, glusterfs_volumes_init (ctx=0x63c010) at glusterfsd.c:2551
+2551        FILE *fp = NULL;
+Missing separate debuginfos, use: debuginfo-install glibc-2.17-307.el7.1.x86_64 keyutils-libs-1.5.8-3.el7.x86_64 krb5-libs-1.15.1-46.el7.x86_64 libcom_err-1.42.9-17.el7.x86_64 libselinux-2.5-15.el7.x86_64 libtirpc-0.2.4-0.16.el7.x86_64 libuuid-2.23.2-63.el7.x86_64 openssl-libs-1.0.2k-19.el7.x86_64 pcre-8.32-17.el7.x86_64 zlib-1.2.7-18.el7.x86_64
+(gdb) c
+Continuing.
+Reading symbols from /usr/local/lib/glusterfs/2020.12.16/rpc-transport/socket.so...done.
+[New Thread 0x2aaab6b98700 (LWP 105980)]
+[New Thread 0x2aaab6d99700 (LWP 105981)]
+[Switching to Thread 0x2aaab6b98700 (LWP 105980)]
+
+Breakpoint 3, glusterfs_process_volfp (ctx=0x63c010, fp=0x2aaab8003280) at glusterfsd.c:2476
+2476        glusterfs_graph_t *graph = NULL;
+Missing separate debuginfos, use: debuginfo-install sssd-client-1.16.4-37.el7.x86_64
+(gdb) c
+Continuing.
+
+Breakpoint 4, glusterfs_graph_construct (fp=0x2aaab8003280) at ./graph.y:558
+558             int                ret = 0;
+(gdb) set print pretty on
+(gdb) dht_init
+Undefined command: "dht_init".  Try "help".
+(gdb) br dht_init
+Function "dht_init" not defined.
+Make breakpoint pending on future shared library load? (y or [n]) y
+Breakpoint 5 (dht_init) pending.
+(gdb) c
+Continuing.
+Reading symbols from /usr/local/lib/glusterfs/2020.12.16/xlator/protocol/client.so...done.
+Reading symbols from /usr/local/lib/glusterfs/2020.12.16/xlator/cluster/replicate.so...done.
+Reading symbols from /usr/local/lib/glusterfs/2020.12.16/xlator/cluster/distribute.so...done.
+Reading symbols from /usr/local/lib/glusterfs/2020.12.16/xlator/features/utime.so...done.
+Reading symbols from /usr/local/lib/glusterfs/2020.12.16/xlator/performance/write-behind.so...done.
+Reading symbols from /usr/local/lib/glusterfs/2020.12.16/xlator/performance/open-behind.so...done.
+Reading symbols from /usr/local/lib/glusterfs/2020.12.16/xlator/performance/quick-read.so...done.
+Reading symbols from /usr/local/lib/glusterfs/2020.12.16/xlator/performance/md-cache.so...done.
+Reading symbols from /usr/local/lib/glusterfs/2020.12.16/xlator/debug/io-stats.so...done.
+Reading symbols from /usr/local/lib/glusterfs/2020.12.16/xlator/system/posix-acl.so...done.
+Reading symbols from /usr/local/lib/glusterfs/2020.12.16/xlator/meta.so...done.
+
+Breakpoint 5, dht_init (this=0x2aaab8012330) at dht-shared.c:611
+611         dht_conf_t *conf = NULL;
+(gdb) br dht_selfheal_dir_getafix
+brBreakpoint 6 at 0x2aaab7328bff: file dht-selfheal.c, line 1815.
+(gdb) br dht_selfheal_layout_new_directory
+Breakpoint 7 at 0x2aaab7328651: file dht-selfheal.c, line 1719.
+(gdb) c
+Continuing.
+[New Thread 0x2aaac5392700 (LWP 108826)]
+[New Thread 0x2aaac5593700 (LWP 108827)]
+[New Thread 0x2aaac5794700 (LWP 108828)]
+[Switching to Thread 0x2aaab6d99700 (LWP 105981)]
+
+Breakpoint 7, dht_selfheal_layout_new_directory (frame=0x2aaabc006bd8, loc=0x2aaad000c640, layout=0x2aaabc001a20) at dht-selfheal.c:1719
+1719        xlator_t *this = NULL;
+(gdb) p frame->this->name
+$1 = 0x2aaab800fbb0 "rep_vol-dht"
+(gdb) p frame->parent->this->name
+$2 = 0x2aaab80134d0 "rep_vol-utime"
+(gdb) br dht_get_layout_count
+Breakpoint 8 at 0x2aaab7327a52: file dht-selfheal.c, line 1429.
+(gdb) n
+1720        double chunk = 0;
+(gdb) 
+1721        int i = 0;
+(gdb) 
+1722        uint32_t start = 0;
+(gdb) 
+1723        int bricks_to_use = 0;
+(gdb) 
+1724        int err = 0;
+(gdb) p bricks_to_use
+$3 = 0
+(gdb) n
+1725        int start_subvol = 0;
+(gdb) 
+1728        uint64_t total_size = 0;
+(gdb) 
+1732        int bricks_used = 0;
+(gdb) 
+1734        this = frame->this;
+(gdb) 
+1735        priv = this->private;
+(gdb) p this->name
+$4 = 0x2aaab800fbb0 "rep_vol-dht"
+(gdb) n
+1736        weight_by_size = priv->do_weighting;
+(gdb) p this->private
+$5 = (void *) 0x2aaab803fe00
+(gdb) n
+1738        bricks_to_use = dht_get_layout_count(this, layout, 1);
+(gdb) 
+
+Breakpoint 8, dht_get_layout_count (this=0x2aaab8012330, layout=0x2aaabc001a20, new_layout=1) at dht-selfheal.c:1429
+1429        int i = 0;
+(gdb) p new_layout
+$6 = 1
+(gdb) n
+1430        int j = 0;
+(gdb) 
+1431        int err = 0;
+(gdb) 
+1432        int count = 0;
+(gdb) br dht->
+Display all 40314 possibilities? (y or n)
+(gdb) n
+1433        dht_conf_t *conf = NULL;
+(gdb) 
+1436        conf = this->private;
+(gdb) 
+1437        for (i = 0; i < layout->cnt; i++) {
+(gdb) p conf->methods.
+layout_search             migration_get_dst_subvol  migration_needed          migration_other           
+(gdb) p conf->methods.
+layout_search             migration_get_dst_subvol  migration_needed          migration_other           
+(gdb) p conf->methods.layout_search 
+$7 = (xlator_t *(*)(xlator_t *, dht_layout_t *, const char *)) 0x2aaab73012a8 <dht_layout_search>
+(gdb) br dht_layout_search
+Breakpoint 9 at 0x2aaab73012bc: file dht-layout.c, line 127.
+(gdb) 
+(gdb) info break
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   <MULTIPLE>         
+        breakpoint already hit 1 time
+1.1                         y     0x00000000004075f5 in create_fuse_mount at glusterfsd.c:557 inf 1
+1.2                         y     0x00000000004075f5 in create_fuse_mount at glusterfsd.c:557 inf 2
+2       breakpoint     keep y   <MULTIPLE>         
+        breakpoint already hit 1 time
+2.1                         y     0x000000000040c090 in glusterfs_volumes_init at glusterfsd.c:2551 inf 1
+2.2                         y     0x000000000040c090 in glusterfs_volumes_init at glusterfsd.c:2551 inf 2
+3       breakpoint     keep y   <MULTIPLE>         
+        breakpoint already hit 1 time
+3.1                         y     0x000000000040be32 in glusterfs_process_volfp at glusterfsd.c:2476 inf 1
+3.2                         y     0x000000000040be32 in glusterfs_process_volfp at glusterfsd.c:2476 inf 2
+4       breakpoint     keep y   <MULTIPLE>         
+        breakpoint already hit 1 time
+4.1                         y     0x00002aaaaada8a9b in glusterfs_graph_construct at ./graph.y:558 inf 1
+4.2                         y     0x00002aaaaada8a9b in glusterfs_graph_construct at ./graph.y:558 inf 2
+5       breakpoint     keep y   0x00002aaab73bca31 in dht_init at dht-shared.c:611 inf 2
+        breakpoint already hit 1 time
+6       breakpoint     keep y   0x00002aaab7328bff in dht_selfheal_dir_getafix at dht-selfheal.c:1815 inf 2
+7       breakpoint     keep y   0x00002aaab7328651 in dht_selfheal_layout_new_directory at dht-selfheal.c:1719 inf 2
+        breakpoint already hit 1 time
+8       breakpoint     keep y   0x00002aaab7327a52 in dht_get_layout_count at dht-selfheal.c:1429 inf 2
+        breakpoint already hit 1 time
+9       breakpoint     keep y   0x00002aaab73012bc in dht_layout_search at dht-layout.c:127 inf 2
+10      breakpoint     keep y   0x00002aaab732796c in dht_selfheal_layout_alloc_start at dht-selfheal.c:1401 inf 2
+        breakpoint already hit 1 time
+11      breakpoint     keep y   0x00002aaab7337dae in dht_hash_compute at dht-hashfn.c:74 inf 2
+        breakpoint already hit 1 time
+12      breakpoint     keep y   0x00002aaab73930f6 in dht_pt_mkdir at dht-common.c:11329 inf 2
+13      breakpoint     keep y   <MULTIPLE>         
+        breakpoint already hit 4 times
+13.1                        y     0x00002aaaaacf3bad in dict_set_bin_common at dict.c:2597 inf 1
+13.2                        y     0x00002aaaaacf3bad in dict_set_bin_common at dict.c:2597 inf 2
+14      breakpoint     keep y   0x00002aaab7041fa9 in afr_mkdir at afr-dir-write.c:661 inf 2
+        breakpoint already hit 1 time
+15      breakpoint     keep y   0x00002aaab6da652a in client_mkdir at client.c:567 inf 2
+16      breakpoint     keep y   0x00002aaab7041ace in afr_mkdir_wind at afr-dir-write.c:644 inf 2
+        breakpoint already hit 1 time
+17      breakpoint     keep y   0x00002aaab703cdd9 in afr_build_parent_loc at afr-dir-write.c:37 inf 2
+        breakpoint already hit 1 time
+18      breakpoint     keep y   0x00002aaab707eae6 in afr_transaction at afr-transaction.c:2873 inf 2
+        breakpoint already hit 1 time
+19      breakpoint     keep y   0x00002aaab7076eb2 in afr_transaction_fop at afr-transaction.c:295 inf 2
