@@ -63,6 +63,9 @@ EXPORT{
         volume = "speech_v5_rep_vol";  
     }
 
+    // 如果支持pNFS的话，需要配置GLUSTER的选项
+    GLUSTER { PNFS_MDS = true; }
+
     Access_type = RW;    
     Squash = No_root_squash; 
     Disable_ACL = TRUE;  
@@ -189,6 +192,11 @@ spec:
   
 # kubectl create -f client-pod.yaml
 # kubectl exec -ti client-pod   bash
-[root@client-pod /]#  mount -t nfs4  -o  port=2049,vers=4,proto=tcp   test-service:/speech_v5_rep_vol /mnt/speech_v5_rep_vol
-```
 
+// 普通的nfs挂载
+[root@client-pod /]#  mount -t nfs4  -o  port=2049,vers=4,proto=tcp   test-service:/speech_v5_rep_vol /mnt/speech_v5_rep_vol
+
+// 如果配置了pfs,则按照如下方式进行pnfs挂载
+[root@client-pod /]#  mount -t nfs  -o   port=2049,vers=4.1,proto=tcp     test-service:/speech_v5_rep_vol /mnt/speech_v5_rep_vol
+
+```
