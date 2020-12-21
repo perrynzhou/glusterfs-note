@@ -1,4 +1,4 @@
-#  分布式存储系统源码的阅读笔记
+#  gluster && nfs-ganesha 存储系统源码的阅读笔记
 
 | 作者 | 时间 |QQ技术交流群 |
 | ------ | ------ |------ |
@@ -27,14 +27,9 @@
 - [libfuse3-10源码编译](./document/libfuse/2020-12-06-libfuse-3.10源码编译.md)
 
 
-## glusterfs
+## glusterfs && nfs-ganesha
 
-
-### glusterfs贡献的pr
-
-- [glusterfs read-hash-mode的bug](https://github.com/gluster/glusterfs/commit/268faabed00995537394c04ac168c018167fbe27)
-
-### glusterfs 运维
+### glusterfs && nfs-ganesha 运维
 
 - [Glusterfs多副本服务端数据丢失演练](./document/glusterfs/Glusterfs多副本服务端数据丢失演练.md)
 - [too many files引起glusterfsd crash](./document/glusterfs/glusterfsd出现crash的分析和总结.md)
@@ -44,7 +39,7 @@
 - [glusterfs-nfs-ganesha初探](./document/glusterfs/2020-11-24-基于glusterfs的nfs-ganesha方案.md)
 - [nfs-ganesha容器部署](./document/glusterfs/2020-12-01-nfs-ganesha容器部署.md)
 
-### glusterfs源码分析
+### glusterfs && nfs-ganesha 源码分析
 - [glustefs 101](./document/glusterfs101-courses)
 - [glustefs调试](./document/glusterfs/glusterfs调试.md)
 - [glusterfsd启动过程](./document/glusterfs/glusterfsd启动过程.md)
@@ -59,6 +54,12 @@
 - [多副本情况下mount挂载目录如何选择可用的副本目录](./document/glusterfs/多副本情况下mount挂载目录如何选择可用的副本目录.md)
 - [gfapi如何工作的](./document/glusterfs/2020-11-04-gfapi如何工作的.md)
 - [gluste-block安装](./document/glusterfs/gluste-block介绍.md) 
+- [nfs-ganesha源码安装](./document/glusterfs/2020-12-20-nfs-ganesha源码安装.md)
+
+
+### glusterfs贡献的pr
+
+- [glusterfs read-hash-mode的bug](https://github.com/gluster/glusterfs/commit/268faabed00995537394c04ac168c018167fbe27)
 
 
 ### glusterfs代码提交流程
