@@ -1,4 +1,4 @@
-#  gluster && nfs-ganesha 存储系统源码的阅读笔记
+#  gluster 源码的阅读笔记
 
 | 作者 | 时间 |QQ技术交流群 |
 | ------ | ------ |------ |
@@ -27,9 +27,9 @@
 - [libfuse3-10源码编译](./document/libfuse/2020-12-06-libfuse-3.10源码编译.md)
 
 
-## glusterfs && nfs-ganesha
+## glusterfs 
 
-### glusterfs && nfs-ganesha 运维
+### glusterfs 
 
 - [Glusterfs多副本服务端数据丢失演练](./document/glusterfs/Glusterfs多副本服务端数据丢失演练.md)
 - [too many files引起glusterfsd crash](./document/glusterfs/glusterfsd出现crash的分析和总结.md)
@@ -39,7 +39,7 @@
 - [glusterfs-nfs-ganesha初探](./document/glusterfs/2020-11-24-基于glusterfs的nfs-ganesha方案.md)
 - [nfs-ganesha容器部署](./document/glusterfs/2020-12-01-nfs-ganesha容器部署.md)
 
-### glusterfs && nfs-ganesha 源码分析
+### glusterfs 
 - [glustefs 101](./document/glusterfs101-courses)
 - [glustefs调试](./document/glusterfs/glusterfs调试.md)
 - [glusterfsd启动过程](./document/glusterfs/glusterfsd启动过程.md)
