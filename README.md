@@ -4,32 +4,12 @@
 | ------ | ------ |------ |
 | perrynzhou@gmail.com |2020/12/01 |中国开源存储技术交流群(672152841) |
 
-## 目标
-
-- minio原理和源代码分析
-- glusterfs的架构设计,梳理glusterfs中的哈希卷、副本卷、EC卷的读写过程
-- glusterfs块设备实现项目gluster-block原理和源码分析
-- libfuse实现原理
-
-## 文章中的图片无法显示问题解决
-
-```
-1.打开https://www.ipaddress.com/网址
-2.查询 raw.githubusercontent.com 域名对应的ip
-3.修改C:\Windows\System32\drivers\etc\hosts文件追加如下内容
-  199.232.68.133 githubusercontent.com
-  199.232.68.133 raw.githubusercontent.com
-4.刷新windows的dns，即可访问文章中的图片
-```
-
-## libfuse
-
-- [libfuse3-10源码编译](./document/libfuse/2020-12-06-libfuse-3.10源码编译.md)
 
 
-## glusterfs 
 
-### glusterfs 
+
+
+### glusterfs 运维
 
 - [Glusterfs多副本服务端数据丢失演练](./document/glusterfs/Glusterfs多副本服务端数据丢失演练.md)
 - [too many files引起glusterfsd crash](./document/glusterfs/glusterfsd出现crash的分析和总结.md)
@@ -39,7 +19,7 @@
 - [glusterfs-nfs-ganesha初探](./document/glusterfs/2020-11-24-基于glusterfs的nfs-ganesha方案.md)
 - [nfs-ganesha容器部署](./document/glusterfs/2020-12-01-nfs-ganesha容器部署.md)
 
-### glusterfs 
+### glusterfs 源码分析
 - [glustefs 101](./document/glusterfs101-courses)
 - [glustefs调试](./document/glusterfs/glusterfs调试.md)
 - [glusterfsd启动过程](./document/glusterfs/glusterfsd启动过程.md)
@@ -65,6 +45,21 @@
 ### glusterfs代码提交流程
 - [glustefs代码提交流程](./document/glusterfs/glusterfs代码提交流程.md)
 
+
+### libfuse
+
+- [libfuse3-10源码编译](./document/libfuse/2020-12-06-libfuse-3.10源码编译.md)
+
+### 文章中的图片无法显示问题解决
+
+```
+1.打开https://www.ipaddress.com/网址
+2.查询 raw.githubusercontent.com 域名对应的ip
+3.修改C:\Windows\System32\drivers\etc\hosts文件追加如下内容
+  199.232.68.133 githubusercontent.com
+  199.232.68.133 raw.githubusercontent.com
+4.刷新windows的dns，即可访问文章中的图片
+```
 
 
 
