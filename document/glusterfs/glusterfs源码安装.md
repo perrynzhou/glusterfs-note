@@ -1,4 +1,4 @@
-### Debug Glusterfs
+###  Glusterfs 源码编译安装
 
 | 作者 | 时间 |QQ技术交流群 |
 | ------ | ------ |------ |
@@ -45,7 +45,23 @@ find /usr/ -name \*liburcu-bp.so\* && echo '/usr/local/lib' > /etc/ld.so.conf.d/
 # make install
 ```
 
+#### check install
 
+```
+whereis glusterfs
+whereis glusterfsd
+whereis glusterd
+systemctl reload-daemon
+systemctl start glusterd
+systemctl status glusterd
+```
+
+### create volume 
+
+```
+gluster volume create rep_vol replica 3 node1:/data/brick node2:/data/brick node3:/data/brick
+gluster start rep_vol
+```
 
 #### Create Mount Point
 
