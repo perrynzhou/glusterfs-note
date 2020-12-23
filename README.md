@@ -21,7 +21,7 @@
 
 ### glusterfs 源码分析
 - [glustefs 101](./document/glusterfs101-courses)
-- [glustefs调试](./document/glusterfs/glusterfs调试.md)
+- [glusterfs源码安装](./document/glusterfs/glusterfs源码安装.md)
 - [glusterfsd启动过程](./document/glusterfs/glusterfsd启动过程.md)
 - [glusterfs客户端挂载init流程](./document/glusterfs/glusterfs客户端挂载init流程.md)
 - [gluster-create-volume处理过程](./document/glusterfs/gluster-create-volume处理过程.md)
