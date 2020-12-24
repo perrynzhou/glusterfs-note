@@ -26,6 +26,13 @@ root     169810      1  7 Oct10 ?        03:17:25 /usr/sbin/glusterfsd -s 192.16
 Max open files            1048576              1048576              files    
 
 ```
+
+### 针对进程的资源消耗
+
+```
+yum install perf 
+perf top -p {进程号}
+```
 ### 查看进程D状态
 - 进程D状态，一般是进程等待IO，处于D状态的进程是无法kill，只能reboot机器才能解决，如何查看进程处于D状态，按照如下方法
 ```
