@@ -15,9 +15,9 @@
 - [too many files引起glusterfsd crash](./document/glusterfs/glusterfsd出现crash的分析和总结.md)
 - [glusterfs安装及创建卷使用](./document/glusterfs/glusterfs安装及创建卷使用.md)
 - [glusterfs添加节点成功但状态异常](./document/glusterfs/glusterfs添加节点错误.md)
-- [glusterfs opencas IO加速方案](./document/opencas/OpenCAS缓存加速方案.md)
-- [glusterfs-nfs-ganesha初探](./document/glusterfs/2020-11-24-基于glusterfs的nfs-ganesha方案.md)
-- [nfs-ganesha容器部署](./document/glusterfs/2020-12-01-nfs-ganesha容器部署.md)
+- [glusterfs opencas IO加速方案](./document/glusterfs/OpenCAS缓存加速方案.md)
+
+- [2020-12-24-glusterfs性能调优.md](./document/glusterfs/2020-12-24-glusterfs性能调优.md)
 
 ### glusterfs 源码分析
 - [glustefs 101](./document/glusterfs101-courses)
@@ -34,7 +34,6 @@
 - [多副本情况下mount挂载目录如何选择可用的副本目录](./document/glusterfs/多副本情况下mount挂载目录如何选择可用的副本目录.md)
 - [gfapi如何工作的](./document/glusterfs/2020-11-04-gfapi如何工作的.md)
 - [gluste-block安装](./document/glusterfs/gluste-block介绍.md) 
-- [nfs-ganesha源码安装](./document/glusterfs/2020-12-20-nfs-ganesha源码安装.md)
 
 
 ### glusterfs贡献的pr
