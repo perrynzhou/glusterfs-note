@@ -98,6 +98,11 @@ gluster volume set dht-vol  performance.client-iothreads on
 gluster volume set dht-vol  performance.io-thread-count 16
 
 
-// 默认值是64
-gluster volume set dht-vol   server.outstanding-rpc-limit
+// 默认值是1,设置每次读取数据选择subvolume的策略，1是根据文件的gfid选择子卷，2是根据客户端mount的pid和gfid选择子卷，3是根据最少请求读取子卷，4是选择网络延迟最小策略选择子卷
+// 0 = first readable child of AFR, starting from 1st child.
+// 1 = hash by GFID of file (all clients use same subvolume).
+// 2 = hash by GFID of file and client PID.
+// 3 = brick having the least outstanding read requests.
+// 4 = brick having the least network ping latency.
+gluster volume set dht-vol   cluster.read-hash-mode 1
 ```
