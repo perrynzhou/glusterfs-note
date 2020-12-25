@@ -105,4 +105,7 @@ gluster volume set dht-vol  performance.io-thread-count 16
 // 3 = brick having the least outstanding read requests.
 // 4 = brick having the least network ping latency.
 gluster volume set dht-vol   cluster.read-hash-mode 1
+
+// 默认是10s,如果检测到10s,磁盘或者文件系统有问题会导致glusterfsd自杀，然后退出
+gluster volume set dht-vol  storage.health-check-timeout 0
 ```
