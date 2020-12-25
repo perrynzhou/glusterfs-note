@@ -35,7 +35,7 @@
 - [多副本情况下mount挂载目录如何选择可用的副本目录](./document/glusterfs/多副本情况下mount挂载目录如何选择可用的副本目录.md)
 - [gfapi如何工作的](./document/glusterfs/2020-11-04-gfapi如何工作的.md)
 - [gluste-block安装](./document/glusterfs/gluste-block介绍.md) 
-
+- [2020-12-25-glusterfs目录创建深入分析](./document/glusterfs/2020-12-25-glusterfs目录创建深入分析.md) 
 
 ### glusterfs贡献的pr
 
