@@ -29,7 +29,7 @@
 - [glusterfs架构和基本概念](./document/glusterfs/glusterfs架构和基本概念.md)
 - [glusterfs-brick哈希范围设定过程](./document/glusterfs/glusterfs-brick哈希范围设定过程.md)
 - [glusterfs客户端写数据分析](./document/glusterfs/glusterfs客户端写数据分析.md)
-- [glusterfs问题诊断](./document/glusterfs/glusterfs问题诊断.md)
+- [glusterfs诊断](./document/glusterfs/glusterfs诊断.md)
 - [glusterfs-fuse实现(持续更新)](./document/glusterfs/glusterfs-fuse实现.md)
 - [cluster.read-hash-mode工作原理](./document/glusterfs/cluster.read-hash-mode工作原理.md)
 - [多副本情况下mount挂载目录如何选择可用的副本目录](./document/glusterfs/多副本情况下mount挂载目录如何选择可用的副本目录.md)
