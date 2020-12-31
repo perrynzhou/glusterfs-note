@@ -4,11 +4,6 @@
 | ------ | ------ |------ |
 | perrynzhou@gmail.com |2020/12/01 |中国开源存储技术交流群(672152841) |
 
-
-
-
-
-
 ### glusterfs 运维
 
 - [Glusterfs多副本服务端数据丢失演练](./document/md/glusterfs/Glusterfs多副本服务端数据丢失演练.md)
@@ -17,10 +12,7 @@
 - [glusterfs添加节点成功但状态异常](./document/md/glusterfs/glusterfs添加节点错误.md)
 - [glusterfs opencas IO加速方案](./document/md/glusterfs/OpenCAS缓存加速方案.md)
 - [2020-12-24-glusterfs性能调优.md](./document/md/glusterfs/2020-12-24-glusterfs性能调优.md)
-
 - [2020-12-31-Glusterfs-mount选项说明](./document/md/glusterfs/2020-12-31-Glusterfs-mount选项说明.md)
-
-
 
 ### glusterfs 源码分析
 - [glustefs 101](./document/glusterfs101-courses)
