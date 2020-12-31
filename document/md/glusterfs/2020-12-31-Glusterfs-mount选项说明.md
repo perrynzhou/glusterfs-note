@@ -13,7 +13,7 @@
 #### Mount参数说明
 - backup-volfile-servers
   
-- backup-volfile-servers参数提供一组volfile server列表，当第一个volfile server挂了,glusterfs server会指定从backup-volfile-servers列表中执行可用的volfile server给客户端使用，直到客户端挂载成功
+  - backup-volfile-servers参数提供一组volfile server列表，当第一个volfile server挂了,glusterfs server会指定从backup-volfile-servers列表中执行可用的volfile server给客户端使用，直到客户端挂载成功
   
 - log-level
 
