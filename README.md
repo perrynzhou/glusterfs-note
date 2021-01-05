@@ -4,15 +4,7 @@
 | ------ | ------ |------ |
 | perrynzhou@gmail.com |2020/12/01 |中国开源存储技术交流群(672152841) |
 
-### glusterfs 运维
 
-- [Glusterfs多副本服务端数据丢失演练](./document/md/glusterfs/Glusterfs多副本服务端数据丢失演练.md)
-- [too many files引起glusterfsd crash](./document/md/glusterfs/glusterfsd出现crash的分析和总结.md)
-- [glusterfs安装及创建卷使用](./document/md/glusterfs/glusterfs安装及创建卷使用.md)
-- [glusterfs添加节点成功但状态异常](./document/md/glusterfs/glusterfs添加节点错误.md)
-- [glusterfs opencas IO加速方案](./document/md/glusterfs/OpenCAS缓存加速方案.md)
-- [2020-12-24-glusterfs性能调优.md](./document/md/glusterfs/2020-12-24-glusterfs性能调优.md)
-- [2020-12-31-Glusterfs-mount选项说明](./document/md/glusterfs/2020-12-31-Glusterfs-mount选项说明.md)
 
 ### glusterfs/pNFS/NFS/fuse 公共文档
 - [glustefs](./document/pdf/glusterfs)
@@ -40,6 +32,16 @@
 - [gfapi如何工作的](./document/md/glusterfs/2020-11-04-gfapi如何工作的.md)
 - [gluste-block安装](./document/md/glusterfs/gluste-block介绍.md) 
 - [glusterfs目录创建深入分析](./document/md/glusterfs/2020-12-25-glusterfs目录创建深入分析.md) 
+
+### glusterfs 运维
+
+- [Glusterfs多副本服务端数据丢失演练](./document/md/glusterfs/Glusterfs多副本服务端数据丢失演练.md)
+- [too many files引起glusterfsd crash](./document/md/glusterfs/glusterfsd出现crash的分析和总结.md)
+- [glusterfs安装及创建卷使用](./document/md/glusterfs/glusterfs安装及创建卷使用.md)
+- [glusterfs添加节点成功但状态异常](./document/md/glusterfs/glusterfs添加节点错误.md)
+- [glusterfs opencas IO加速方案](./document/md/glusterfs/OpenCAS缓存加速方案.md)
+- [2020-12-24-glusterfs性能调优.md](./document/md/glusterfs/2020-12-24-glusterfs性能调优.md)
+- [2020-12-31-Glusterfs-mount选项说明](./document/md/glusterfs/2020-12-31-Glusterfs-mount选项说明.md)
 
 ### glusterfs贡献的pr
 
