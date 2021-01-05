@@ -1,8 +1,8 @@
 ## glusterfs目录创建深入分析
 
-| 作者 | 时间 |QQ技术交流群 |
-| ------ | ------ |------ |
-| perrynzhou@gmail.com |2020/12/01 |中国开源存储技术交流群(672152841) |
+| 作者                 | 时间       | QQ技术交流群                      |
+| -------------------- | ---------- | --------------------------------- |
+| perrynzhou@gmail.com | 2020/12/01 | 中国开源存储技术交流群(672152841) |
 
 ### 调试卷信息
 
@@ -24,38 +24,75 @@ transport.address-family: inet
 nfs.disable: on
 performance.client-io-threads: off
 ```
-### 客户端断点设置
+### 客户端断点函数说明
 
 - 设置客户端gdb调试
 ```
-$ gdb /usr/local/sbin/glusterfs
-(gdb)  set args  --acl --process-name fuse --volfile-server=172.16.84.37 --volfile-id=rep_vol  /mnt/rep_vol
-(gdb) br create_fuse_mount
-Breakpoint 1, create_fuse_mount (ctx=0x63c010) at glusterfsd.c:557
-557         int ret = 0;
+$ gdb glusterfs
+(gdb) set args  --acl --process-name fuse --volfile-server=172.16.84.37 --volfile-id=rep-vol  /mnt/rep_vol 
+(gdb) br main
+// 创建 mount/fuse xlator并且初始化
+(gdb) br create_fuse_mount 
+Breakpoint 1, create_fuse_mount (ctx=0x2567abaefd0f7200) at glusterfsd.c:556
 606         ret = xlator_init(master);
-(gdb) 
-[Detaching after fork from child process 161268]
+[Detaching after fork from child process 79742]
 607         if (ret) {
 (gdb) set follow-fork-mode child
-(gdb) set detach-on-fork off   
-(gdb) br dht_selfheal_layout_new_directory
-(gdb) br dht_pt_mkdir
-(gdb) br afr_mkdir
-Breakpoint 6 at 0x2aaab7041fa9: file afr-dir-write.c, line 661.
-(gdb) br afr_mkdir_wind
-Breakpoint 7 at 0x2aaab7041ace: file afr-dir-write.c, line 644.
-(gdb) br client_mkdir 
-Breakpoint 8 at 0x2aaab6da652a: file client.c, line 567.
-(gdb) br client4_0_mkdir
-Breakpoint 9 at 0x2aaab6e0be3d: file client-rpc-fops_v2.c, line 3608.
+(gdb) set detach-on-fork off
+// 初始化"mount/fuse" xlator后初始化volume信息
+(gdb) br glusterfs_volumes_init
+// 注册获取volume spec的函数，volume spec就是从glusterd获取当前集群的配置所有的sub volume
+(gdb) br glusterfs_mgmt_init
+// 注册rpc连接glusterd服务端和从glusterd服务端断开的函数处理
+(gdb) br mgmt_rpc_notify
+// 获取volume spec(volume描述信息),整个Final Graph信息
+(gdb) br glusterfs_volfile_fetch
+// 获取当个sub volume信息
+(gdb) br glusterfs_volfile_fetch_one
+// 反序列化从glusterd获取到的volume信息，然后依次根据volume file构建volume、预处理volume、激活volume,通过这三步的处理，volume的秒数信息就是挂载日志中的Final Graph信息
+(gdb) br mgmt_getspec_cbk
+// 从glusterd获取volfile后，需要处理这个volfile
+(gdb) br glusterfs_process_volfp
+// 根据volfile来构造volume的加载xlator信息
+(gdb) br glusterfs_graph_construct
+// xlator的graph的预处理
+(gdb) br glusterfs_graph_prepare
+// 加载和调用所有的sub volume对象的xaltor的函数init函数
+(gdb) br glusterfs_graph_activate
+[Detaching after fork from child process 79742]
+607         if (ret) {
+(gdb) set follow-fork-mode child
+(gdb) set detach-on-fork off
+(gdb) info break
+// volume meta-autoload、volume rep_vol-quick-read、volume rep_vol-write-behind、volume rep_vol-open-behind、volume rep_vol-quick-read 在执行mkdir命令时候并没有实际的操作，都是设置为默认的default_mkdir
+(gdb) br default_mkdir 
+// volume posix-acl-autoload 对应的客户端mkdir命令的执行函数
+(gdb) br posix_acl_mkdir 
+// volume rep_vol 对应客户端执行mkdir命令的操作函数
+(gdb) br io_stats_mkdir 
+// volume rep_vol-md-cache 对应客户端执行mkdir命令的操作函数
+(gdb) br mdc_mkdir 
+// volume rep_vol-utime  对应客户端执行mkdir命令的操作函数
+(gdb) br gf_utime_mkdir 
+// volume rep_vol-dht 对应客户端执行mkdir命令的操作函数
+(gdb) br dht_pt_mkdir 
+// volume rep_vol-replicate-0  对应客户端执行mkdir命令的操作函数
+(gdb) br afr_mkdir 
+(gdb) br afr_mkdir_wind 
+// volume rep_vol-client-0 对应client_mkdir函数
+(gdb) br  client_mkdir
+(gdb) br  client4_0_mkdir
 ```
+-  调试说明:
+   -  每个xlator的执行顺序通过graph图的顺序严格执行，这个行为可以在客户端中的Final Graph信息可以看出来。每个客户端执行文件相关的操作，在每个xlator都有对应的操作函数，所有的功能都是通过xlator堆叠出来的。每个xlator要么通过XXX_WIND宏、xxx_wind函数调用下一个xlator。不如一个mkdir命令，每个xlator都有一个xxx_mkdir函数，每个函数都对应这个操作需要处理的逻辑。glusterfs客户端实现是这样，glusterd/glusterfsd设计和实现也是这样.
+   -  某些xlator可以缓存一些indo信息，这些inode信息是glusterfs内部定义的。如果是一个open操作，仅仅是在glusterfs客户端层面，执行每个xlator的xxx_open函数，经过层层处理，把此次open的请求的req提交给对应glusterfsd，glusterfsd也是经过层层的处理，最后返回给glusterfs客户端也是glusterfs内部定义的inode信息，紧接着执行echo "test"到glusterfs客户端挂载文件中，调用glusterfs和glusterfsd的所有的xxx_write操作，最终把处理的结果返回给glusterfs客户端，所以glusterfs的一个操作的rpc网络开销是2次，并且操作的inode的信息并不是在glusterfs客户端执行操作的，都需要通过网络请求glusterfsd的
 
-- 每个xlator的做了什么事情?
+### mkdir命令在glusterfs客户端层面都做了什么
 
-  - meta-autoload:执行的是glusterfs/libglusterfs/src/defaults.c,而这个文件是根据glusterfs/libglusterfs/src/default-tmpl.c生成的，在编译器生成的。最终调用的是default_mkdir函数，这个函数所在的xlator是meta-autoload
 
-    - volume 信息
+- meta-autoload:执行的是glusterfs/libglusterfs/src/defaults.c,而这个文件是根据glusterfs/libglusterfs/src/default-tmpl.c生成的，在编译器生成的。最终调用的是default_mkdir函数，这个函数所在的xlator是meta-autoload
+
+  - volume 信息
 
     ```
     volume meta-autoload
@@ -64,7 +101,7 @@ Breakpoint 9 at 0x2aaab6e0be3d: file client-rpc-fops_v2.c, line 3608.
     end-volume
     ```
 
-    - meta-autoload的mkdir函数实现
+  - meta-autoload的mkdir函数实现
 
       ```
       // 这个函数是通过glusterfs/libglusterfs/src/default-tmpl.c模板代码生成的函数，用于连接
@@ -81,10 +118,10 @@ Breakpoint 9 at 0x2aaab6e0be3d: file client-rpc-fops_v2.c, line 3608.
       }
       ```
 
-   - posix-acl-autoload:当mount时候添加-o acl选项时候会进入这xlator的操作，如果操作是mkdir会执行 posix_acl_mkdir_cbk这个函数
+ - posix-acl-autoload:当mount时候添加-o acl选项时候会进入这xlator的操作，如果操作是mkdir会执行 posix_acl_mkdir_cbk这个函数
   
-     - volume信息
-  
+   - volume信息
+    
        ```
        // 对应 posix_acl_mkdir 函数
        volume posix-acl-autoload
@@ -92,11 +129,11 @@ Breakpoint 9 at 0x2aaab6e0be3d: file client-rpc-fops_v2.c, line 3608.
            subvolumes rep_vol
        end-volume
        ```
-  
+    
        
-  
-     - posix-acl-autoload的mkdir实现
-  
+    
+   - posix-acl-autoload的mkdir实现
+    
        ```
        int posix_acl_mkdir_cbk()
        {
@@ -113,10 +150,10 @@ Breakpoint 9 at 0x2aaab6e0be3d: file client-rpc-fops_v2.c, line 3608.
        }
        ```
   
-   - rep_vol:如果用户配置了diagnostics.count-fop-hits: on 和 diagnostics.latency-measurement: on，这个是针对gluster volume profile test-volume start和# gluster volume profile *VOLNAME* info
+ - rep_vol:如果用户配置了diagnostics.count-fop-hits: on 和 diagnostics.latency-measurement: on，这个是针对gluster volume profile test-volume start和# gluster volume profile *VOLNAME* info
   
-     - volume信息
-  
+   - volume信息
+    
        ```
        // io_stats_mkdir函数
        volume rep_vol
@@ -129,9 +166,9 @@ Breakpoint 9 at 0x2aaab6e0be3d: file client-rpc-fops_v2.c, line 3608.
         subvolumes rep_vol-md-cache
        end-volume
        ```
+  
    
-     
-     - rep_vol的mkdir实现
+   - rep_vol的mkdir实现
      
         ```
        int io_stats_mkdir()
@@ -146,7 +183,7 @@ Breakpoint 9 at 0x2aaab6e0be3d: file client-rpc-fops_v2.c, line 3608.
            return 0;
        }
        ```
-  
+
 
 
 

@@ -14,8 +14,18 @@
 - [2020-12-24-glusterfs性能调优.md](./document/md/glusterfs/2020-12-24-glusterfs性能调优.md)
 - [2020-12-31-Glusterfs-mount选项说明](./document/md/glusterfs/2020-12-31-Glusterfs-mount选项说明.md)
 
-### glusterfs 源码分析
-- [glustefs 101](./document/glusterfs101-courses)
+### glusterfs/pNFS/NFS/fuse 公共文档
+- [glustefs](./document/pdf/glusterfs)
+- [pNFS](./document/pdf/pNFS)
+- [NFS](./document/pdf/NFS)
+- [fuse](./document/pdf/fuse)
+
+
+### fuse 原理分析
+- [libfuse3-10源码编译](./document/md/fuse/2020-12-06-libfuse-3.10源码编译.md)
+
+
+### glusterfs 原理分析
 - [glusterfs源码安装](./document/md/glusterfs/glusterfs源码安装.md)
 - [glusterfsd启动过程](./document/md/glusterfs/glusterfsd启动过程.md)
 - [glusterfs客户端挂载init流程](./document/md/glusterfs/glusterfs客户端挂载init流程.md)
@@ -29,7 +39,7 @@
 - [多副本情况下mount挂载目录如何选择可用的副本目录](./document/md/glusterfs/多副本情况下mount挂载目录如何选择可用的副本目录.md)
 - [gfapi如何工作的](./document/md/glusterfs/2020-11-04-gfapi如何工作的.md)
 - [gluste-block安装](./document/md/glusterfs/gluste-block介绍.md) 
-- [2020-12-25-glusterfs目录创建深入分析](./document/md/glusterfs/2020-12-25-glusterfs目录创建深入分析.md) 
+- [glusterfs目录创建深入分析](./document/md/glusterfs/2020-12-25-glusterfs目录创建深入分析.md) 
 
 ### glusterfs贡献的pr
 
@@ -40,9 +50,6 @@
 - [glustefs代码提交流程](./document/md/glusterfs/glusterfs代码提交流程.md)
 
 
-### libfuse
-
-- [libfuse3-10源码编译](./document/libfuse/2020-12-06-libfuse-3.10源码编译.md)
 
 ### 文章中的图片无法显示问题解决
 
