@@ -13,7 +13,7 @@
 - 在write-back模式中，所有数据同步写入open cas的ssd中，然后异步刷新到HDD中。
 - open cas 缓存满后，采用open cas的淘汰算法，用最新写入的数据淘汰以前旧数据，已达到oepn cas始终可以缓存数据。
 
- ![alt text](../images/guide_figure1.jpg) 
+ ![alt text](../../images/guide_figure1.jpg) 
 
 
 ### 系统组件以来

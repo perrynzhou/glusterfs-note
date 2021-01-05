@@ -31,12 +31,12 @@
   ```
 ###### 3.glusterfsd如何加载xlator
 - glusterfsd是通过读取配置文件/var/lib/glusterd/vols/dht_vol/dht_vol.172.17.0.2.data-brick.vol来加载glusterfsd运行期间需要的xlator，这些配置信息是用户创建volume时候系统生成的
-![](../images/2582954-d6d03fa2881d4dfe.png)
+![](../../images/2582954-d6d03fa2881d4dfe.png)
 
 
 ###### 4. glusterd启动后进程列表
 - runner_start后继续glusterfsd.c中的main方法，启动对应的服务，glusterfsd正式启动了，就如systemctl start glusterd后出现如下的结果:
-![](../images/2582954-bb00ca85ed37cff0.png)
+![](../../images/2582954-bb00ca85ed37cff0.png)
 
 ###### 5.glusterfsd启动流程
 - 上个步骤通过runner_start加载glusterfsd的二进制进程，glusterfsd进入初始化节点，首先 glusterfs_listener_init 初始化tcp连接

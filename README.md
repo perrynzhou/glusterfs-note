@@ -6,7 +6,7 @@
 
 
 
-### glusterfs/pNFS/NFS/fuse 公共文档
+### glusterfs/pNFS/NFS/fuse public document
 - [glustefs](./document/pdf/glusterfs)
 - [pNFS](./document/pdf/pNFS)
 - [NFS](./document/pdf/NFS)

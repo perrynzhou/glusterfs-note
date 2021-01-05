@@ -18,7 +18,7 @@
   https://review.gluster.org/#/dashboard/self
   ```
 - 在红色框内配置自己github邮箱和sshkey,配置完毕后需要登陆邮箱地址进行确认
-  ![avatar](../images/config_2020929_111226.jpg)
+  ![avatar](../../images/config_2020929_111226.jpg)
 
 - 克隆代码
 ```

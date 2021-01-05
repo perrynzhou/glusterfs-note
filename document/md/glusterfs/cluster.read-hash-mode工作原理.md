@@ -236,7 +236,7 @@ int32_t client4_0_lookup(call_frame_t *frame, xlator_t *this, void *data)
 
 ####  replicat 卷的volume层级关系
 - volume对应的xlator调用关系
-  ![afr-volume](../images/afr-volume.jpg)
+  ![afr-volume](../../images/afr-volume.jpg)
 
 - glusterfs-fuse日志中的呈现
 ```

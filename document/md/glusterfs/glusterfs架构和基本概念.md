@@ -4,7 +4,7 @@
 | perrynzhou@gmail.com |2020/12/01 |中国开源存储技术交流群(672152841) |
 
 ## 架构介绍
-  ![glusterfs-arc](../images/archtector.jpg)
+  ![glusterfs-arc](../../images/archtector.jpg)
 ### glusterfs的进程结构
 - glusterfs :用于客户端挂在的进程
 - glusterfsd:用于数据读写的进程
@@ -139,8 +139,8 @@
 	```
 
 - 加载和执行顺序
-    ![glusterfs-server-xlator](../images/client-server-xlator.jpg)
-    - 客户端执行的xlator的顺序和配置文件中的顺序相反，客户端的第一个xlator是mount/fuse,第二个是cluster/distribute，最后一个是protocol/client,依次调用每个xlator中的xlator_api中的fops函数。 [xlator.h](../glusterfs-release-8/libglusterfs/src/glusterfs/xlator.h)中定义了各种各样的内部文件操作的函数
+    ![glusterfs-server-xlator](../../images/client-server-xlator.jpg)
+    - 客户端执行的xlator的顺序和配置文件中的顺序相反，客户端的第一个xlator是mount/fuse,第二个是cluster/distribute，最后一个是protocol/client,依次调用每个xlator中的xlator_api中的fops函数。 [xlator.h](../../../glusterfs/glusterfs-8.3/libglusterfs/src/glusterfs/xlator.h)中定义了各种各样的内部文件操作的函数
  		```
 		/* WARNING: make sure the list is in order with FOP definition in
 		   `rpc/xdr/src/glusterfs-fops.x`.
