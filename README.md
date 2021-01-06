@@ -32,6 +32,7 @@
 - [gfapi如何工作的](./document/md/glusterfs/2020-11-04-gfapi如何工作的.md)
 - [gluste-block安装](./document/md/glusterfs/gluste-block介绍.md) 
 - [glusterfs目录创建深入分析](./document/md/glusterfs/2020-12-25-glusterfs目录创建深入分析.md) 
+- [event-threads设定后都做了什么](./document/md/glusterfs/event-threads设定后都做了什么.md) 
 
 ### glusterfs 运维
 
