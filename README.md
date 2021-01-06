@@ -3,6 +3,7 @@
 | 作者 | 时间 |QQ技术交流群 |
 | ------ | ------ |------ |
 | perrynzhou@gmail.com |2020/12/01 |中国开源存储技术交流群(672152841) |
+| 357884202@qq.com |2020/12/01 |中国开源存储技术交流群(672152841) |
 
 
 
@@ -43,6 +44,9 @@
 - [glusterfs opencas IO加速方案](./document/md/glusterfs/OpenCAS缓存加速方案.md)
 - [2020-12-24-glusterfs性能调优.md](./document/md/glusterfs/2020-12-24-glusterfs性能调优.md)
 - [2020-12-31-Glusterfs-mount选项说明](./document/md/glusterfs/2020-12-31-Glusterfs-mount选项说明.md)
+- [glusterfs替换掉brick](./document/md/glusterfs/glusterfs替换掉brick.md)
+- [Glusterfs扩缩容方法](./document/md/glusterfs/Glusterfs扩缩容方法.md)
+- [根据gfid定位到文件具体路径](./document/md/glusterfs/根据gfid定位到文件具体路径.md)
 
 ### glusterfs贡献的pr
 
