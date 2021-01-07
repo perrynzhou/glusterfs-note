@@ -26,6 +26,20 @@ root     169810      1  7 Oct10 ?        03:17:25 /usr/sbin/glusterfsd -s 192.16
 Max open files            1048576              1048576              files    
 
 ```
+### glusterfs调试诊断
+
+```
+gdb --args /usr/local/sbin/gluster  --acl --process-name fuse --volfile-server=192.168.15.153 --volfile-id=rep3_vol /mnt/rep3_vol
+
+or
+
+gdb /usr/local/sbin/gluster
+set args --acl --process-name fuse --volfile-server=192.168.15.153 --volfile-id=rep3_vol /mnt/rep3_vol
+
+// create_fuse_mount函数中调用xlator_init函数返回后设置如下两个GDB的选型
+set follow-fork-mode child
+set detach-on-fork off
+```
 
 ### 针对进程的资源消耗
 
