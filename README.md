@@ -14,11 +14,15 @@
 - [fuse](./document/pdf/fuse)
 
 
-### fuse 原理分析
-- [libfuse3-10源码编译](./document/md/fuse/2020-12-06-libfuse-3.10源码编译.md)
+### fuse 分析
+- [libfuse3-10源码编译](./document/md/fuse/libfuse-3.10源码编译.md)
 
+### nfs-ganesha分析
+- [nfs-ganesha容器部署](./document/md/nfs-ganesha/nfs-ganesha容器部署.md)
+- [nfs-ganesha源码安装](./document/md/nfs-ganesha/nfs-ganesha源码安装)
+- [基于glusterfs的nfs-ganesha方案](./document/md/nfs-ganesha/基于glusterfs的nfs-ganesha方案.md)
 
-### glusterfs 原理分析
+### glusterfs 分析
 - [glusterfs源码安装](./document/md/glusterfs/glusterfs源码安装.md)
 - [glusterfsd启动过程](./document/md/glusterfs/glusterfsd启动过程.md)
 - [glusterfs客户端挂载init流程](./document/md/glusterfs/glusterfs客户端挂载init流程.md)
@@ -30,9 +34,9 @@
 - [glusterfs-fuse实现(持续更新)](./document/md/glusterfs/glusterfs-fuse实现.md)
 - [cluster.read-hash-mode工作原理](./document/md/glusterfs/cluster.read-hash-mode工作原理.md)
 - [多副本情况下mount挂载目录如何选择可用的副本目录](./document/md/glusterfs/多副本情况下mount挂载目录如何选择可用的副本目录.md)
-- [gfapi如何工作的](./document/md/glusterfs/2020-11-04-gfapi如何工作的.md)
+- [gfapi如何工作的](./document/md/glusterfs/gfapi如何工作的.md)
 - [gluste-block安装](./document/md/glusterfs/gluste-block介绍.md) 
-- [glusterfs目录创建深入分析](./document/md/glusterfs/2020-12-25-glusterfs目录创建深入分析.md) 
+- [glusterfs目录创建深入分析](./document/md/glusterfs/glusterfs目录创建深入分析.md) 
 - [event-threads设定后都做了什么](./document/md/glusterfs/event-threads设定后都做了什么.md) 
 
 ### glusterfs 运维
@@ -42,8 +46,8 @@
 - [glusterfs安装及创建卷使用](./document/md/glusterfs/glusterfs安装及创建卷使用.md)
 - [glusterfs添加节点成功但状态异常](./document/md/glusterfs/glusterfs添加节点错误.md)
 - [glusterfs opencas IO加速方案](./document/md/glusterfs/OpenCAS缓存加速方案.md)
-- [2020-12-24-glusterfs性能调优.md](./document/md/glusterfs/2020-12-24-glusterfs性能调优.md)
-- [2020-12-31-Glusterfs-mount选项说明](./document/md/glusterfs/2020-12-31-Glusterfs-mount选项说明.md)
+- [glusterfs性能调优.md](./document/md/glusterfs/glusterfs性能调优.md)
+- [Glusterfs-mount选项说明](./document/md/glusterfs/Glusterfs-mount选项说明.md)
 - [glusterfs替换掉brick](./document/md/glusterfs/glusterfs替换掉brick.md)
 - [Glusterfs扩缩容方法](./document/md/glusterfs/Glusterfs扩缩容方法.md)
 - [根据gfid定位到文件具体路径](./document/md/glusterfs/根据gfid定位到文件具体路径.md)
