@@ -1,4 +1,4 @@
-#  gluster 源码的阅读笔记
+#  gluster/fuse/nfs-ganesha 源码的阅读笔记
 
 | 作者 | 时间 |QQ技术交流群 |
 | ------ | ------ |------ |
