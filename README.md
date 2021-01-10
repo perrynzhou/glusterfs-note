@@ -19,7 +19,7 @@
 
 ### nfs-ganesha分析
 - [nfs-ganesha容器部署](./document/md/nfs-ganesha/nfs-ganesha容器部署.md)
-- [nfs-ganesha源码安装](./document/md/nfs-ganesha/nfs-ganesha源码安装)
+- [nfs-ganesha源码安装](./document/md/nfs-ganesha/nfs-ganesha源码安装.md)
 - [基于glusterfs的nfs-ganesha方案](./document/md/nfs-ganesha/基于glusterfs的nfs-ganesha方案.md)
 
 ### glusterfs 分析
