@@ -4,7 +4,7 @@
 | ------ | ------ |------ |
 | perrynzhou@gmail.com |2020/12/01 |中国开源存储技术交流群(672152841) |
 
-- 测试卷信息
+#### 测试卷信息
 
   ```
   Volume Name: rep-vol
@@ -27,7 +27,7 @@
 
   
 
-- perf收集glusterfs信息
+#### perf收集glusterfs信息
 
   ```
    // ubuntu安装perf
@@ -47,7 +47,7 @@
   
   ```
 
-- 客户端和服务端网卡信息都是为1GB/s
+#### 客户端和服务端网卡信息都是为1GB/s
 
   ```
   Settings for bond0:
@@ -71,7 +71,7 @@
 
   
 
-- 使用perf收集glusterfsd进程信息
+#### 使用perf收集glusterfsd进程信息
 
   ```
   $ ps -ef|grep glusterfsd|grep rep-vol
@@ -82,7 +82,7 @@
   
   ```
 
-- 运行客户端写入程序
+#### 运行客户端写入程序
 
   ```
   $ git clone  https://hub.fastgit.org/perrynzhou/fs-tps.git
@@ -95,56 +95,55 @@
   goroutine finish 40960 files
   ```
 
--  37节点
-    - zpool
-    ![37-zpool](../../images/37-zpool.JPG)
+#### 37节点
+- zpool
+![37-zpool](../../images/37-zpool.JPG)
 
-    - dstat
-    ![37-dstat](../../images/37-dstat.JPG)
+- dstat
+![37-dstat](../../images/37-dstat.JPG)
 
-    - iotop
-    ![37-iotop](../../images/37-iotop.JPG)
+- iotop
+![37-iotop](../../images/37-iotop.JPG)
 
-    - network
-    ![37-net](../../images/37-network-bw.JPG)
+- network
+![37-net](../../images/37-network-bw.JPG)
 
-    - iostat
-    ![37-iostat](../../images/37-iostat.JPG)
+- iostat
+![37-iostat](../../images/37-iostat.JPG)
 
-- 41节点
-    - zpool
-    ![41-zpool](../../images/41-zpool.JPG)
+#### 41节点
+- zpool
+![41-zpool](../../images/41-zpool.JPG)
 
-    - dstat
-    ![41-dstat](../../images/41-dstat.JPG)
+- dstat
+![41-dstat](../../images/41-dstat.JPG)
 
-    - iotop
-    ![41-iotop](../../images/41-iotop.JPG)
+- iotop
+![41-iotop](../../images/41-iotop.JPG)
 
-    - network
-    ![41-net](../../images/41-netork-bw.JPG)
+- network
+![41-net](../../images/41-netork-bw.JPG)
 
-    - iostat
-    ![41-iostat](../../images/41-iostat.JPG)
+- iostat
+![41-iostat](../../images/41-iostat.JPG)
 
-- 42节点
-    - zpool
-    ![42-zpool](../../images/42-zpool.JPG)
+#### 42节点
+- zpool
+![42-zpool](../../images/42-zpool.JPG)
 
-    - dstat
-    ![42-dstat](../../images/42-dstat.JPG)
+- dstat
+![42-dstat](../../images/42-dstat.JPG)
 
-    - iotop
-    ![42-iotop](../../images/42-iotop.JPG)
+- iotop
+![42-iotop](../../images/42-iotop.JPG)
 
-    - network
-    ![42-net](../../images/42-network-bw.JPG)
-    
-    - iostat
-    ![42-iostat](../../images/42-iostat.JPG)
+- network
+![42-net](../../images/42-network-bw.JPG)
+
+- iostat
+![42-iostat](../../images/42-iostat.JPG)
   
-
-- 生成火焰图
+#### 生成火焰图
 
   ```
   # 下载火焰图生成工程
@@ -160,12 +159,12 @@
   # 生成火焰图
   FlameGraph/flamegraph.pl out.folded > out.svg
   ```
-- glusterfs 火焰图
-  -  [glusterfs](../../images/glusterfs.svg)
-- glusterfsd 火焰图
-  -  [glusterfsd](../../images/glusterfsd.svg)
+#### glusterfs 火焰图
+-  [glusterfs](../../images/glusterfs.svg)
+#### glusterfsd 火焰图
+-  [glusterfsd](../../images/glusterfsd.svg)
   
 
-- 疑惑
-  - 写入测试代码并发写入80M文件，后端glusterfsd的glfs_iotwr线程仅仅是2~3个，很不合理，同时设置了io-thread-count后，这个线程数也没有上去？
-  - 每个节点机器的网卡是1GB/s,但是后端节点的网络最大也就在300MB/s左右，磁盘的ioutil在30~40之间，明显感觉带宽没有合理用好，这个可能与glusterfsd的IO线程数有关
+#### 疑惑
+- 写入测试代码并发写入80M文件，后端glusterfsd的glfs_iotwr线程仅仅是2~3个，很不合理，同时设置了io-thread-count后，这个线程数也没有上去？
+- 每个节点机器的网卡是1GB/s,但是后端节点的网络最大也就在300MB/s左右，磁盘的ioutil在30~40之间，明显感觉带宽没有合理用好，这个可能与glusterfsd的IO线程数有关
