@@ -38,6 +38,7 @@
 - [gluste-block安装](./document/md/glusterfs/gluste-block介绍.md) 
 - [glusterfs目录创建深入分析](./document/md/glusterfs/glusterfs目录创建深入分析.md) 
 - [event-threads设定后都做了什么](./document/md/glusterfs/event-threads设定后都做了什么.md) 
+- [perf分析glusterfs写操作-持续更新](./document/md/glusterfs/perf分析glusterfs写操作.md) 
 
 ### glusterfs 运维
 
