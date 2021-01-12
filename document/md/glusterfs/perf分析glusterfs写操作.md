@@ -106,12 +106,15 @@
 ![37-dstat](../../images/37-dstat.JPG)
 
 - iotop
+
 ![37-iotop](../../images/37-iotop.JPG)
 
 - network
+
 ![37-net](../../images/37-network-bw.JPG)
 
 - iostat
+
 ![37-iostat](../../images/37-iostat.JPG)
 
 #### 41节点
@@ -125,12 +128,15 @@
 ![41-dstat](../../images/41-dstat.JPG)
 
 - iotop
+
 ![41-iotop](../../images/41-iotop.JPG)
 
 - network
+
 ![41-net](../../images/41-netork-bw.JPG)
 
 - iostat
+
 ![41-iostat](../../images/41-iostat.JPG)
 
 #### 42节点
@@ -144,12 +150,15 @@
 ![42-dstat](../../images/42-dstat.JPG)
 
 - iotop
+
 ![42-iotop](../../images/42-iotop.JPG)
 
 - network
+
 ![42-net](../../images/42-network-bw.JPG)
 
 - iostat
+
 ![42-iostat](../../images/42-iostat.JPG)
   
 #### 生成火焰图
