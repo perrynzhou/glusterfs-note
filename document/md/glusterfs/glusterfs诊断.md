@@ -97,6 +97,50 @@ $ gdb /usr/local/sbin/glusterfs
 $ set args --acl --process-name fuse --volfile-server=10.193.189.153 --volfile-id=rep3_vol /mnt/rep3_vol
 $ br main
 ```
+
+### glusterfs 开启debug.trace模块
+
+- 开启设置
+```
+// 可以查看请求的是哪一个FOP
+//客户端启用
+gluster volume set volname debug.trace client
+gluster volume set volname debug.log-file 1
+// 在服务端启用
+gluster volume set volname debug.trace posix
+gluster volume set volname debug.log-file 1
+
+```
+
+- debug.trace选项
+```
+static volgen_brick_xlator_t server_graph_table[] = {
+    {brick_graph_add_server, NULL},
+    {brick_graph_add_io_stats, "NULL"},
+    {brick_graph_add_sdfs, "sdfs"},
+    {brick_graph_add_namespace, "namespace"},
+    {brick_graph_add_cdc, NULL},
+    {brick_graph_add_quota, "quota"},
+    {brick_graph_add_index, "index"},
+    {brick_graph_add_barrier, NULL},
+    {brick_graph_add_marker, "marker"},
+    {brick_graph_add_selinux, "selinux"},
+    {brick_graph_add_fdl, "fdl"},
+    {brick_graph_add_iot, "io-threads"},
+    {brick_graph_add_upcall, "upcall"},
+    {brick_graph_add_leases, "leases"},
+    {brick_graph_add_pump, NULL},
+    {brick_graph_add_ro, NULL},
+    {brick_graph_add_worm, NULL},
+    {brick_graph_add_locks, "locks"},
+    {brick_graph_add_acl, "acl"},
+    {brick_graph_add_bitrot_stub, "bitrot-stub"},
+    {brick_graph_add_changelog, "changelog"},
+    {brick_graph_add_trash, "trash"},
+    {brick_graph_add_arbiter, "arbiter"},
+    {brick_graph_add_posix, "posix"},
+};
+```
 ### perf查看gluterfs相关进程函数
 
 ```
