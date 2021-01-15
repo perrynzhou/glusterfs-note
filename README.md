@@ -36,7 +36,7 @@
 - [多副本情况下mount挂载目录如何选择可用的副本目录](./document/md/glusterfs/多副本情况下mount挂载目录如何选择可用的副本目录.md)
 - [gfapi如何工作的](./document/md/glusterfs/gfapi如何工作的.md)
 - [gluste-block安装](./document/md/glusterfs/gluste-block介绍.md) 
-- [glusterfs目录创建深入分析](./document/md/glusterfs/glusterfs目录创建深入分析.md) 
+- [glusterfs写入一个文件深入分析](./document/md/glusterfs/glusterfs写入一个文件深入分析.md) 
 - [event-threads设定后都做了什么](./document/md/glusterfs/event-threads设定后都做了什么.md) 
 - [perf分析glusterfs写操作-持续更新](./document/md/glusterfs/perf分析glusterfs写操作.md) 
 
