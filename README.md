@@ -6,6 +6,9 @@
 | 357884202@qq.com |2020/12/01 |中国开源存储技术交流群(672152841) |
 
 
+### gluster blogs
+
+- [why-brick-multiplexing](https://gluster.home.blog/2019/05/06/why-brick-multiplexing/)
 
 ### glusterfs/pNFS/NFS/fuse public document
 - [glustefs](./document/pdf/glusterfs)
