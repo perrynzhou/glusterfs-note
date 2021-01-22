@@ -55,6 +55,8 @@
 - [glusterfs替换掉brick](./document/md/glusterfs/glusterfs替换掉brick.md)
 - [Glusterfs扩缩容方法](./document/md/glusterfs/Glusterfs扩缩容方法.md)
 - [根据gfid定位到文件具体路径](./document/md/glusterfs/根据gfid定位到文件具体路径.md)
+- [perf分析glusterfs写操作](./document/md/glusterfs/perf分析glusterfs写操作.md)
+
 
 ### glusterfs贡献的pr
 
