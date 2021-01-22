@@ -42,7 +42,7 @@
 - [glusterfs写入一个文件深入分析](./document/md/glusterfs/glusterfs写入一个文件深入分析.md) 
 - [event-threads设定后都做了什么](./document/md/glusterfs/event-threads设定后都做了什么.md) 
 - [perf分析glusterfs写操作-持续更新](./document/md/glusterfs/perf分析glusterfs写操作.md) 
-
+- [io-thread线程工作方式](./document/md/glusterfs/io-thread线程工作方式.md) 
 ### glusterfs 运维
 
 - [Glusterfs多副本服务端数据丢失演练](./document/md/glusterfs/Glusterfs多副本服务端数据丢失演练.md)
@@ -55,6 +55,8 @@
 - [glusterfs替换掉brick](./document/md/glusterfs/glusterfs替换掉brick.md)
 - [Glusterfs扩缩容方法](./document/md/glusterfs/Glusterfs扩缩容方法.md)
 - [根据gfid定位到文件具体路径](./document/md/glusterfs/根据gfid定位到文件具体路径.md)
+- [perf分析glusterfs写操作](./document/md/glusterfs/perf分析glusterfs写操作.md)
+
 
 ### glusterfs贡献的pr
 
