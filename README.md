@@ -10,11 +10,12 @@
 
 - [why-brick-multiplexing](https://gluster.home.blog/2019/05/06/why-brick-multiplexing/)
 
-### glusterfs/pNFS/NFS/fuse public document
+### glusterfs/pNFS/NFS/fuse/HPC
 - [glustefs](./document/pdf/glusterfs)
 - [pNFS](./document/pdf/pNFS)
 - [NFS](./document/pdf/NFS)
 - [fuse](./document/pdf/fuse)
+- [hpc](./document/pdf/hpc)
 
 
 ### fuse 分析
