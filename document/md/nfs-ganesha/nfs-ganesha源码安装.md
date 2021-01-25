@@ -98,6 +98,37 @@ $ whereis ganesha.nfsd
 ganesha: /usr/bin/ganesha.nfsd /usr/lib64/ganesha /etc/ganesha /usr/local/etc/ganesha /usr/libexec/ganesha
 ```
 
+#### 添加service
+
+```
+vi /usr/lib/systemd/system/nfs-ganesha.service
+
+[Unit]
+Description=NFS-Ganesha file server
+Documentation=http://github.com/nfs-ganesha/nfs-ganesha/wiki
+After=rpcbind.service nfs-ganesha-lock.service
+Wants=rpcbind.service nfs-ganesha-lock.service
+Conflicts=nfs.target
+
+After=nfs-ganesha-config.service
+Wants=nfs-ganesha-config.service
+
+[Service]
+Type=forking
+# Let systemd create /run/ganesha, /var/log/ganesha and /var/lib/nfs/ganesha
+# directories
+RuntimeDirectory=ganesha
+LogsDirectory=ganesha
+StateDirectory=nfs/ganesha
+EnvironmentFile=-/run/sysconfig/ganesha
+ExecStart=/bin/bash -c "${NUMACTL} ${NUMAOPTS} /usr/bin/ganesha.nfsd ${OPTIONS} ${EPOCH}"
+ExecReload=/bin/kill -HUP $MAINPID
+ExecStop=/bin/dbus-send --system   --dest=org.ganesha.nfsd --type=method_call /org/ganesha/nfsd/admin org.ganesha.nfsd.admin.shutdown
+
+[Install]
+WantedBy=multi-user.target
+Also=nfs-ganesha-lock.service
+```
 #### nfs-ganehsa服务启动
 
 ```
