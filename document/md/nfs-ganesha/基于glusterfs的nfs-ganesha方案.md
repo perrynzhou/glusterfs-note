@@ -107,7 +107,7 @@ EXPORT_DEFAULTS {
         Access_Type = RW;
 }
 
-EXPORT{
+EXPORT {
     Export_Id = 101 ;   
     Path = "/mnt/nfs";  
 
@@ -118,6 +118,8 @@ EXPORT{
         //卷信息
         volume = "speech_v5_rep_vol";  
     }
+    // 如果支持pNFS的话，需要配置GLUSTER的选项
+    GLUSTER { PNFS_MDS = true; }
 
     Access_type = RW;    
     Squash = No_root_squash; 
