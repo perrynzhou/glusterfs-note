@@ -53,7 +53,7 @@ EXPORT_DEFAULTS {
         Access_Type = RW;
 }
 
-EXPORT{
+EXPORT {
     Export_Id = 101 ;   
     Path = "/mnt/speech_v5_rep_vol";  
 
