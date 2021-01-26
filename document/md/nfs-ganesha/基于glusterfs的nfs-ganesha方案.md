@@ -109,7 +109,7 @@ EXPORT_DEFAULTS {
 
 EXPORT {
     Export_Id = 101 ;   
-    Path = "/mnt/nfs";  
+    Path = "/speech_v5_rep_vol";  
 
     FSAL {
         name = GLUSTER;
@@ -150,4 +150,7 @@ yum install –y nfs-utils
 
 //支持挂载子目录，这里10.168.18.141是nfs-ganehsa节点的IP(这个独立于glusgerfs后端服务)
 mount -t nfs4  10.168.18.141:/speech_v5_rep_vol  /mnt/nfs
+
+// 如果配置了pfs,则按照如下方式进行pnfs挂载
+mount -t nfs  -o   port=2049,vers=4.1,proto=tcp     10.168.18.141:/speech_v5_rep_vol /mnt/speech_v5_rep_vol
 ```
