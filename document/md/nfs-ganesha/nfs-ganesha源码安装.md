@@ -98,6 +98,40 @@ $ whereis ganesha.nfsd
 ganesha: /usr/bin/ganesha.nfsd /usr/lib64/ganesha /etc/ganesha /usr/local/etc/ganesha /usr/libexec/ganesha
 ```
 
+#### nfs-ganesha配置
+
+```
+EXPORT
+{
+	# Export Id (mandatory, each EXPORT must have a unique Export_Id)
+	Export_Id = 77;
+
+	# Exported path (mandatory)
+	Path = "/dht-vol";
+
+	# Pseudo Path (required for NFS v4)
+	Pseudo = "/dht-vol";
+
+	# Required for access (default is None)
+	# Could use CLIENT blocks instead
+	Access_Type = RW;
+
+	# Allow root access
+	Squash = No_Root_Squash;
+
+	# Security flavor supported
+	SecType = "sys";
+
+	# Exporting FSAL
+	FSAL {
+		Name = "GLUSTER";
+		Hostname = "172.16.84.37";
+		Volume = "dht-vol";
+		enable_upcall = true;
+		Transport = tcp; # tcp or rdma
+	}
+}
+```
 #### 添加service
 
 ```
@@ -135,4 +169,21 @@ Also=nfs-ganesha-lock.service
 $ systemctl daemon-reload
 $ systemctl start  nfs-ganesha 
 $ systemctl stop nfs-ganesha 
+
+
+// 或者二进制启动
+/usr/bin/ganesha.nfsd -L /var/log/ganesha/ganesha.log -f /etc/ganesha/ganesha.conf -N NIV_EVENT
 ```
+
+#### 客户端挂载
+
+```
+
+yum install –y nfs-utils
+
+//支持挂载子目录，这里10.168.18.141是nfs-ganehsa节点的IP(这个独立于glusgerfs后端服务)
+mount -t nfs4  10.168.18.141:/dht-vol  /mnt/nfs
+
+// 如果配置了pfs,则按照如下方式进行pnfs挂载
+mount -t nfs  -o   port=2049,vers=4.1,proto=tcp     10.168.18.141:/dht-vol /mnt/speech_v5_rep_vol
+ ```
