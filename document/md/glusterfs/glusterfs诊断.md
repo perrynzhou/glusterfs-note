@@ -41,6 +41,17 @@ set follow-fork-mode child
 set detach-on-fork off
 ```
 
+### EC卷命令行使用说明
+
+```
+//如果想要建立一个4+2（6)的EC卷，可以用如下命令来做
+
+gluster volume create disperse 6 redundancy 2 node1:/brick node2:/brick node3:/brick node4:/brick node5:/brick node6:/brick
+
+//或者按照如下方式建立EC卷
+
+gluster volume create disperse-data 4 redundancy 2 node1:/brick node2:/brick node3:/brick node4:/brick node5:/brick node6:/brick
+```
 ### 针对进程的资源消耗
 
 ```
