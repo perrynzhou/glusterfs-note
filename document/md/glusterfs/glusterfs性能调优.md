@@ -75,6 +75,8 @@ net.ipv4.tcp_wmem=33554432
 - 
 ### Gluster参数调优
 
+- 读写性能参数优化
+
 ```
 // 打开metadata-cache,打开这个选项可以提高在mount端操作文件、目录元数据的性能，这个cache的是有一个过期时间，默认是10分钟，如下命令是打开客户端的元数据cache的命令
 gluster volume set dht-vol group metadata-cache
@@ -167,4 +169,17 @@ gluster volume set dht-vol   cluster.read-hash-mode 1
 gluster volume set dht-vol  storage.health-check-timeout 0
 
 
+```
+
+- heal修复速度优化
+
+```
+// 设置glusterfs shd修复IO线程数
+gluster volume set rep-vol  cluster.shd-max-threads 64
+
+//修复的数据快大小，默认是1(1*128k)，默认是按照128K数据快修复，如果需要修复的数据很大，这个默认1太小，可以适当的调大，最大是128M
+gluster volume set rep-vol  cluster.self-heal-window-size 1024
+
+// 取消修复速度（rate-limiting for self-heal）的限制，这个在修复速度上有非常大的提高
+gluster volume set rep-vol  performance.enable-least-priority no
 ```
