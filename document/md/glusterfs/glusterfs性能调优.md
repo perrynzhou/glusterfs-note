@@ -3,7 +3,7 @@
 
 | 作者 | 版本 |时间 |QQ技术交流群 |
 | ------| ------ | ------ |------ |
-| perrynzhou@gmail.com|v2 |2020/12/01 |中国开源存储技术交流群(672152841) |
+| perrynzhou@gmail.com|v3 |2020/12/01 |中国开源存储技术交流群(672152841) |
 
 ### 说明
 - 涉及到的参数依据每个服务器的配置而不同，请参照服务器配置来设定关于内核和glusterfs的性能参数
@@ -182,4 +182,16 @@ gluster volume set rep-vol  cluster.self-heal-window-size 1024
 
 // 取消修复速度（rate-limiting for self-heal）的限制，这个在修复速度上有非常大的提高
 gluster volume set rep-vol  performance.enable-least-priority no
+```
+
+- 三副本可用性优化
+
+```
+//如果使用的是glusterfs三副本，默认其中2个副本所在节点宕机了，三副本卷是无法对外提供服务的，需要调整可用性，只要有一个副本能正常工作，就可以对外提供服务需要设定如下参数
+
+// 比如使用gluster volume create rep-vol replica 3  node1:/brick node2:/brick node3:/brick，每个节点一个brick.
+
+// 这个选项是调整卷对应节点 crash后，卷是否能被访问的策略；cluster.quorum-type蚕食有2个值，一个是fixed,另外一个是auto.fixed含义结合三个节点意思就是三个节点中只要有cluster.quorum-count个节点是活着的，就继续提供读写服务；auto的含义是三个节点宕机超过一半将不可读写.节点恢复后，可以继续数据的heal操作
+gluster volume set rep-vol cluster.quorum-type fixed
+gluster volume set rep-vol cluster.quorum-count 1
 ```
