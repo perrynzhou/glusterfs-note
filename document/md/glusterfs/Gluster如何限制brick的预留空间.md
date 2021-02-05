@@ -74,7 +74,7 @@ void posix_disk_space_check(xlator_t *this)
         totsz = (buf.f_blocks * buf.f_bsize);
         size = ((totsz * percent) / 100);
     } else {
-   	// 如果使用的是storage.reserve-size，则直接是大小，单位是字节
+   	// 如果使用的是storage.reserve-size，则直接是大小，单位是字节。这个字段的初始化是由xlator_option_reconf_percent_or_size来做的
         size = priv->disk_reserve;
     }
 	// 计算磁盘剩余的空间大小
