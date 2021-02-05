@@ -45,7 +45,7 @@
 - [perf分析glusterfs写操作-持续更新](./document/md/glusterfs/perf分析glusterfs写操作.md) 
 - [io-thread线程工作方式](./document/md/glusterfs/io-thread线程工作方式.md) 
 - [gluster中的group](./document/md/glusterfs/gluster中的group.md) 
-
+- [Gluster如何限制brick的预留空间](./document/md/glusterfs/Gluster如何限制brick的预留空间.md) 
 ### glusterfs 运维
 
 - [Glusterfs多副本服务端数据丢失演练](./document/md/glusterfs/Glusterfs多副本服务端数据丢失演练.md)
