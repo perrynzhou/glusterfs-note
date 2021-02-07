@@ -164,18 +164,28 @@
 #### 生成火焰图
 
   ```
+
+  # 生成perf数据
+
+  perf record -p `pgrep -d ',' glusterfsd`
+
+
+  # 生成一个详细的报告。
+  perf report -n --stdio
+
+
   # 下载火焰图生成工程
   git clone --depth 1 https://github.com/brendangregg/FlameGraph.git
   
   # 默认读取perf.data文件然后生成out.perf文件
   perf script -i perf.data > out.perf
-  
-  perf script -i perf.data -F comm,pid,tid,cpu,time,period,event,ip,sym,dso,trace
-  # 折叠调用栈
-  FlameGraph/stackcollapse-perf.pl out.perf > out.folded
-  
-  # 生成火焰图
-  FlameGraph/flamegraph.pl out.folded > out.svg
+   or
+  perf script > out.perf   # 将 perf.data 的内容 dump 到 out.perf
+
+ git clone --depth 1 https://github.com/brendangregg/FlameGraph.git
+ FlameGraph/stackcollapse-perf.pl out.perf > out.folded
+ FlameGraph/flamegraph.pl out.folded > out.svg
+
   ```
 #### glusterfs 火焰图
 -  [glusterfs](../../images/glusterfs.svg)
