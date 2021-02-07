@@ -1,9 +1,8 @@
-#  gluster/fuse/nfs-ganesha 源码的阅读笔记
+#  gluster/fuse/nfs-ganesha 笔记
 
 | 作者 | 时间 |QQ技术交流群 |
 | ------ | ------ |------ |
-| perrynzhou@gmail.com |2020/12/01 |中国开源存储技术交流群(672152841) |
-| 357884202@qq.com |2020/12/01 |中国开源存储技术交流群(672152841) |
+| perrynzhou@gmail.com |2020/12/01 |672152841 |
 
 
 ### gluster blogs
