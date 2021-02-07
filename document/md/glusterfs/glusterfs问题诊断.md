@@ -57,6 +57,13 @@ gluster volume create disperse-data 4 redundancy 2 node1:/brick node2:/brick nod
 ```
 yum install perf 
 perf top -p {进程号}
+
+//收集信息，会生成perf.data文件
+perf record -e cpu-clock -g -p {进程号}
+perf record -p `pgrep -d ',' glusterfsd`
+
+// 分析perf.data
+perf report -i perf.data
 ```
 ### 查看进程D状态
 - 进程D状态，一般是进程等待IO，处于D状态的进程是无法kill，只能reboot机器才能解决，如何查看进程处于D状态，按照如下方法
