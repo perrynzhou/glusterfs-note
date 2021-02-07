@@ -26,6 +26,13 @@
 - [nfs-ganesha源码安装](./document/md/nfs-ganesha/nfs-ganesha源码安装.md)
 - [基于glusterfs的nfs-ganesha方案](./document/md/nfs-ganesha/基于glusterfs的nfs-ganesha方案.md)
 
+
+### glusterfs commit pr
+
+- [fixed read-hash-mode选择读取模式问题](https://review.gluster.org/#/c/glusterfs/+/25062/)
+- [fixed posix_disk_space_check_thread_proc函数检测磁盘剩余空间间隔时间可配置方式](https://github.com/perrynzhou/glusterfs/commit/3256de978f29801b7d29af56c4cc7587ec421cc9)
+
+
 ### glusterfs 分析
 - [glusterfs源码安装](./document/md/glusterfs/glusterfs源码安装.md)
 - [glusterfsd启动过程](./document/md/glusterfs/glusterfsd启动过程.md)
@@ -60,11 +67,8 @@
 - [glusterfs替换掉brick](./document/md/glusterfs/glusterfs替换掉brick.md)
 - [Glusterfs扩缩容方法](./document/md/glusterfs/Glusterfs扩缩容方法.md)
 - [根据gfid定位到文件具体路径](./document/md/glusterfs/根据gfid定位到文件具体路径.md)
+- [posix_disk_space_check_thread_proc函数检测磁盘剩余空间间隔时间可配置方式](./document/md/glusterfs/修改posix_disk_space_check_thread_proc函数检测磁盘剩余空间间隔时间可配置方式.md)
 
-
-### glusterfs贡献的pr
-
-- [glusterfs read-hash-mode的bug](https://github.com/gluster/md/glusterfs/commit/268faabed00995537394c04ac168c018167fbe27)
 
 
 ### glusterfs代码提交流程
