@@ -64,6 +64,10 @@ perf record -p `pgrep -d ',' glusterfsd`
 
 // 分析perf.data
 perf report -i perf.data
+
+// call-graph
+sudo perf record --call-graph dwarf -p {进程PID}
+sudo perf script | FlameGraph/stackcollapse-perf.pl | FlameGraph/flamegraph.pl > process.svg
 ```
 ### 查看进程D状态
 - 进程D状态，一般是进程等待IO，处于D状态的进程是无法kill，只能reboot机器才能解决，如何查看进程处于D状态，按照如下方法
