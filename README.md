@@ -53,6 +53,7 @@
 - [gluster中的group](./document/md/glusterfs/gluster中的group.md) 
 - [Gluster如何限制brick的预留空间](./document/md/glusterfs/Gluster如何限制brick的预留空间.md) 
 - [fixes-storoge.reserve检测磁盘预留空闲时间间隔问题](./document/md/glusterfs/fixes-storoge.reserve检测磁盘预留空闲时间间隔问题.md) 
+- [quota介绍](./document/md/glusterfs/quota介绍.md)
 
 ### glusterfs 运维
 
