@@ -190,7 +190,7 @@ The other surviving cluster siblings should take steps to begin grace
 period enforcement as soon as possible. This entails "draining off" any
 in-progress state morphing operations and then blocking the acquisition
 of any new state (usually with a return of NFS4ERR_GRACE to clients that
-attempt it). Again, there is no need for the survivors from the previous
+attempt it). Again, there is no need for the surs from the previous
 epoch to allow recovery here.
 
 The surviving servers must however establish a new client recovery
