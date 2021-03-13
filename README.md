@@ -55,7 +55,7 @@
 - [fixes-storoge.reserve检测磁盘预留空闲时间间隔问题](./document/md/glusterfs/fixes-storoge.reserve检测磁盘预留空闲时间间隔问题.md) 
 - [quota介绍](./document/md/glusterfs/quota介绍.md)
 - [Glusterfs-Self-Heal如何工作的](./document/md/glusterfs/Glusterfs-Self-Heal如何工作的.md)
-
+- [Gluster分析](./document/md/glusterfs/Gluster分析.md)
 
 ### glusterfs 运维
 

@@ -1,8 +1,8 @@
 ### Gluster中的group
 
-| 作者 | 时间 |QQ技术交流群 |
+| 作者 | 时间 |QQ群 |
 | ------ | ------ |------ |
-| perrynzhou@gmail.com |2020/12/01 |中国开源存储技术交流群(672152841) |
+| perrynzhou@gmail.com |2020/12/01 |672152841 |
 
 - gluster中的group概念，gluster中的group是一个或者多个xlator的功能集合，比如设置gluster volume set vol1 db-workload,针对db-workload会有一个或者多个xlator的功能组合对应这个db-workload。当设置以后glusterd会去按照/var/lib/glusterd/groups/db-workload文件中定义的一组xlator对应的参数进行设置完成这个db-workload的操作
 - gluster中的group定义如下几种group
