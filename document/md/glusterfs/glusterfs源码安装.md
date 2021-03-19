@@ -40,9 +40,11 @@ find /usr/ -name \*liburcu-bp.so\* && echo '/usr/local/lib' > /etc/ld.so.conf.d/
 ```shell
 # cd glusterfs && git checkout v8.3
 # ./autogen.sh
-// 指定glusterfs的编译版本
+// 指定glusterfs的编译版本，针对8.X以上的版本用如下命令
 # CFLAGS="-ggdb3 -O0"  ./configure  --enable-debug 
 
+// 指定glusterfs的编译版本，针对8.X以下的版本用如下命令
+#CFLAGS="-ggdb3 -O0"  ./configure  --enable-debug   --without-libtirpc
 # echo "v8.3.0-1" >> VERSION
 # make -j4
 # make install
