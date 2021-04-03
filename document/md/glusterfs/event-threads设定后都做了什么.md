@@ -1,7 +1,7 @@
 ## event-threads设定后都做了什么
 | 作者 | 时间 |QQ技术交流群 |
 | ------ | ------ |------ |
-| perrynzhou@gmail.com |2020/12/01 |中国开源存储技术交流群(672152841) |
+| perrynzhou@gmail.com |2021/03/27 |672152841 |
 ### event-threads 参数说明
 
 - client.event-threads:指定客户端多个event线程并行处理，这个线程数调大可以让请求处理更快一些，设定的最大值是32.
