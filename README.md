@@ -30,7 +30,7 @@
 
 - [fixed read-hash-mode选择读取模式问题](https://review.gluster.org/#/c/glusterfs/+/25062/)
 - [fixed posix_disk_space_check_thread_proc函数检测磁盘剩余空间间隔时间可配置方式](https://github.com/perrynzhou/glusterfs/commit/3256de978f29801b7d29af56c4cc7587ec421cc9)
-- [openmpi fatal bugs] https://github.com/open-mpi/ompi/pull/6738
+- [openmpi fatal bugs](https://github.com/open-mpi/ompi/pull/6738)
 
 ### glusterfs 分析
 - [glusterfs源码安装](./document/md/glusterfs/glusterfs源码安装.md)
